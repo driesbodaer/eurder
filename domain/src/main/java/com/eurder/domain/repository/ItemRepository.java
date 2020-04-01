@@ -13,4 +13,8 @@ public class ItemRepository {
     public ItemRepository() {
         this.itemList = List.of(new Item("kaas", "camenbert", 1.5, 10));
     }
+
+    public void addItem(Item item) {
+        itemList.add(item);
+    }
 }

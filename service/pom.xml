@@ -15,6 +15,10 @@
         <groupId>com.eurder</groupId>
         <artifactId>domain</artifactId>
     </dependency>
+    <dependency>
+        <groupId>com.eurder</groupId>
+        <artifactId>infrastructure</artifactId>
+    </dependency>
 </dependencies>
 
 </project>

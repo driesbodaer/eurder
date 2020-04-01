@@ -1,6 +1,6 @@
-package authentication;
+package com.eurder.infrastructure.authentication;
 
-import eurderRoles.EurderRole;
+import com.eurder.infrastructure.eurderRoles.EurderRole;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
