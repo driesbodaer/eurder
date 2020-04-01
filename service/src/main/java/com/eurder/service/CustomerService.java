@@ -9,6 +9,7 @@ import com.eurder.infrastructure.eurderRoles.EurderRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 @Service
@@ -26,10 +27,17 @@ public class CustomerService {
     }
 
     public Customer createCustomer(CustomerDto customerDto) {
+        if (hasAnyEmptyFields(customerDto)){ throw new NotEverythingFilledInExeption("fill in everything");}
         Customer customer = customerMapper.toCustomer(customerDto);
         customerRepository.addCustomer(customer);
         fakeAuthenticationService.addUser(customer.getFirstname(), "customer", List.of(EurderRole.CUSTOMER));
         return customer;
+    }
+
+    public boolean hasAnyEmptyFields(CustomerDto customerDto){
+      for(Field field :  CustomerDto.class.getFields()){
+          if( field == null) {return false;}
+      }return true;
     }
 
     public CustomerRepository getCustomerRepository() {

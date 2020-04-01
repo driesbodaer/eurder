@@ -7,6 +7,7 @@ import com.eurder.service.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,7 +21,9 @@ public class ItemController {
         this.itemService = itemService;
     }
 
+
     @PostMapping (produces = JSON , consumes = JSON)
+//    @PreAuthorize("hasAuthority('MAKE_ITEM')")
     @ResponseStatus(HttpStatus.OK)
     public Item addItem(@RequestBody ItemDto itemDto) {
        return itemService.addItem(itemDto);
