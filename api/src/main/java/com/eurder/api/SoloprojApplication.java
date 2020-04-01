@@ -1,4 +1,4 @@
-package com.eurder.soloproj;
+package com.eurder.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
