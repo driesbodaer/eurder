@@ -2,16 +2,19 @@ package com.eurder.domain.repository;
 
 import com.eurder.domain.classes.Customer;
 import com.eurder.domain.mapper.CustomerFactory;
+import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
-
+@Repository
 public class CustomerRepository {
 
-   private List<Customer> customerList;
+    private List<Customer> customerList;
 
     public CustomerRepository() {
-        this.customerList = List.of(CustomerFactory.buildCustomer()
+        this.customerList = new ArrayList<>();
+        customerList.add(CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("dries")
                 .setLastname("bodaer")
@@ -19,5 +22,9 @@ public class CustomerRepository {
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
                 .build());
+    }
+
+    public void addCustomer(Customer customer) {
+        customerList.add(customer);
     }
 }

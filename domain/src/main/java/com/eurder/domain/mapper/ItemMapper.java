@@ -2,7 +2,9 @@ package com.eurder.domain.mapper;
 
 import com.eurder.domain.classes.Item;
 import com.eurder.domain.dto.ItemDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ItemMapper {
 
     public Item toItem(ItemDto itemDto) {

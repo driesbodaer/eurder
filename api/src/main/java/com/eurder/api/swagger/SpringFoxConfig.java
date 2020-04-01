@@ -35,8 +35,8 @@ import java.util.Collections;
 
         private ApiInfo apiInfo() {
             return new ApiInfo(
-                    "Digibooky API",
-                    "Created by Team Awesome",
+                    "eurder API",
+                    "Created by dries",
                     "",
                     "",
                     new Contact("", "", ""),

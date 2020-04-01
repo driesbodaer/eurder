@@ -2,7 +2,9 @@ package com.eurder.domain.mapper;
 
 import com.eurder.domain.classes.Customer;
 import com.eurder.domain.dto.CustomerDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CustomerFactory {
     private String firstname;
     private String lastname;

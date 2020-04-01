@@ -2,6 +2,8 @@ package com.eurder.domain.classes;
 
 import com.eurder.domain.mapper.CustomerFactory;
 
+import java.util.Objects;
+
 public class Customer {
     private int id;
     private String firstname;
@@ -38,6 +40,23 @@ public class Customer {
 
     public String getPhonenumber() {
         return phonenumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(firstname, customer.firstname) &&
+                Objects.equals(lastname, customer.lastname) &&
+                Objects.equals(Emailadress, customer.Emailadress) &&
+                Objects.equals(address, customer.address) &&
+                Objects.equals(phonenumber, customer.phonenumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname, Emailadress, address, phonenumber);
     }
 }
 
