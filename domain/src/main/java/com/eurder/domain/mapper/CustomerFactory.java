@@ -15,7 +15,7 @@ public class CustomerFactory {
     }
 
     public Customer build() {
-        return new Customer(this);
+        return new Customer( this);
     }
     public CustomerDto buildCustomerDto() {
         return new CustomerDto(this);
