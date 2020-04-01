@@ -9,14 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>infrastructure</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-    </dependencies>
-
+    <artifactId>service</artifactId>
+<dependencies>
+    <dependency>
+        <groupId>com.eurder</groupId>
+        <artifactId>domain</artifactId>
+    </dependency>
+</dependencies>
 
 </project>

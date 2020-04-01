@@ -27,4 +27,8 @@ public class CustomerRepository {
     public void addCustomer(Customer customer) {
         customerList.add(customer);
     }
+
+    public List<Customer> getCustomerList() {
+        return customerList;
+    }
 }

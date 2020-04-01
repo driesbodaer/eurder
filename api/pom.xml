@@ -14,13 +14,11 @@
     <dependencies>
         <dependency>
             <groupId>com.eurder</groupId>
-            <artifactId>domain</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>service</artifactId>
         </dependency>
         <dependency>
             <groupId>com.eurder</groupId>
             <artifactId>infrastructure</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>

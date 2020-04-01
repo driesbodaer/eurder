@@ -16,19 +16,16 @@ import reactor.core.publisher.Mono;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CustomerControllerTest {
-//    @Autowired
-//    public CustomerControllerTest(CustomerController customerController) {
-//        this.customerController = customerController;
-//    }
-
     CustomerController customerController;
-    @Autowired
+
     WebTestClient testClient;
 
-    @BeforeEach
-    public void init() {
-        this.customerController = new CustomerController(new CustomerMapper(), new CustomerRepository());
+    @Autowired
+    public CustomerControllerTest(CustomerController customerController, WebTestClient webTestClient) {
+        this.customerController = customerController;
+        this.testClient = webTestClient;
     }
+
 
     @Test
     void createCostumer() {
@@ -58,15 +55,6 @@ class CustomerControllerTest {
     @Test
     void createCostumer_customerIsAdded() {
 
-        Customer actual = CustomerFactory.buildCustomer()
-                .setAddress("kerkstraat")
-                .setFirstname("bart")
-                .setLastname("test")
-                .setAddress("kerkstraat")
-                .setEmailadress("dries@gmail.com")
-                .setPhonenumber("013426238")
-                .build();
-
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("bart")
@@ -78,7 +66,7 @@ class CustomerControllerTest {
 
         Customer expectedCustomer = customerController.createCostumer(expected);
 
-        Assertions.assertThat(actual).isEqualTo(expectedCustomer);
+        Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(1)).isEqualTo(expectedCustomer);
     }
 
     @Test

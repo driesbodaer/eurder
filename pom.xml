@@ -7,6 +7,7 @@
         <module>api</module>
         <module>domain</module>
         <module>infrastructure</module>
+        <module>service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -55,6 +56,11 @@
             <dependency>
                 <groupId>com.eurder</groupId>
                 <artifactId>domain</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.eurder</groupId>
+                <artifactId>service</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
