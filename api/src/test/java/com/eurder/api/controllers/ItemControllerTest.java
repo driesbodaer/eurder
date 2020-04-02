@@ -34,7 +34,7 @@ class ItemControllerTest {
 
     @Test
     void addItem() {
-        Item item = new Item("cheese", "burgut", new Price(5.4, "eur"), 15);
+        Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         Assertions.assertThat(item).isEqualTo(itemController.addItem(itemDto));
@@ -42,11 +42,15 @@ class ItemControllerTest {
 
     @Test
     void addItem_addedToList() {
-        Item item = new Item("cheese", "burgut",  new Price(5.4, "eur"), 15);
+        Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         itemController.addItem(itemDto);
         Assertions.assertThat(itemController.getItemService().getItemRepository().getItemList().get(2)).isEqualTo(item);
+    }
+
+    private Item getItem() {
+        return new Item("cheese", "burgut",  new Price(5.4, "eur"), 15);
     }
 
     @Test
@@ -59,7 +63,7 @@ class ItemControllerTest {
 
     @Test
     void webtestclient_test() {
-        Item item = new Item("kaas", "burgut",  new Price(5.4, "eur"), 15);
+        Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         String url = "items";

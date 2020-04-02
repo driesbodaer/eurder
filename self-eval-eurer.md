@@ -43,7 +43,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [:heavy_check_mark: ] The functional requirements are implemented
  - [:heavy_check_mark: ] The requirements are tested with Postman
  - [:heavy_check_mark:] The requirements are unit tested
- - [x ] The requirements are integration tested
+ - [:heavy_check_mark:] The requirements are integration tested
  - [:heavy_check_mark: ] Proper logging is setup
  - [:heavy_check_mark: ] I did a "codereview" of my own code before declaring it "done".
  - [ :heavy_check_mark:] I commit/push my code when this story was done
@@ -52,7 +52,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [ :heavy_check_mark:] The functional requirements are implemented
  - [ :heavy_check_mark:] The requirements are tested with Postman
  - [:heavy_check_mark: ] The requirements are unit tested
- - [ x] The requirements are integration tested
+ - [ :heavy_check_mark:] The requirements are integration tested
  - [ :heavy_check_mark:] Proper logging is setup
  - [:heavy_check_mark: ] I did a "codereview" of my own code before declaring it "done".
  - [ :heavy_check_mark:] I commit/push my code when this story was done

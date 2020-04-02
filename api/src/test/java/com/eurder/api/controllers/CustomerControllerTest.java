@@ -5,6 +5,7 @@ import com.eurder.domain.dto.CustomerDto;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.CustomerMapper;
 import com.eurder.domain.repository.CustomerRepository;
+import com.eurder.infrastructure.SecurityConfig;
 import com.eurder.infrastructure.authentication.ExternalAuthentication;
 import com.eurder.infrastructure.eurderRoles.EurderRole;
 import com.google.common.base.Utf8;
@@ -13,6 +14,8 @@ import org.assertj.core.api.ThrowableAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
@@ -24,10 +27,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@EnableAutoConfiguration (exclude = { SecurityAutoConfiguration.class})
 class CustomerControllerTest {
     CustomerController customerController;
     CustomerMapper customerMapper;
-
     WebTestClient testClient;
 
     @Autowired
@@ -138,6 +141,7 @@ class CustomerControllerTest {
                 .expectBody(CustomerDto.class)
                 .isEqualTo(expected);
     }
+
 
 
 }
