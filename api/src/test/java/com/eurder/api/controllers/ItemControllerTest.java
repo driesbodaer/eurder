@@ -1,6 +1,7 @@
 package com.eurder.api.controllers;
 
 import com.eurder.domain.classes.Item;
+import com.eurder.domain.classes.Price;
 import com.eurder.domain.dto.CustomerDto;
 import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.mapper.CustomerMapper;
@@ -33,7 +34,7 @@ class ItemControllerTest {
 
     @Test
     void addItem() {
-        Item item = new Item("cheese", "burgut", 5.4, 15);
+        Item item = new Item("cheese", "burgut", new Price(5.4, "eur"), 15);
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         Assertions.assertThat(item).isEqualTo(itemController.addItem(itemDto));
@@ -41,7 +42,7 @@ class ItemControllerTest {
 
     @Test
     void addItem_addedToList() {
-        Item item = new Item("cheese", "burgut", 5.4, 15);
+        Item item = new Item("cheese", "burgut",  new Price(5.4, "eur"), 15);
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         itemController.addItem(itemDto);
@@ -50,7 +51,7 @@ class ItemControllerTest {
 
     @Test
     void addItem_fieldsAreEmpty_throws() {
-        Item item = new Item("", "burgut", 5.4, 15);
+        Item item = new Item("", "burgut",  new Price(5.4, "eur"), 15);
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         Assertions.assertThatThrownBy(() -> itemController.addItem(itemDto));
@@ -58,7 +59,7 @@ class ItemControllerTest {
 
     @Test
     void webtestclient_test() {
-        Item item = new Item("kaas", "burgut", 5.4, 15);
+        Item item = new Item("kaas", "burgut",  new Price(5.4, "eur"), 15);
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         String url = "items";

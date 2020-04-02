@@ -1,18 +1,19 @@
-package com.eurder.domain.classes;
+package com.eurder.domain.dto;
+
+import com.eurder.domain.classes.Customer;
+import com.eurder.domain.classes.ItemGroup;
+import com.eurder.domain.classes.Price;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Order {
-    private final int id;
+public class OrderDto {
     private List<ItemGroup> itemGroupList;
     private Price totalPrice;
     private Customer customer;
-    private static int counter=1;
 
-    public Order(List<ItemGroup> itemGroupList, Price totalPrice, Customer customer) {
-        this.id = counter++;
+    public OrderDto(List<ItemGroup> itemGroupList, Price totalPrice, Customer customer) {
         this.itemGroupList = new ArrayList<>(itemGroupList);
         this.totalPrice = totalPrice;
         this.customer = customer;
@@ -34,10 +35,10 @@ public class Order {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
-        return Objects.equals(itemGroupList, order.itemGroupList) &&
-                Objects.equals(totalPrice, order.totalPrice) &&
-                Objects.equals(customer, order.customer);
+        OrderDto orderDto = (OrderDto) o;
+        return Objects.equals(itemGroupList, orderDto.itemGroupList) &&
+                Objects.equals(totalPrice, orderDto.totalPrice) &&
+                Objects.equals(customer, orderDto.customer);
     }
 
     @Override

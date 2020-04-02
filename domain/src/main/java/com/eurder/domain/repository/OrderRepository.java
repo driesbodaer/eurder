@@ -15,4 +15,8 @@ public class OrderRepository {
     public OrderRepository() {
         this.orderList = new ArrayList<>();
     }
+
+    public void placeOrder(Order order) {
+        orderList.add(order);
+    }
 }

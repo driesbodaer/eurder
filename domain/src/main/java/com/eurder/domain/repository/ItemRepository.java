@@ -1,6 +1,7 @@
 package com.eurder.domain.repository;
 
 import com.eurder.domain.classes.Item;
+import com.eurder.domain.classes.Price;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class ItemRepository {
     private List<Item> itemList;
 
     public ItemRepository() {
-        this.itemList = new ArrayList<>(List.of(new Item("kaas", "camenbert", 1.5, 10)));
+        this.itemList = new ArrayList<>(List.of(new Item("kaas", "camenbert", new Price( 1.5, "eur"), 10)));
     }
 
     public void addItem(Item item) {

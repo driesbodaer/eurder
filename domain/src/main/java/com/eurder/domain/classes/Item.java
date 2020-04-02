@@ -5,17 +5,17 @@ import java.util.Objects;
 public class Item {
     private String name;
     private String description;
-    private double price;
+    private Price price;
     private int amount;
 
-    public Item(String name, String description, double price, int amount) {
+    public Item(String name, String description, Price price, int amount) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.amount = amount;
     }
 
-    public double getPrice() {
+    public Price getPrice() {
         return price;
     }
 
@@ -36,10 +36,10 @@ public class Item {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return Double.compare(item.price, price) == 0 &&
-                amount == item.amount &&
+        return amount == item.amount &&
                 Objects.equals(name, item.name) &&
-                Objects.equals(description, item.description);
+                Objects.equals(description, item.description) &&
+                Objects.equals(price, item.price);
     }
 
     @Override

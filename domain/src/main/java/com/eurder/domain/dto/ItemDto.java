@@ -1,14 +1,16 @@
 package com.eurder.domain.dto;
 
+import com.eurder.domain.classes.Price;
+
 import java.util.Objects;
 
 public class ItemDto {
     private String name;
     private String description;
-    private double price;
+    private Price price;
     private int amount;
 
-    public ItemDto(String name, String description, double price, int amount) {
+    public ItemDto(String name, String description, Price price, int amount) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -27,7 +29,7 @@ public class ItemDto {
         return amount;
     }
 
-    public double getPrice() {
+    public Price getPrice() {
         return price;
     }
 
@@ -36,10 +38,10 @@ public class ItemDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ItemDto itemDto = (ItemDto) o;
-        return Double.compare(itemDto.price, price) == 0 &&
-                amount == itemDto.amount &&
+        return amount == itemDto.amount &&
                 Objects.equals(name, itemDto.name) &&
-                Objects.equals(description, itemDto.description);
+                Objects.equals(description, itemDto.description) &&
+                Objects.equals(price, itemDto.price);
     }
 
     @Override

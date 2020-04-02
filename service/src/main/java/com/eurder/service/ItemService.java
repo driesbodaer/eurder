@@ -31,7 +31,7 @@ public class ItemService {
     }
 
     public boolean hasAnyEmptyFields(ItemDto itemDto) {
-        return itemDto.getDescription().isEmpty() || itemDto.getName().isEmpty() || itemDto.getAmount() == 0 || itemDto.getPrice() == 0.0;
+        return itemDto.getDescription().isEmpty() || itemDto.getName().isEmpty() || itemDto.getAmount() == 0 || itemDto.getPrice().getPrice() == 0.0;
     }
 
     public com.eurder.domain.repository.ItemRepository getItemRepository() {

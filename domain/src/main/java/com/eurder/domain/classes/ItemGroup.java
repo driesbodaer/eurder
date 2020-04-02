@@ -11,7 +11,7 @@ public class ItemGroup {
     public ItemGroup(Item item, int amount) {
         this.item = item;
         this.amount = amount;
-        this.price = item.getPrice() * amount;
+        this.price = item.getPrice().getPrice() * amount;
         this.shippingdate = LocalDate.now().plusDays(1);
     }
 

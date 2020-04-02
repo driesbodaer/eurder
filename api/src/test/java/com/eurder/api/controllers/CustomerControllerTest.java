@@ -59,7 +59,7 @@ class CustomerControllerTest {
 
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
-                .setFirstname("bart2")
+                .setFirstname("bart9")
                 .setLastname("test")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
@@ -67,7 +67,7 @@ class CustomerControllerTest {
 
         Customer expectedCustomer = customerController.createCostumer(expected);
 
-        Assertions.assertThat(customerController.getCustomerService().getFakeAuthenticationService().getUser("bart2", "customer")).isEqualTo(new ExternalAuthentication().withUsername("bart2").withPassword("customer").withRoles(List.of(EurderRole.CUSTOMER)));
+        Assertions.assertThat(customerController.getCustomerService().getFakeAuthenticationService().getUser("bart9", "customer")).isEqualTo(new ExternalAuthentication().withUsername("bart9").withPassword("customer").withRoles(List.of(EurderRole.CUSTOMER)));
     }
 
     @Test
