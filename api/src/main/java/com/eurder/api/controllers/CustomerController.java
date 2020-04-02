@@ -23,8 +23,8 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @PostMapping (produces = JSON , consumes = JSON)
-    @ResponseStatus(HttpStatus.OK)
+    @PostMapping(produces = JSON, consumes = JSON)
+    @ResponseStatus(HttpStatus.CREATED)
     public Customer createCostumer(@RequestBody CustomerDto customerDto) {
         return customerService.createCustomer(customerDto);
     }

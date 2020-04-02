@@ -137,7 +137,7 @@ class CustomerControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(Mono.just(expected), CustomerDto.class)
                 .exchange()
-                .expectStatus().isOk()
+                .expectStatus().isCreated()
                 .expectBody(CustomerDto.class)
                 .isEqualTo(expected);
     }

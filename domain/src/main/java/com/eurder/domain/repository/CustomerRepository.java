@@ -16,7 +16,7 @@ public class CustomerRepository {
         this.customerList = new ArrayList<>();
         customerList.add(CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
-                .setFirstname("dries")
+                .setFirstname("admin")
                 .setLastname("bodaer")
                 .setAddress("kerkstraat")
                 .setEmailadress("dries@gmail.com")
@@ -33,6 +33,12 @@ public class CustomerRepository {
     }
 
     public Customer getCustomerBasedOnName(String name) {
-        return customerList.stream().filter(x -> x.getFirstname().equals(name)).findFirst().orElse(null);
+        for (Customer customer : customerList) {
+            if (customer.getFirstname().equals(name)) {
+                return customer;
+            }
+        } return null;
+
+
     }
 }

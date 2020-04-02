@@ -75,7 +75,7 @@ class ItemControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(Mono.just(itemDto), ItemDto.class)
                 .exchange()
-                .expectStatus().isOk()
+                .expectStatus().isCreated()
                 .expectBody(ItemDto.class)
                 .isEqualTo(itemDto);
 

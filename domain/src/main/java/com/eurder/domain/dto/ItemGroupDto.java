@@ -27,4 +27,12 @@ public class ItemGroupDto {
         return amount;
     }
 
+    @Override
+    public String toString() {
+        return "ItemGroupDto{" +
+                "item=" + item +
+                ", amount=" + amount +
+                ", price=" + price +
+                '}';
+    }
 }

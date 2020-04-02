@@ -7,16 +7,18 @@ import com.eurder.domain.mapper.OrderMapper;
 import com.eurder.domain.repository.CustomerRepository;
 import com.eurder.domain.repository.ItemRepository;
 import com.eurder.domain.repository.OrderRepository;
-import com.eurder.infrastructure.EurderAuthenticationEntryPoint;
-import com.eurder.infrastructure.EurderAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.function.ServerRequest;
+
+import java.util.List;
 
 @Service
-public class OrderService {
+public class OrderService  {
     private final OrderMapper orderMapper;
     private final OrderRepository orderRepository;
     private final ItemRepository itemRepository;
@@ -24,22 +26,24 @@ public class OrderService {
 
 
     @Autowired
-    public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository) {
+    public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository ) {
         this.orderMapper = orderMapper;
         this.orderRepository = orderRepository;
         this.itemRepository = itemRepository;
         this.customerRepository = customerRepository;
     }
 
-    public Order placeOrder(OrderDto orderDto) {
+    public Order placeOrder(OrderDto orderDto, String username) {
         if (hasAnyEmptyFields(orderDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        Customer customerThatOrdered = customerRepository.getCustomerBasedOnName( auth.getName());
-        Customer customerThatOrdered = customerRepository.getCustomerList().get(0);
+
+        Customer customerThatOrdered = customerRepository.getCustomerBasedOnName( username);
+//        Customer customerThatOrdered = customerRepository.getCustomerList().get(0);
+
         Order order = orderMapper.toOrder(orderDto, customerThatOrdered);
         orderRepository.placeOrder(order);
+        System.out.println(order);
         return order;
     }
 
@@ -54,5 +58,7 @@ public class OrderService {
     }
 
 
-
+    public List<Order> getAllOrders() {
+        return orderRepository.getOrderList();
+    }
 }

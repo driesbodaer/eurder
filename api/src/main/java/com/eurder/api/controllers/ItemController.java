@@ -30,7 +30,7 @@ public class ItemController {
 
     @PostMapping(produces = JSON, consumes = JSON)
 //    @PreAuthorize("hasAuthority('MAKE_ITEM')")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public Item addItem(@RequestBody ItemDto itemDto) {
         return itemService.addItem(itemDto);
     }

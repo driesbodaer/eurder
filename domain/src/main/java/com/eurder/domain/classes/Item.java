@@ -46,4 +46,14 @@ public class Item {
     public int hashCode() {
         return Objects.hash(name, description, price, amount);
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
+                '}';
+    }
 }

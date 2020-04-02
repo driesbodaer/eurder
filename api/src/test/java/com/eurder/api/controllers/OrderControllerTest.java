@@ -16,6 +16,7 @@ import org.springframework.util.Base64Utils;
 import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
+import java.security.Principal;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -25,6 +26,12 @@ class OrderControllerTest {
     WebTestClient testClient;
     ItemRepository itemRepository;
     CustomerRepository customerRepository;
+    Principal principal = new Principal() {
+        @Override
+        public String getName() {
+            return "admin";
+        }
+    };
 
     @Autowired
     public OrderControllerTest(OrderController orderController, WebTestClient webTestClient, OrderMapper orderMapper, ItemRepository itemRepository, CustomerRepository customerRepository) {
@@ -48,7 +55,7 @@ class OrderControllerTest {
         Order order = getOrder();
         OrderDto orderDto = orderMapper.toOrderDto(order);
 
-        Assertions.assertThat(order).isEqualTo(orderController.placeOrder(orderDto));
+        Assertions.assertThat(order).isEqualTo(orderController.placeOrder(orderDto, principal));
     }
 
     @Test
@@ -56,7 +63,8 @@ class OrderControllerTest {
         Order order = getOrder();
         OrderDto orderDto = orderMapper.toOrderDto(order);
 
-        orderController.placeOrder(orderDto);
+        orderController.placeOrder(orderDto, principal);
+
         Assertions.assertThat(orderController.getOrderService().getOrderRepository().getOrderList().get(0)).isEqualTo(order);
     }
 
@@ -79,7 +87,7 @@ class OrderControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(Mono.just(orderDto), OrderDto.class)
                 .exchange()
-                .expectStatus().isOk()
+                .expectStatus().isCreated()
                 .expectBody(OrderDto.class)
                 .isEqualTo(orderDto);
 
