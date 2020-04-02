@@ -27,17 +27,17 @@ public class CustomerService {
     }
 
     public Customer createCustomer(CustomerDto customerDto) {
-        if (hasAnyEmptyFields(customerDto)){ throw new NotEverythingFilledInExeption("fill in everything");}
+        if (hasAnyEmptyFields(customerDto)) {
+            throw new NotEverythingFilledInExeption("fill in everything");
+        }
         Customer customer = customerMapper.toCustomer(customerDto);
         customerRepository.addCustomer(customer);
         fakeAuthenticationService.addUser(customer.getFirstname(), "customer", List.of(EurderRole.CUSTOMER));
         return customer;
     }
 
-    public boolean hasAnyEmptyFields(CustomerDto customerDto){
-      for(Field field :  CustomerDto.class.getFields()){
-          if( field == null) {return true;}
-      }return false;
+    public boolean hasAnyEmptyFields(CustomerDto customerDto) {
+        return customerDto.getAddress().isEmpty() || customerDto.getEmailadress().isEmpty() || customerDto.getFirstname().isEmpty() || customerDto.getLastname().isEmpty() || customerDto.getPhonenumber().isEmpty();
     }
 
     public CustomerRepository getCustomerRepository() {
