@@ -22,22 +22,22 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - What happens if the firstname contains numbers? Is this allowed?
  > ....
  - In which currency are the prices?
- > ....
+ > eur
  - Does the phonenumber include the country code?
- > ....
+ > no
  - Did you go for a similar architecture as digibooky?
- > ....
+ > jes
  - Is your application deployed in the cloud? (Heroku?)
  > ....
  - ....
 ## Progress Story 0 (project setup & technical requirements)
- - [x] Be awesome
- - [ ] Setup Github
- - [ ] Setup Jenkins
- - [ ] Basic setup / skeleton for Spring Boot & Maven
- - [ ] I have my first REST Controller ready
- - [ ] I commit/push my code on a regular basis
- - [ ] Swagger is enabled
+ - [:heavy_check_mark:] Be awesome
+ - [:heavy_check_mark:] Setup Github
+ - [ :heavy_check_mark:] Setup Jenkins
+ - [:heavy_check_mark: ] Basic setup / skeleton for Spring Boot & Maven
+ - [:heavy_check_mark: ] I have my first REST Controller ready
+ - [:heavy_check_mark: ] I commit/push my code on a regular basis
+ - [:heavy_check_mark: ] Swagger is enabled
 ### Comments:
 ## Story 1
  - [ ] The functional requirements are implemented
