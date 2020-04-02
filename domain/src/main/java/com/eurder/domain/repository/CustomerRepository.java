@@ -31,4 +31,8 @@ public class CustomerRepository {
     public List<Customer> getCustomerList() {
         return customerList;
     }
+
+    public Customer getCustomerBasedOnName(String name) {
+        return customerList.stream().filter(x -> x.getFirstname().equals(name)).findFirst().orElse(null);
+    }
 }

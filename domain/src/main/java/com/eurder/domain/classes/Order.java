@@ -7,15 +7,23 @@ import java.util.Objects;
 public class Order {
     private final int id;
     private List<ItemGroup> itemGroupList;
-    private Price totalPrice;
+    private final Price totalPrice;
     private Customer customer;
     private static int counter=1;
 
-    public Order(List<ItemGroup> itemGroupList, Price totalPrice, Customer customer) {
+    public Order(List<ItemGroup> itemGroupList, Customer customer) {
         this.id = counter++;
         this.itemGroupList = new ArrayList<>(itemGroupList);
-        this.totalPrice = totalPrice;
+        this.totalPrice = calculateTotalPrice();
         this.customer = customer;
+    }
+
+    public Price calculateTotalPrice(){
+        double price =0;
+        for (ItemGroup itemGroup : itemGroupList) {
+            price += itemGroup.getPrice();
+        }
+        return new Price(price, "eur");
     }
 
     public List<ItemGroup> getItemGroupList() {
@@ -43,5 +51,15 @@ public class Order {
     @Override
     public int hashCode() {
         return Objects.hash(itemGroupList, totalPrice, customer);
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", itemGroupList=" + itemGroupList +
+                ", totalPrice=" + totalPrice +
+                ", customer=" + customer +
+                '}';
     }
 }
