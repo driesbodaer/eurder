@@ -13,8 +13,8 @@ public class ItemRepository {
     private List<Item> itemList;
 
     public ItemRepository() {
-        this.itemList = new ArrayList<>(List.of(new Item("kaas", "camenbert", new Price( 1.5, "eur"), 10)));
-        itemList.add(new Item("brood", "rozijnen", new Price( 2.5, "eur"), 20));
+        this.itemList = new ArrayList<>(List.of(new Item("kaas", "camenbert", new Price(1.5, "eur"), 10)));
+        itemList.add(new Item("brood", "rozijnen", new Price(2.5, "eur"), 20));
     }
 
     public void addItem(Item item) {

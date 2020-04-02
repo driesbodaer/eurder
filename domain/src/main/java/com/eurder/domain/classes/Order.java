@@ -9,7 +9,7 @@ public class Order {
     private List<ItemGroup> itemGroupList;
     private final Price totalPrice;
     private Customer customer;
-    private static int counter=1;
+    private static int counter = 1;
 
     public Order(List<ItemGroup> itemGroupList, Customer customer) {
         this.id = counter++;
@@ -18,8 +18,8 @@ public class Order {
         this.customer = customer;
     }
 
-    public Price calculateTotalPrice(){
-        double price =0;
+    public Price calculateTotalPrice() {
+        double price = 0;
         for (ItemGroup itemGroup : itemGroupList) {
             price += itemGroup.getPrice();
         }

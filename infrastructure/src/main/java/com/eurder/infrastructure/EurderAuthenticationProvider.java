@@ -33,7 +33,7 @@ public class EurderAuthenticationProvider implements AuthenticationProvider {
         String password = authentication.getCredentials().toString();
 
         ExternalAuthentication user = authService.getUser(username, password);
-        if (user==null){
+        if (user == null) {
             throw new BadCredentialsException("Username and password not found.");
         } else {
             return new UsernamePasswordAuthenticationToken(username, password, rolesToGrantedAuthorities(Feature.getFeaturesForRoles(user.getRoles())));

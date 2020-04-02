@@ -32,15 +32,20 @@ public class OrderMapper {
         List<ItemGroup> itemGroupList = new ArrayList<>();
         for (ItemGroupDto itemGroupDto : orderDto.getItemGroupDtoList()) {
             itemGroupList.add(itemGroupMapper.toItemGroup(itemGroupDto, checkIfItemGroupIsInStock(itemGroupDto)));
+            removeItemFromRepo(itemGroupDto);
         }
         return new Order(itemGroupList, customer);
     }
 
-    public Boolean checkIfItemGroupIsInStock(ItemGroupDto itemGroupDto) {
-        Item itemTocheck = itemRepository.getItemList().stream()
-                .filter(x -> x.getName().equals( itemGroupDto.getItem().getName()))
-                .findFirst().orElse(null);
+    private void removeItemFromRepo(ItemGroupDto itemGroupDto) {
+        if (checkIfItemGroupIsInStock(itemGroupDto)) {
+            Item item = getItemFromList(itemGroupDto);
+            item.setAmount(item.getAmount() - itemGroupDto.getAmount());
+        }
+    }
 
+    public Boolean checkIfItemGroupIsInStock(ItemGroupDto itemGroupDto) {
+        Item itemTocheck = getItemFromList(itemGroupDto);
         return itemTocheck != null && itemTocheck.getAmount() >= itemGroupDto.getAmount();
     }
 
@@ -50,5 +55,11 @@ public class OrderMapper {
             itemGroupDtoList.add(itemGroupMapper.toItemGroupDto(itemGroup));
         }
         return new OrderDto(itemGroupDtoList);
+    }
+
+    private Item getItemFromList(ItemGroupDto itemGroupDto) {
+        return itemRepository.getItemList().stream()
+                .filter(x -> x.getName().equals(itemGroupDto.getItem().getName()))
+                .findFirst().orElse(null);
     }
 }

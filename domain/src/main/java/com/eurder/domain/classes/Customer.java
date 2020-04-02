@@ -11,9 +11,9 @@ public class Customer {
     private String Emailadress;
     private String address;
     private String phonenumber;
-    private static int counter =1;
+    private static int counter = 1;
 
-    public Customer( CustomerFactory customerFactory) {
+    public Customer(CustomerFactory customerFactory) {
         this.id = counter++;
         this.firstname = customerFactory.getFirstname();
         this.lastname = customerFactory.getLastname();

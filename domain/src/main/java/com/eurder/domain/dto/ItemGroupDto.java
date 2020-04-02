@@ -3,6 +3,7 @@ package com.eurder.domain.dto;
 import com.eurder.domain.classes.Item;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class ItemGroupDto {
     private Item item;
@@ -34,5 +35,20 @@ public class ItemGroupDto {
                 ", amount=" + amount +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ItemGroupDto that = (ItemGroupDto) o;
+        return amount == that.amount &&
+                Double.compare(that.price, price) == 0 &&
+                Objects.equals(item, that.item);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(item, amount, price);
     }
 }

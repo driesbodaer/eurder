@@ -50,12 +50,12 @@ class ItemControllerTest {
     }
 
     private Item getItem() {
-        return new Item("cheese", "burgut",  new Price(5.4, "eur"), 15);
+        return new Item("cheese", "burgut", new Price(5.4, "eur"), 15);
     }
 
     @Test
     void addItem_fieldsAreEmpty_throws() {
-        Item item = new Item("", "burgut",  new Price(5.4, "eur"), 15);
+        Item item = new Item("", "burgut", new Price(5.4, "eur"), 15);
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         Assertions.assertThatThrownBy(() -> itemController.addItem(itemDto));

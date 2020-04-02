@@ -20,8 +20,8 @@ public class OrderDto {
         this.totalPrice = calculateTotalPrice();
     }
 
-    public Price calculateTotalPrice(){
-        double price =0;
+    public Price calculateTotalPrice() {
+        double price = 0;
         for (ItemGroupDto itemGroupDto : itemGroupDtoList) {
             price += itemGroupDto.getPrice();
         }
@@ -42,8 +42,7 @@ public class OrderDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         OrderDto orderDto = (OrderDto) o;
-        return Objects.equals(itemGroupDtoList, orderDto.itemGroupDtoList) &&
-                Objects.equals(totalPrice, orderDto.totalPrice);
+        return Objects.equals(itemGroupDtoList, orderDto.itemGroupDtoList);
     }
 
     @Override

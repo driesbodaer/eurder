@@ -12,7 +12,4 @@ public class ReportDto {
         this.orderReportList = orderList;
         this.totalpriceOfOrders = 0; //use calculatemethod here
     }
-
-
-
 }

@@ -15,13 +15,18 @@ public class ItemGroup {
         this.amount = amount;
         this.price = item.getPrice().getPrice() * amount;
         this.inStock = inStock;
-        this.shippingdate = getShippingdate();
+        this.shippingdate = calcShippingdate();
     }
 
-    private LocalDate getShippingdate() {
-        if (inStock){
-        return LocalDate.now().plusDays(1);}
+    private LocalDate calcShippingdate() {
+        if (inStock) {
+            return LocalDate.now().plusDays(1);
+        }
         return LocalDate.now().plusDays(7);
+    }
+
+    public LocalDate getShippingdate() {
+        return shippingdate;
     }
 
     public double getPrice() {

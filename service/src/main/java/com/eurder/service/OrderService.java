@@ -18,7 +18,7 @@ import org.springframework.web.servlet.function.ServerRequest;
 import java.util.List;
 
 @Service
-public class OrderService  {
+public class OrderService {
     private final OrderMapper orderMapper;
     private final OrderRepository orderRepository;
     private final ItemRepository itemRepository;
@@ -26,7 +26,7 @@ public class OrderService  {
 
 
     @Autowired
-    public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository ) {
+    public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository) {
         this.orderMapper = orderMapper;
         this.orderRepository = orderRepository;
         this.itemRepository = itemRepository;
@@ -38,15 +38,11 @@ public class OrderService  {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
 
-        Customer customerThatOrdered = customerRepository.getCustomerBasedOnName( username);
-//        Customer customerThatOrdered = customerRepository.getCustomerList().get(0);
-
+        Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
         Order order = orderMapper.toOrder(orderDto, customerThatOrdered);
         orderRepository.placeOrder(order);
-        System.out.println(order);
         return order;
     }
-
 
 
     public boolean hasAnyEmptyFields(OrderDto orderDto) {

@@ -30,7 +30,7 @@ public class CustomerService {
         if (hasAnyEmptyFields(customerDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
-        if (lettersAreInputted(customerDto.getFirstname()) || lettersAreInputted(customerDto.getLastname())){
+        if (lettersAreInputted(customerDto.getFirstname()) || lettersAreInputted(customerDto.getLastname())) {
             throw new NotEverythingFilledInExeption("nameinput not correct");
         }
 
@@ -43,8 +43,9 @@ public class CustomerService {
     public boolean hasAnyEmptyFields(CustomerDto customerDto) {
         return customerDto.getAddress().isEmpty() || customerDto.getEmailadress().isEmpty() || customerDto.getFirstname().isEmpty() || customerDto.getLastname().isEmpty() || customerDto.getPhonenumber().isEmpty();
     }
-    public boolean lettersAreInputted(String input){
-      return !input.chars().allMatch(Character::isLetter);
+
+    public boolean lettersAreInputted(String input) {
+        return !input.chars().allMatch(Character::isLetter);
     }
 
     public FakeAuthenticationService getFakeAuthenticationService() {

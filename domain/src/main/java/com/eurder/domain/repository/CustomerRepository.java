@@ -37,7 +37,8 @@ public class CustomerRepository {
             if (customer.getFirstname().equals(name)) {
                 return customer;
             }
-        } return null;
+        }
+        return null;
 
 
     }

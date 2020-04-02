@@ -28,8 +28,8 @@ public class FakeAuthenticationService {
                 .orElse(null);
     }
 
-    public void addUser(String name, String password, List<EurderRole> roles){
-        if (externalAuthentications.stream().map(ExternalAuthentication::getUsername).collect(Collectors.toList()).contains(name)){
+    public void addUser(String name, String password, List<EurderRole> roles) {
+        if (externalAuthentications.stream().map(ExternalAuthentication::getUsername).collect(Collectors.toList()).contains(name)) {
             throw new IllegalArgumentException("username already exists");
         }
         externalAuthentications.add(ExternalAuthentication.externalAuthentication().withUsername(name).withPassword(password).withRoles(roles));
