@@ -10,6 +10,7 @@ public class ItemGroupDto {
     private int amount;
     private double price;
 
+
     public ItemGroupDto(Item item, int amount) {
         this.item = item;
         this.amount = amount;

@@ -23,6 +23,13 @@ public class Price {
     }
 
     @Override
+    public String toString() {
+        return "Price{" +
+                "price=" + price +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(price, denomination);
     }

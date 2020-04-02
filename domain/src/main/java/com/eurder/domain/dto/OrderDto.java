@@ -1,6 +1,7 @@
 package com.eurder.domain.dto;
 
 import com.eurder.domain.classes.Customer;
+import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Price;
 

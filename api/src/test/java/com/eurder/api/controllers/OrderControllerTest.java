@@ -4,6 +4,7 @@ import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.classes.Price;
+import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.dto.OrderDto;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.OrderMapper;
@@ -13,8 +14,12 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.util.Base64Utils;
+import reactor.core.publisher.Mono;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
@@ -51,6 +56,16 @@ class OrderControllerTest {
     }
 
     @Test
+    void IsremovedfromStock_WhenOrdered() {
+        Order order = getOrder();
+        OrderDto orderDto = orderMapper.toOrderDto(order);
+
+        orderController.placeOrder(orderDto, principal);
+
+        Assertions.assertThat(itemRepository.getItemList().get(0).getAmount()).isEqualTo(2);
+    }
+
+    @Test
     void addOrder() {
         Order order = getOrder();
         OrderDto orderDto = orderMapper.toOrderDto(order);
@@ -78,16 +93,6 @@ class OrderControllerTest {
         Assertions.assertThat(order.getItemGroupList().get(0).getShippingdate()).isEqualTo(LocalDate.now().plusDays(1));
     }
 
-    @Test
-    void IsremovedfromStock_WhenOrdered() {
-        Order order = getOrder();
-        OrderDto orderDto = orderMapper.toOrderDto(order);
-
-        orderController.placeOrder(orderDto, principal);
-
-        Assertions.assertThat(itemRepository.getItemList().get(0).getAmount()).isEqualTo(8);
-    }
-
     private Order getOrder() {
         return new Order(List.of(new ItemGroup(itemRepository.getItemList().get(0), 2, true)), customerRepository.getCustomerList().get(0));
     }
@@ -112,4 +117,23 @@ class OrderControllerTest {
 //                .isEqualTo(orderDto);
 //
 //    }
+
+    @Test
+    void webtestclient_test2() {
+        OrderDto orderDto = orderMapper.toOrderDto(getOrder());
+
+        String url = "/orders";
+
+        testClient.post()
+                .uri(url)
+                .header("Authorization", "Basic " + Base64Utils
+                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+                .body(Mono.just(orderDto), OrderDto.class)
+                .exchange()
+                .expectStatus().isCreated()
+                .expectBody(OrderDto.class);
+
+    }
 }

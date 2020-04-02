@@ -29,7 +29,7 @@ import static com.eurder.api.controllers.CustomerController.JSON;
 @RequestMapping(path = "orders")
 public class OrderController {
     private final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
-    private final com.eurder.service.OrderService orderService;
+    private final OrderService orderService;
 
     @Autowired
     public OrderController(OrderService orderService) {

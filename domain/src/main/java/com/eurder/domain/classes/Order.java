@@ -11,6 +11,7 @@ public class Order {
     private Customer customer;
     private static int counter = 1;
 
+
     public Order(List<ItemGroup> itemGroupList, Customer customer) {
         this.id = counter++;
         this.itemGroupList = new ArrayList<>(itemGroupList);
