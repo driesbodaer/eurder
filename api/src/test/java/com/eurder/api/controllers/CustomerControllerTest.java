@@ -7,6 +7,7 @@ import com.eurder.domain.mapper.CustomerMapper;
 import com.eurder.domain.repository.CustomerRepository;
 import com.google.common.base.Utf8;
 import org.assertj.core.api.Assertions;
+import org.assertj.core.api.ThrowableAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,21 @@ class CustomerControllerTest {
         Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(2)).isEqualTo(expectedCustomer);
     }
     @Test
+    void createCostumer_FieldEmpty_throws() {
+
+        Customer actual = CustomerFactory.buildCustomer()
+                .setAddress("kerkstraat")
+                .setFirstname("bart7")
+                .setLastname("test")
+                .setEmailadress("dries@gmail.com")
+                .setPhonenumber("")
+                .build();
+        CustomerDto customerDto = customerMapper.toCustomerDto(actual);
+
+        Assertions.assertThatThrownBy(() -> customerController.createCostumer(customerDto));
+    }
+
+    @Test
     void createCostumer() {
 
         Customer actual = CustomerFactory.buildCustomer()
@@ -59,8 +75,6 @@ class CustomerControllerTest {
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
                 .build();
-
-
         Customer expectedCustomer = customerController.createCostumer(customerMapper.toCustomerDto(actual));
 
         Assertions.assertThat(actual).isEqualTo(expectedCustomer);
@@ -89,4 +103,6 @@ class CustomerControllerTest {
                 .expectBody(CustomerDto.class)
                 .isEqualTo(expected);
     }
+
+
 }
