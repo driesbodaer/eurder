@@ -43,7 +43,7 @@ class CustomerControllerTest {
 
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
-                .setFirstname("bart2")
+                .setFirstname("aaaaa")
                 .setLastname("test")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
@@ -59,7 +59,7 @@ class CustomerControllerTest {
 
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
-                .setFirstname("bart9")
+                .setFirstname("bbb")
                 .setLastname("test")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
@@ -67,7 +67,7 @@ class CustomerControllerTest {
 
         Customer expectedCustomer = customerController.createCostumer(expected);
 
-        Assertions.assertThat(customerController.getCustomerService().getFakeAuthenticationService().getUser("bart9", "customer")).isEqualTo(new ExternalAuthentication().withUsername("bart9").withPassword("customer").withRoles(List.of(EurderRole.CUSTOMER)));
+        Assertions.assertThat(customerController.getCustomerService().getFakeAuthenticationService().getUser("bbb", "customer")).isEqualTo(new ExternalAuthentication().withUsername("bbb").withPassword("customer").withRoles(List.of(EurderRole.CUSTOMER)));
     }
 
     @Test
@@ -75,10 +75,25 @@ class CustomerControllerTest {
 
         Customer actual = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
-                .setFirstname("bart7")
+                .setFirstname("ccc")
                 .setLastname("test")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("")
+                .build();
+        CustomerDto customerDto = customerMapper.toCustomerDto(actual);
+
+        Assertions.assertThatThrownBy(() -> customerController.createCostumer(customerDto));
+    }
+
+    @Test
+    void createCostumer_WrongName_throws() {
+
+        Customer actual = CustomerFactory.buildCustomer()
+                .setAddress("kerkstraat")
+                .setFirstname("ddd10")
+                .setLastname("test")
+                .setEmailadress("dries@gmail.com")
+                .setPhonenumber("01352485")
                 .build();
         CustomerDto customerDto = customerMapper.toCustomerDto(actual);
 
@@ -90,7 +105,7 @@ class CustomerControllerTest {
 
         Customer actual = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
-                .setFirstname("bart1")
+                .setFirstname("eee")
                 .setLastname("test")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
@@ -104,7 +119,7 @@ class CustomerControllerTest {
     void createCostumer_WithSprinboottest() throws UnsupportedEncodingException {
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
-                .setFirstname("bart")
+                .setFirstname("fff")
                 .setLastname("test")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")

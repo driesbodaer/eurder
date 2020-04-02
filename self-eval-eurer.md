@@ -10,7 +10,7 @@ As a developer you have to make choices constantly.
 Choices about time efficiency and quality, choices about your architecture, choices about functionality.
 Which choices did you make? (List your choices below, remove what is not relevant)
  - What is your focus when working on Örder?
- > learning and practice
+ > learning and practice 
  - Do you have a single-module maven project? Or a multi-module maven project?
  > multi
  - Are you working test-first?
@@ -20,7 +20,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - Do you have logging enabled?
  > yes
  - What happens if the firstname contains numbers? Is this allowed?
- > ....
+ > no, throws exeption
  - In which currency are the prices?
  > eur
  - Does the phonenumber include the country code?
@@ -28,7 +28,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - Did you go for a similar architecture as digibooky?
  > jes
  - Is your application deployed in the cloud? (Heroku?)
- > ....
+ > i am requesting adminrights to my pc via cegekaticket to try this, currently i have no acces.
  - ....
 ## Progress Story 0 (project setup & technical requirements)
  - [:heavy_check_mark:] Be awesome
@@ -40,22 +40,22 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [:heavy_check_mark: ] Swagger is enabled
 ### Comments:
 ## Story 1
- - [ ] The functional requirements are implemented
- - [ ] The requirements are tested with Postman
- - [ ] The requirements are unit tested
- - [ ] The requirements are integration tested
- - [ ] Proper logging is setup
- - [ ] I did a "codereview" of my own code before declaring it "done".
- - [ ] I commit/push my code when this story was done
+ - [:heavy_check_mark: ] The functional requirements are implemented
+ - [:heavy_check_mark: ] The requirements are tested with Postman
+ - [:heavy_check_mark:] The requirements are unit tested
+ - [:heavy_check_mark: ] The requirements are integration tested
+ - [:heavy_check_mark: ] Proper logging is setup
+ - [:heavy_check_mark: ] I did a "codereview" of my own code before declaring it "done".
+ - [ :heavy_check_mark:] I commit/push my code when this story was done
 ### Comments:
 ## Story 2
- - [ ] The functional requirements are implemented
- - [ ] The requirements are tested with Postman
- - [ ] The requirements are unit tested
- - [ ] The requirements are integration tested
- - [ ] Proper logging is setup
- - [ ] I did a "codereview" of my own code before declaring it "done".
- - [ ] I commit/push my code when this story was done
+ - [ :heavy_check_mark:] The functional requirements are implemented
+ - [ :heavy_check_mark:] The requirements are tested with Postman
+ - [:heavy_check_mark: ] The requirements are unit tested
+ - [ :heavy_check_mark:] The requirements are integration tested
+ - [ :heavy_check_mark:] Proper logging is setup
+ - [:heavy_check_mark: ] I did a "codereview" of my own code before declaring it "done".
+ - [ :heavy_check_mark:] I commit/push my code when this story was done
 ### Comments:
 ## Story 3
  - [ ] The functional requirements are implemented
