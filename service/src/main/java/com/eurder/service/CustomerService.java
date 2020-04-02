@@ -40,6 +40,10 @@ public class CustomerService {
         return customerDto.getAddress().isEmpty() || customerDto.getEmailadress().isEmpty() || customerDto.getFirstname().isEmpty() || customerDto.getLastname().isEmpty() || customerDto.getPhonenumber().isEmpty();
     }
 
+    public FakeAuthenticationService getFakeAuthenticationService() {
+        return fakeAuthenticationService;
+    }
+
     public CustomerRepository getCustomerRepository() {
         return customerRepository;
     }
