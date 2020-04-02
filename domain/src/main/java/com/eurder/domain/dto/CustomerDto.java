@@ -14,7 +14,7 @@ public class CustomerDto {
     public CustomerDto(CustomerFactory customerFactory) {
         this.firstname = customerFactory.getFirstname();
         this.lastname = customerFactory.getLastname();
-        emailadress = customerFactory.getEmailadress();
+        this.emailadress = customerFactory.getEmailadress();
         this.address = customerFactory.getAddress();
         this.phonenumber = customerFactory.getPhonenumber();
     }
@@ -45,6 +45,17 @@ public class CustomerDto {
 
     public String getPhonenumber() {
         return phonenumber;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerDto{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", emailadress='" + emailadress + '\'' +
+                ", address='" + address + '\'' +
+                ", phonenumber='" + phonenumber + '\'' +
+                '}';
     }
 
     @Override

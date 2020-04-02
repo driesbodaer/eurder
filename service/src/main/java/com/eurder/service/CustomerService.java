@@ -36,8 +36,8 @@ public class CustomerService {
 
     public boolean hasAnyEmptyFields(CustomerDto customerDto){
       for(Field field :  CustomerDto.class.getFields()){
-          if( field == null) {return false;}
-      }return true;
+          if( field == null) {return true;}
+      }return false;
     }
 
     public CustomerRepository getCustomerRepository() {

@@ -1,472 +1,80 @@
-2020-04-01 11:49:04.241  INFO 11752 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 11752 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 11:49:04.244  INFO 11752 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 11:49:05.204  INFO 11752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 11:49:05.214  INFO 11752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 11:49:05.215  INFO 11752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 11:49:05.318  INFO 11752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 11:49:05.318  INFO 11752 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1024 ms
-2020-04-01 11:49:05.591  INFO 11752 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 11:49:05.686  INFO 11752 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 11:49:05.799  INFO 11752 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 11:49:05.817  INFO 11752 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 11:49:05.839  INFO 11752 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 11:49:06.237  INFO 11752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 11:49:06.241  INFO 11752 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.445 seconds (JVM running for 3.076)
-2020-04-01 12:44:47.130  INFO 11752 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 12:44:47.132  INFO 11752 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 12:44:47.141  INFO 11752 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2020-04-01 12:45:04.632  INFO 8952 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 8952 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 12:45:04.634  INFO 8952 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 12:45:05.485  INFO 8952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 12:45:05.494  INFO 8952 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 12:45:05.496  INFO 8952 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 12:45:05.588  INFO 8952 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 12:45:05.588  INFO 8952 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 921 ms
-2020-04-01 12:45:05.878  INFO 8952 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 12:45:05.956  INFO 8952 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 12:45:06.065  INFO 8952 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 12:45:06.078  INFO 8952 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 12:45:06.099  INFO 8952 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 12:45:06.399  INFO 8952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 12:45:06.402  INFO 8952 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.065 seconds (JVM running for 2.731)
-2020-04-01 12:45:08.228  INFO 8952 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 12:45:08.230  INFO 8952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 12:45:08.235  INFO 8952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-04-01 14:07:34.836  INFO 20344 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 20344 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 14:07:34.838  INFO 20344 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 14:07:35.712  INFO 20344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 14:07:35.718  INFO 20344 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 14:07:35.718  INFO 20344 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 14:07:35.772  INFO 20344 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 14:07:35.772  INFO 20344 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 905 ms
-2020-04-01 14:07:35.959  INFO 20344 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 14:07:36.013  INFO 20344 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 14:07:36.080  INFO 20344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 14:07:36.090  INFO 20344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 14:07:36.106  INFO 20344 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 14:07:36.402  INFO 20344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 14:07:36.405  INFO 20344 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 1.798 seconds (JVM running for 2.365)
-2020-04-01 14:13:42.589  INFO 26216 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 26216 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 14:13:42.592  INFO 26216 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 14:13:43.405  INFO 26216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 14:13:43.412  INFO 26216 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 14:13:43.412  INFO 26216 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 14:13:43.468  INFO 26216 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 14:13:43.468  INFO 26216 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 843 ms
-2020-04-01 14:13:43.678  INFO 26216 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 14:13:43.735  INFO 26216 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 14:13:43.810  INFO 26216 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 14:13:43.821  INFO 26216 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 14:13:43.838  INFO 26216 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 14:13:44.142  INFO 26216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 14:13:44.145  INFO 26216 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 1.789 seconds (JVM running for 2.375)
-2020-04-01 14:16:48.363  INFO 26216 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 14:16:48.364  INFO 26216 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 14:16:48.370  INFO 26216 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-04-01 14:16:48.412  WARN 26216 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
- at [Source: (PushbackInputStream); line: 10, column: 2]]
-2020-04-01 14:16:58.983 ERROR 26216 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.UnsupportedOperationException] with root cause
-
-java.lang.UnsupportedOperationException: null
-	at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:73) ~[na:na]
-	at java.base/java.util.ImmutableCollections$AbstractImmutableCollection.add(ImmutableCollections.java:77) ~[na:na]
-	at com.eurder.domain.repository.CustomerRepository.addCustomer(CustomerRepository.java:26) ~[classes/:na]
-	at com.eurder.api.controllers.CustomerController.createCostumer(CustomerController.java:31) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
-
-2020-04-01 14:18:34.082  INFO 20312 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 20312 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 14:18:34.085  INFO 20312 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 14:18:35.355  INFO 20312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 14:18:35.365  INFO 20312 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 14:18:35.365  INFO 20312 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 14:18:35.434  INFO 20312 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 14:18:35.435  INFO 20312 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1316 ms
-2020-04-01 14:18:35.651  INFO 20312 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 14:18:35.709  INFO 20312 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 14:18:35.781  INFO 20312 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 14:18:35.792  INFO 20312 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 14:18:35.809  INFO 20312 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 14:18:36.106  INFO 20312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 14:18:36.109  INFO 20312 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.274 seconds (JVM running for 2.856)
-2020-04-01 14:18:44.426  INFO 20312 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 14:18:44.427  INFO 20312 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 14:18:44.432  INFO 20312 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-04-01 14:18:44.486 ERROR 20312 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.UnsupportedOperationException] with root cause
-
-java.lang.UnsupportedOperationException: null
-	at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:73) ~[na:na]
-	at java.base/java.util.ImmutableCollections$AbstractImmutableCollection.add(ImmutableCollections.java:77) ~[na:na]
-	at com.eurder.domain.repository.CustomerRepository.addCustomer(CustomerRepository.java:26) ~[classes/:na]
-	at com.eurder.api.controllers.CustomerController.createCostumer(CustomerController.java:31) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
-
-2020-04-01 14:20:58.397  INFO 13332 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 13332 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 14:20:58.400  INFO 13332 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 14:20:59.244  INFO 13332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 14:20:59.250  INFO 13332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 14:20:59.251  INFO 13332 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 14:20:59.307  INFO 13332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 14:20:59.308  INFO 13332 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 879 ms
-2020-04-01 14:20:59.512  INFO 13332 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 14:20:59.566  INFO 13332 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 14:20:59.636  INFO 13332 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 14:20:59.647  INFO 13332 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 14:20:59.664  INFO 13332 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 14:20:59.960  INFO 13332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 14:20:59.963  INFO 13332 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 1.804 seconds (JVM running for 2.362)
-2020-04-01 14:21:05.164  INFO 13332 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 14:21:05.165  INFO 13332 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 14:21:05.171  INFO 13332 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-01 15:05:02.244  INFO 3040 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 3040 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 15:05:02.247  INFO 3040 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 15:05:03.239  INFO 3040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 15:05:03.251  INFO 3040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 15:05:03.252  INFO 3040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 15:05:03.310  INFO 3040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 15:05:03.310  INFO 3040 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1016 ms
-2020-04-01 15:05:03.543  INFO 3040 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 15:05:03.602  INFO 3040 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 15:05:03.679  INFO 3040 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 15:05:03.697  INFO 3040 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 15:05:03.722  INFO 3040 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 15:05:04.043  INFO 3040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 15:05:04.046  INFO 3040 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.165 seconds (JVM running for 2.968)
-2020-04-01 15:35:07.152  INFO 17156 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 17156 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 15:35:07.155  INFO 17156 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 15:35:08.063  INFO 17156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 15:35:08.070  INFO 17156 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 15:35:08.071  INFO 17156 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 15:35:08.135  INFO 17156 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 15:35:08.135  INFO 17156 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 942 ms
-2020-04-01 15:35:08.361  INFO 17156 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 15:35:08.420  INFO 17156 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 15:35:08.541  INFO 17156 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 9f34ac10-436c-46cc-b8e6-eaa5b5b71826
-
-2020-04-01 15:35:08.626  INFO 17156 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@118041c7, org.springframework.security.web.context.SecurityContextPersistenceFilter@13250132, org.springframework.security.web.header.HeaderWriterFilter@5eed6dfb, org.springframework.security.web.csrf.CsrfFilter@6f85ee02, org.springframework.security.web.com.eurder.infrastructure.authentication.logout.LogoutFilter@2bebd114, org.springframework.security.web.com.eurder.infrastructure.authentication.UsernamePasswordAuthenticationFilter@31aab981, org.springframework.security.web.com.eurder.infrastructure.authentication.ui.DefaultLoginPageGeneratingFilter@5d1d9d73, org.springframework.security.web.com.eurder.infrastructure.authentication.ui.DefaultLogoutPageGeneratingFilter@a2b54e3, org.springframework.security.web.com.eurder.infrastructure.authentication.www.BasicAuthenticationFilter@16bd7ae1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a864d4d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@501957bf, org.springframework.security.web.com.eurder.infrastructure.authentication.AnonymousAuthenticationFilter@5c4cc644, org.springframework.security.web.session.SessionManagementFilter@551be9f6, org.springframework.security.web.access.ExceptionTranslationFilter@69ed5ea2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@de579ff]
-2020-04-01 15:35:08.647  INFO 17156 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 15:35:08.661  INFO 17156 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 15:35:08.682  INFO 17156 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 15:35:09.001  INFO 17156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 15:35:09.004  INFO 17156 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.24 seconds (JVM running for 3.306)
-2020-04-01 16:44:47.373  INFO 15588 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 15588 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 16:44:47.380  INFO 15588 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 16:44:48.636  INFO 15588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 16:44:48.644  INFO 15588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 16:44:48.644  INFO 15588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 16:44:48.721  INFO 15588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 16:44:48.721  INFO 15588 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1256 ms
-2020-04-01 16:44:49.000  INFO 15588 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 16:44:49.072  INFO 15588 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 16:44:49.206  INFO 15588 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 14872c75-b971-449f-a7e2-6b7f81696ba0
-
-2020-04-01 16:44:49.291  INFO 15588 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@706f6d26, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f129467, org.springframework.security.web.header.HeaderWriterFilter@44bc2449, org.springframework.security.web.csrf.CsrfFilter@58a765ce, org.springframework.security.web.com.eurder.infrastructure.authentication.logout.LogoutFilter@3709748f, org.springframework.security.web.com.eurder.infrastructure.authentication.UsernamePasswordAuthenticationFilter@797fcf9, org.springframework.security.web.com.eurder.infrastructure.authentication.ui.DefaultLoginPageGeneratingFilter@102c18e, org.springframework.security.web.com.eurder.infrastructure.authentication.ui.DefaultLogoutPageGeneratingFilter@3af2f846, org.springframework.security.web.com.eurder.infrastructure.authentication.www.BasicAuthenticationFilter@5c4cc644, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57151b3a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a84788f, org.springframework.security.web.com.eurder.infrastructure.authentication.AnonymousAuthenticationFilter@6af65f29, org.springframework.security.web.session.SessionManagementFilter@7558c24b, org.springframework.security.web.access.ExceptionTranslationFilter@7d3691e1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@251d7fdd]
-2020-04-01 16:44:49.316  INFO 15588 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 16:44:49.333  INFO 15588 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 16:44:49.357  INFO 15588 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 16:44:49.706  INFO 15588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 16:44:49.710  INFO 15588 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.87 seconds (JVM running for 4.019)
-2020-04-01 16:45:09.002  INFO 15588 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 16:45:09.003  INFO 15588 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 16:45:09.008  INFO 15588 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-04-01 16:45:09.207  WARN 15588 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [183] milliseconds.
-2020-04-01 16:46:43.661  INFO 13168 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 13168 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 16:46:43.664  INFO 13168 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 16:46:44.585  INFO 13168 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 16:46:44.591  INFO 13168 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 16:46:44.592  INFO 13168 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 16:46:44.662  INFO 13168 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 16:46:44.662  INFO 13168 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 959 ms
-2020-04-01 16:46:44.878  INFO 13168 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 16:46:44.937  INFO 13168 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 16:46:45.050  INFO 13168 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 98cbd3f7-36e0-486e-a55a-c56cd0d98926
-
-2020-04-01 16:46:45.120  INFO 13168 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c38cd16, org.springframework.security.web.context.SecurityContextPersistenceFilter@102c18e, org.springframework.security.web.header.HeaderWriterFilter@53a50b0a, org.springframework.security.web.csrf.CsrfFilter@46a123e4, org.springframework.security.web.com.eurder.infrastructure.authentication.logout.LogoutFilter@251c8145, org.springframework.security.web.com.eurder.infrastructure.authentication.UsernamePasswordAuthenticationFilter@240f350a, org.springframework.security.web.com.eurder.infrastructure.authentication.ui.DefaultLoginPageGeneratingFilter@22d477c2, org.springframework.security.web.com.eurder.infrastructure.authentication.ui.DefaultLogoutPageGeneratingFilter@7ddcb0dc, org.springframework.security.web.com.eurder.infrastructure.authentication.www.BasicAuthenticationFilter@58b311ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@65eb3597, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ef2f7ad, org.springframework.security.web.com.eurder.infrastructure.authentication.AnonymousAuthenticationFilter@f5bf288, org.springframework.security.web.session.SessionManagementFilter@395f52ed, org.springframework.security.web.access.ExceptionTranslationFilter@6c742b84, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21f7e537]
-2020-04-01 16:46:45.142  INFO 13168 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 16:46:45.157  INFO 13168 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 16:46:45.180  INFO 13168 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 16:46:45.486  INFO 13168 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 16:46:45.488  INFO 13168 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.095 seconds (JVM running for 2.678)
-2020-04-01 16:46:49.949  INFO 13168 --- [http-nio-8080-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 16:46:49.950  INFO 13168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 16:46:49.957  INFO 13168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-01 16:46:50.162  WARN 13168 --- [http-nio-8080-exec-8] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [190] milliseconds.
-2020-04-01 16:48:02.303  INFO 11476 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 11476 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 16:48:02.308  INFO 11476 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 16:48:03.268  INFO 11476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 16:48:03.274  INFO 11476 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 16:48:03.275  INFO 11476 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 16:48:03.344  INFO 11476 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 16:48:03.344  INFO 11476 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 994 ms
-2020-04-01 16:48:03.590  INFO 11476 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 16:48:03.657  INFO 11476 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 16:48:03.767  INFO 11476 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 8a279b2a-425c-4181-90cf-b21bf4ef937e
-
-2020-04-01 16:48:03.840  INFO 11476 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a62062a, org.springframework.security.web.context.SecurityContextPersistenceFilter@26c8b296, org.springframework.security.web.header.HeaderWriterFilter@69796bd0, org.springframework.security.web.csrf.CsrfFilter@251c8145, org.springframework.security.web.com.eurder.infrastructure.authentication.logout.LogoutFilter@2fd39436, org.springframework.security.web.com.eurder.infrastructure.authentication.UsernamePasswordAuthenticationFilter@6806468e, org.springframework.security.web.com.eurder.infrastructure.authentication.ui.DefaultLoginPageGeneratingFilter@bb3ecfe, org.springframework.security.web.com.eurder.infrastructure.authentication.ui.DefaultLogoutPageGeneratingFilter@7ec08115, org.springframework.security.web.com.eurder.infrastructure.authentication.www.BasicAuthenticationFilter@24a0c58b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10f405ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a216eb4, org.springframework.security.web.com.eurder.infrastructure.authentication.AnonymousAuthenticationFilter@53dd42d6, org.springframework.security.web.session.SessionManagementFilter@8c0a23f, org.springframework.security.web.access.ExceptionTranslationFilter@1efac5b9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@353e6389]
-2020-04-01 16:48:03.861  INFO 11476 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 16:48:03.877  INFO 11476 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 16:48:03.899  INFO 11476 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 16:48:04.228  INFO 11476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 16:48:04.233  INFO 11476 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.207 seconds (JVM running for 2.782)
-2020-04-01 16:48:08.394  INFO 11476 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 16:48:08.395  INFO 11476 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 16:48:08.400  INFO 11476 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-04-01 16:48:08.615  WARN 11476 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [201] milliseconds.
-2020-04-01 16:56:01.600  INFO 8784 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 8784 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 16:56:01.604  INFO 8784 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 16:56:02.434  INFO 8784 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:56:02.438  INFO 8784 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:56:02.440  INFO 8784 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@54e3658c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:56:02.442  INFO 8784 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:56:02.444  INFO 8784 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:56:02.595  INFO 8784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 16:56:02.602  INFO 8784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 16:56:02.602  INFO 8784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 16:56:02.670  INFO 8784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 16:56:02.670  INFO 8784 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1032 ms
-2020-04-01 16:56:02.996  INFO 8784 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 16:56:03.097  INFO 8784 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c18a3ea, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c30c81d, org.springframework.security.web.header.HeaderWriterFilter@1b4872bc, org.springframework.security.web.authentication.logout.LogoutFilter@7fb8bad0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@66749eea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a54acec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2eb60c71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@166c2c17, org.springframework.security.web.session.SessionManagementFilter@7df6d663, org.springframework.security.web.access.ExceptionTranslationFilter@260e3837, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@43da0955]
-2020-04-01 16:56:03.201  INFO 8784 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 16:56:03.312  INFO 8784 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 16:56:03.325  INFO 8784 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 16:56:03.349  INFO 8784 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 16:56:03.704  INFO 8784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 16:56:03.707  INFO 8784 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.385 seconds (JVM running for 2.99)
-2020-04-01 16:56:06.413  INFO 8784 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 16:56:06.414  INFO 8784 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 16:56:06.420  INFO 8784 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-04-01 16:59:12.799  INFO 14068 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 14068 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 16:59:12.802  INFO 14068 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 16:59:13.692  INFO 14068 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:59:13.695  INFO 14068 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:59:13.698  INFO 14068 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1229a2b7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:59:13.699  INFO 14068 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:59:13.702  INFO 14068 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 16:59:13.861  INFO 14068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 16:59:13.867  INFO 14068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 16:59:13.868  INFO 14068 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 16:59:13.938  INFO 14068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 16:59:13.939  INFO 14068 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1094 ms
-2020-04-01 16:59:14.219  INFO 14068 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 16:59:14.305  INFO 14068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@443a53df, org.springframework.security.web.context.SecurityContextPersistenceFilter@66ec4409, org.springframework.security.web.header.HeaderWriterFilter@549ac12c, org.springframework.security.web.authentication.logout.LogoutFilter@c1e14f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@267f9765, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f1c3f18, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@93501be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c33da7a, org.springframework.security.web.session.SessionManagementFilter@52831a73, org.springframework.security.web.access.ExceptionTranslationFilter@1953bc95, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d7eb170]
-2020-04-01 16:59:14.377  INFO 14068 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 16:59:14.487  INFO 14068 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 16:59:14.499  INFO 14068 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 16:59:14.521  INFO 14068 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 16:59:14.844  INFO 14068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 16:59:14.847  INFO 14068 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.323 seconds (JVM running for 2.921)
-2020-04-01 16:59:18.713  INFO 14068 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 16:59:18.714  INFO 14068 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 16:59:18.719  INFO 14068 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-04-01 17:00:59.234  INFO 17724 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 17724 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 17:00:59.238  INFO 17724 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 17:01:00.125  INFO 17724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:01:00.129  INFO 17724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:01:00.131  INFO 17724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2f5ac102' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:01:00.133  INFO 17724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:01:00.135  INFO 17724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:01:00.303  INFO 17724 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 17:01:00.310  INFO 17724 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 17:01:00.311  INFO 17724 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 17:01:00.376  INFO 17724 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 17:01:00.377  INFO 17724 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1103 ms
-2020-04-01 17:01:00.433  WARN 17724 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig' defined in file [C:\_projects\switchfully\eurder\infrastructure\target\classes\com\eurder\infrastructure\SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2020-04-01 17:01:00.435  INFO 17724 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-04-01 17:01:00.446  INFO 17724 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-04-01 17:01:00.541 ERROR 17724 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.eurder.infrastructure.SecurityConfig required a bean of type 'org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint' in your configuration.
-
-2020-04-01 17:18:11.266  INFO 18392 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 18392 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 17:18:11.271  INFO 18392 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 17:18:12.185  INFO 18392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:18:12.189  INFO 18392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:18:12.191  INFO 18392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@654c7d2d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:18:12.193  INFO 18392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:18:12.195  INFO 18392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 17:18:12.358  INFO 18392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 17:18:12.365  INFO 18392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 17:18:12.365  INFO 18392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 17:18:12.457  INFO 18392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 17:18:12.463  INFO 18392 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1152 ms
-2020-04-01 17:18:12.819  INFO 18392 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 17:18:12.918  INFO 18392 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f7cec93, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e7abaf7, org.springframework.security.web.header.HeaderWriterFilter@4b033eac, org.springframework.security.web.authentication.logout.LogoutFilter@32a72c4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@52b959df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63bfdbcb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b97b3d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c9ef6e9, org.springframework.security.web.session.SessionManagementFilter@46320c9a, org.springframework.security.web.access.ExceptionTranslationFilter@34330f77, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@28e8888d]
-2020-04-01 17:18:12.993  INFO 18392 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 17:18:13.102  INFO 18392 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 17:18:13.114  INFO 18392 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 17:18:13.141  INFO 18392 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 17:18:13.488  INFO 18392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 17:18:13.494  INFO 18392 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.54 seconds (JVM running for 3.162)
-2020-04-01 17:18:17.167  INFO 18392 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 17:18:17.168  INFO 18392 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 17:18:17.175  INFO 18392 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-01 19:23:18.112  INFO 9748 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 9748 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 19:23:18.114  INFO 9748 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 19:23:19.004  INFO 9748 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:23:19.008  INFO 9748 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:23:19.010  INFO 9748 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3dffc764' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:23:19.012  INFO 9748 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:23:19.014  INFO 9748 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:23:19.201  INFO 9748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 19:23:19.210  INFO 9748 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 19:23:19.210  INFO 9748 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 19:23:19.280  INFO 9748 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 19:23:19.281  INFO 9748 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1131 ms
-2020-04-01 19:23:19.566  INFO 9748 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 19:23:19.656  INFO 9748 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ac730cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@2be818da, org.springframework.security.web.header.HeaderWriterFilter@61e86192, org.springframework.security.web.authentication.logout.LogoutFilter@443a53df, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@79627d27, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32256e68, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b251fb9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@668cc9a2, org.springframework.security.web.session.SessionManagementFilter@236ae13d, org.springframework.security.web.access.ExceptionTranslationFilter@49edcb30, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ca14cf4]
-2020-04-01 19:23:19.732  INFO 9748 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 19:23:19.840  INFO 9748 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 19:23:19.853  INFO 9748 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 19:23:19.874  INFO 9748 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 19:23:20.198  INFO 9748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 19:23:20.201  INFO 9748 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.362 seconds (JVM running for 2.939)
-2020-04-01 19:24:07.866  INFO 6684 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 6684 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 19:24:07.869  INFO 6684 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 19:24:08.717  INFO 6684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:08.721  INFO 6684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:08.723  INFO 6684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@12fcc71f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:08.725  INFO 6684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:08.727  INFO 6684 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:08.891  INFO 6684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 19:24:08.899  INFO 6684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 19:24:08.899  INFO 6684 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 19:24:08.963  INFO 6684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 19:24:08.963  INFO 6684 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1056 ms
-2020-04-01 19:24:09.269  INFO 6684 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 19:24:09.354  INFO 6684 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31834a2b, org.springframework.security.web.context.SecurityContextPersistenceFilter@510689af, org.springframework.security.web.header.HeaderWriterFilter@49fdbe2b, org.springframework.security.web.authentication.logout.LogoutFilter@4a70d302, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3a1b36a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72ce812e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7302ff13, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44f0ff2b, org.springframework.security.web.session.SessionManagementFilter@382dc417, org.springframework.security.web.access.ExceptionTranslationFilter@1ab14636, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27960b1e]
-2020-04-01 19:24:09.428  INFO 6684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 19:24:09.534  INFO 6684 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 19:24:09.547  INFO 6684 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 19:24:09.571  INFO 6684 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 19:24:09.884  INFO 6684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 19:24:09.887  INFO 6684 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.309 seconds (JVM running for 2.892)
-2020-04-01 19:24:12.711  INFO 6684 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 19:24:12.713  INFO 6684 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 19:24:12.719  INFO 6684 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-01 19:24:18.034 ERROR 6684 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: username already exists] with root cause
+2020-04-02 09:44:33.523  INFO 8400 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 8400 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
+2020-04-02 09:44:33.536  INFO 8400 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
+2020-04-02 09:44:34.502  INFO 8400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:44:34.524  INFO 8400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:44:34.526  INFO 8400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7a0e7ecd' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:44:34.528  INFO 8400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:44:34.530  INFO 8400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:44:34.701  INFO 8400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-02 09:44:34.708  INFO 8400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-02 09:44:34.709  INFO 8400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-02 09:44:34.781  INFO 8400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-02 09:44:34.781  INFO 8400 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1182 ms
+2020-04-02 09:44:35.085  INFO 8400 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-04-02 09:44:35.176  INFO 8400 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@166c2c17, org.springframework.security.web.context.SecurityContextPersistenceFilter@415a3f6a, org.springframework.security.web.header.HeaderWriterFilter@498a612d, org.springframework.security.web.authentication.logout.LogoutFilter@12d40609, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7135ce0a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19da993b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@87d9a01, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25953be6, org.springframework.security.web.session.SessionManagementFilter@13d019a4, org.springframework.security.web.access.ExceptionTranslationFilter@88b76f2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@bc09d57]
+2020-04-02 09:44:35.256  INFO 8400 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-02 09:44:35.355  INFO 8400 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-04-02 09:44:35.367  INFO 8400 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-04-02 09:44:35.393  INFO 8400 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-04-02 09:44:35.706  INFO 8400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-02 09:44:35.709  INFO 8400 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.5 seconds (JVM running for 3.137)
+2020-04-02 09:49:09.406  INFO 8400 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-02 09:49:09.408  INFO 8400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-02 09:49:09.414  INFO 8400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-04-02 09:49:09.480 ERROR 8400 --- [http-nio-8080-exec-1] c.e.api.controllers.CustomerController   : fill in everything
+2020-04-02 09:49:28.873  INFO 18948 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 18948 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
+2020-04-02 09:49:28.876  INFO 18948 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
+2020-04-02 09:49:29.895  INFO 18948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:49:29.899  INFO 18948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:49:29.902  INFO 18948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4b6e1c0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:49:29.902  INFO 18948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:49:29.904  INFO 18948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:49:30.064  INFO 18948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-02 09:49:30.086  INFO 18948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-02 09:49:30.086  INFO 18948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-02 09:49:30.159  INFO 18948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-02 09:49:30.160  INFO 18948 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1237 ms
+2020-04-02 09:49:30.442  INFO 18948 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-04-02 09:49:30.527  INFO 18948 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6371cf2f, org.springframework.security.web.context.SecurityContextPersistenceFilter@52d0f583, org.springframework.security.web.header.HeaderWriterFilter@6a950a3b, org.springframework.security.web.authentication.logout.LogoutFilter@79ba0a6f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@10f477e2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12d40609, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7af0affa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b5b9333, org.springframework.security.web.session.SessionManagementFilter@4315c28c, org.springframework.security.web.access.ExceptionTranslationFilter@10177794, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2bb62414]
+2020-04-02 09:49:30.599  INFO 18948 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-02 09:49:30.706  INFO 18948 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-04-02 09:49:30.718  INFO 18948 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-04-02 09:49:30.739  INFO 18948 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-04-02 09:49:31.058  INFO 18948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-02 09:49:31.060  INFO 18948 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.498 seconds (JVM running for 3.127)
+2020-04-02 09:49:35.892  INFO 18948 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-02 09:49:35.893  INFO 18948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-02 09:49:35.901  INFO 18948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-04-02 09:49:35.987 ERROR 18948 --- [http-nio-8080-exec-2] c.e.api.controllers.CustomerController   : fill in everything
+2020-04-02 09:51:33.143  INFO 6256 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 6256 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
+2020-04-02 09:51:33.146  INFO 6256 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
+2020-04-02 09:51:34.037  INFO 6256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:34.041  INFO 6256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:34.043  INFO 6256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@620c8641' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:34.044  INFO 6256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:34.046  INFO 6256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:34.208  INFO 6256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-02 09:51:34.215  INFO 6256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-02 09:51:34.215  INFO 6256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-02 09:51:34.283  INFO 6256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-02 09:51:34.283  INFO 6256 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1100 ms
+2020-04-02 09:51:34.560  INFO 6256 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-04-02 09:51:34.649  INFO 6256 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c18d6d4, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d7eb170, org.springframework.security.web.header.HeaderWriterFilter@7fb8bad0, org.springframework.security.web.authentication.logout.LogoutFilter@59d0cdb6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3c9ef6e9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67d4c48d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b9ac754, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6cbb175, org.springframework.security.web.session.SessionManagementFilter@23e3f5cd, org.springframework.security.web.access.ExceptionTranslationFilter@8fd91d1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6097fca9]
+2020-04-02 09:51:34.725  INFO 6256 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-02 09:51:34.832  INFO 6256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-04-02 09:51:34.843  INFO 6256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-04-02 09:51:34.864  INFO 6256 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-04-02 09:51:35.167  INFO 6256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-02 09:51:35.170  INFO 6256 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.308 seconds (JVM running for 2.868)
+2020-04-02 09:51:39.454  INFO 6256 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-02 09:51:39.456  INFO 6256 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-02 09:51:39.463  INFO 6256 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-04-02 09:51:49.481 ERROR 6256 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: username already exists] with root cause
 
 java.lang.IllegalArgumentException: username already exists
 	at com.eurder.infrastructure.authentication.FakeAuthenticationService.addUser(FakeAuthenticationService.java:33) ~[classes/:na]
-	at com.eurder.service.CustomerService.createCustomer(CustomerService.java:31) ~[classes/:na]
-	at com.eurder.api.controllers.CustomerController.createCostumer(CustomerController.java:25) ~[classes/:na]
+	at com.eurder.service.CustomerService.createCustomer(CustomerService.java:33) ~[classes/:na]
+	at com.eurder.api.controllers.CustomerController.createCostumer(CustomerController.java:29) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -552,356 +160,26 @@ java.lang.IllegalArgumentException: username already exists
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
 	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
 
-2020-04-01 19:24:28.149  INFO 10040 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 10040 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 19:24:28.152  INFO 10040 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 19:24:29.083  INFO 10040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:29.086  INFO 10040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:29.089  INFO 10040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@117525fe' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:29.090  INFO 10040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:29.092  INFO 10040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:24:29.246  INFO 10040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 19:24:29.252  INFO 10040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 19:24:29.252  INFO 10040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 19:24:29.325  INFO 10040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 19:24:29.326  INFO 10040 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1127 ms
-2020-04-01 19:24:29.631  INFO 10040 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 19:24:29.709  INFO 10040 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2abafa97, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c538eb2, org.springframework.security.web.header.HeaderWriterFilter@6467ddc7, org.springframework.security.web.authentication.logout.LogoutFilter@382dc417, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@40943a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@487cd177, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f1fb828, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f6cc7da, org.springframework.security.web.session.SessionManagementFilter@70997a94, org.springframework.security.web.access.ExceptionTranslationFilter@57e5396b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55e1192]
-2020-04-01 19:24:29.774  INFO 10040 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 19:24:29.878  INFO 10040 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 19:24:29.891  INFO 10040 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 19:24:29.912  INFO 10040 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 19:24:30.237  INFO 10040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 19:24:30.240  INFO 10040 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.466 seconds (JVM running for 3.106)
-2020-04-01 19:24:47.788  INFO 10040 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 19:24:47.790  INFO 10040 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 19:24:47.796  INFO 10040 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-01 19:25:19.529  INFO 17744 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 17744 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 19:25:19.532  INFO 17744 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 19:25:20.527  INFO 17744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:25:20.530  INFO 17744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:25:20.533  INFO 17744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@122d6c22' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:25:20.534  INFO 17744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:25:20.536  INFO 17744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:25:20.703  INFO 17744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 19:25:20.709  INFO 17744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 19:25:20.709  INFO 17744 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 19:25:20.777  INFO 17744 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 19:25:20.777  INFO 17744 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1214 ms
-2020-04-01 19:25:21.110  INFO 17744 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 19:25:21.195  INFO 17744 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ef31f71, org.springframework.security.web.context.SecurityContextPersistenceFilter@6467ddc7, org.springframework.security.web.header.HeaderWriterFilter@3b7c58e7, org.springframework.security.web.authentication.logout.LogoutFilter@1ab14636, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@261b9a37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59636c47, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59096b66, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e8fdd19, org.springframework.security.web.session.SessionManagementFilter@57e5396b, org.springframework.security.web.access.ExceptionTranslationFilter@5729b410, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f995afc]
-2020-04-01 19:25:21.270  INFO 17744 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 19:25:21.377  INFO 17744 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 19:25:21.393  INFO 17744 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 19:25:21.417  INFO 17744 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 19:25:21.729  INFO 17744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 19:25:21.731  INFO 17744 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.476 seconds (JVM running for 3.06)
-2020-04-01 19:25:23.637  INFO 17744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 19:25:23.639  INFO 17744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 19:25:23.644  INFO 17744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-04-01 19:27:28.221  INFO 4132 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 4132 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 19:27:28.225  INFO 4132 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 19:27:29.068  INFO 4132 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:27:29.071  INFO 4132 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:27:29.073  INFO 4132 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2eae4349' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:27:29.074  INFO 4132 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:27:29.076  INFO 4132 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:27:29.239  INFO 4132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 19:27:29.244  INFO 4132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 19:27:29.245  INFO 4132 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 19:27:29.311  INFO 4132 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 19:27:29.311  INFO 4132 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1050 ms
-2020-04-01 19:27:29.612  INFO 4132 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 19:27:29.691  INFO 4132 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37e0056e, org.springframework.security.web.context.SecurityContextPersistenceFilter@38fb50f8, org.springframework.security.web.header.HeaderWriterFilter@38588dea, org.springframework.security.web.authentication.logout.LogoutFilter@4b88ca8e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6637a365, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@608cd501, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70997a94, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@415795f3, org.springframework.security.web.session.SessionManagementFilter@5c18d6d4, org.springframework.security.web.access.ExceptionTranslationFilter@b5b9333, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@241fbec]
-2020-04-01 19:27:29.759  INFO 4132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 19:27:29.864  INFO 4132 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 19:27:29.876  INFO 4132 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 19:27:29.899  INFO 4132 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 19:27:30.212  INFO 4132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 19:27:30.214  INFO 4132 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.268 seconds (JVM running for 2.826)
-2020-04-01 19:27:35.288  INFO 4132 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 19:27:35.289  INFO 4132 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 19:27:35.296  INFO 4132 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2020-04-01 19:45:50.259  INFO 13864 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 13864 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 19:45:50.263  INFO 13864 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 19:45:51.233  INFO 13864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:45:51.237  INFO 13864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:45:51.240  INFO 13864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@654c7d2d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:45:51.242  INFO 13864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:45:51.244  INFO 13864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:45:51.402  INFO 13864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 19:45:51.410  INFO 13864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 19:45:51.410  INFO 13864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 19:45:51.483  INFO 13864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 19:45:51.483  INFO 13864 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1161 ms
-2020-04-01 19:45:51.795  INFO 13864 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 19:45:51.875  INFO 13864 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26582ca, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ab14636, org.springframework.security.web.header.HeaderWriterFilter@61f377d1, org.springframework.security.web.authentication.logout.LogoutFilter@3e26482, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@587c5c1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49fdbe2b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7197b07f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@153cb763, org.springframework.security.web.session.SessionManagementFilter@77b5148c, org.springframework.security.web.access.ExceptionTranslationFilter@70ede57d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@798cb6d9]
-2020-04-01 19:45:51.944  INFO 13864 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 19:45:52.049  INFO 13864 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 19:45:52.062  INFO 13864 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 19:45:52.085  INFO 13864 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 19:45:52.399  INFO 13864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 19:45:52.402  INFO 13864 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.468 seconds (JVM running for 3.066)
-2020-04-01 19:45:55.279  INFO 13864 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 19:45:55.280  INFO 13864 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 19:45:55.285  INFO 13864 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-04-01 19:46:37.952  INFO 16520 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 16520 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 19:46:37.955  INFO 16520 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 19:46:38.856  INFO 16520 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:46:38.860  INFO 16520 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:46:38.862  INFO 16520 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@421056e5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:46:38.864  INFO 16520 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:46:38.866  INFO 16520 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 19:46:39.021  INFO 16520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 19:46:39.028  INFO 16520 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 19:46:39.028  INFO 16520 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 19:46:39.101  INFO 16520 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 19:46:39.101  INFO 16520 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1106 ms
-2020-04-01 19:46:39.403  INFO 16520 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 19:46:39.489  INFO 16520 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@715fa8c5, org.springframework.security.web.context.SecurityContextPersistenceFilter@79627d27, org.springframework.security.web.header.HeaderWriterFilter@3ca14cf4, org.springframework.security.web.authentication.logout.LogoutFilter@6c538eb2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7c5df615, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b5b9333, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5aa62ee7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@644a3add, org.springframework.security.web.session.SessionManagementFilter@64518270, org.springframework.security.web.access.ExceptionTranslationFilter@184823ed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5fed9976]
-2020-04-01 19:46:39.562  INFO 16520 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 19:46:39.685  INFO 16520 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 19:46:39.697  INFO 16520 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 19:46:39.721  INFO 16520 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 19:46:40.093  INFO 16520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 19:46:40.096  INFO 16520 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.422 seconds (JVM running for 3.005)
-2020-04-01 19:46:43.714  INFO 16520 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 19:46:43.715  INFO 16520 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 19:46:43.721  INFO 16520 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-01 20:02:39.051 ERROR 16520 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: username already exists] with root cause
-
-java.lang.IllegalArgumentException: username already exists
-	at com.eurder.infrastructure.authentication.FakeAuthenticationService.addUser(FakeAuthenticationService.java:33) ~[classes/:na]
-	at com.eurder.service.CustomerService.createCustomer(CustomerService.java:31) ~[classes/:na]
-	at com.eurder.api.controllers.CustomerController.createCostumer(CustomerController.java:27) ~[classes/:na]
-	at com.eurder.api.controllers.CustomerController$$FastClassBySpringCGLIB$$c790ca97.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) ~[spring-aop-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69) ~[spring-security-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) ~[spring-aop-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at com.eurder.api.controllers.CustomerController$$EnhancerBySpringCGLIB$$b25ca072.createCostumer(<generated>) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
-
-2020-04-01 20:03:20.489  INFO 8072 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 8072 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 20:03:20.492  INFO 8072 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 20:03:21.331  INFO 8072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:03:21.335  INFO 8072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:03:21.337  INFO 8072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5bc28f40' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:03:21.339  INFO 8072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:03:21.340  INFO 8072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:03:21.500  INFO 8072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 20:03:21.506  INFO 8072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 20:03:21.507  INFO 8072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 20:03:21.574  INFO 8072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 20:03:21.574  INFO 8072 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1050 ms
-2020-04-01 20:03:21.859  INFO 8072 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 20:03:21.946  INFO 8072 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5729b410, org.springframework.security.web.context.SecurityContextPersistenceFilter@51a16adf, org.springframework.security.web.header.HeaderWriterFilter@87d9a01, org.springframework.security.web.authentication.logout.LogoutFilter@5e002356, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@37c5284a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4315c28c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32256e68, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64518270, org.springframework.security.web.session.SessionManagementFilter@69c532af, org.springframework.security.web.access.ExceptionTranslationFilter@60e1d87c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b0f2d91]
-2020-04-01 20:03:22.017  INFO 8072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 20:03:22.123  INFO 8072 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 20:03:22.140  INFO 8072 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 20:03:22.162  INFO 8072 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 20:03:22.477  INFO 8072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 20:03:22.480  INFO 8072 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.275 seconds (JVM running for 2.851)
-2020-04-01 20:03:26.843  INFO 8072 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 20:03:26.845  INFO 8072 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 20:03:26.850  INFO 8072 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-04-01 20:03:26.921 ERROR 8072 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: fill in everything] with root cause
-
-java.lang.IllegalArgumentException: fill in everything
-	at com.eurder.service.CustomerService.createCustomer(CustomerService.java:30) ~[classes/:na]
-	at com.eurder.api.controllers.CustomerController.createCostumer(CustomerController.java:26) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
-
-2020-04-01 20:12:56.403  INFO 15972 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 15972 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-01 20:12:56.407  INFO 15972 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
-2020-04-01 20:12:57.243  INFO 15972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:12:57.246  INFO 15972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:12:57.249  INFO 15972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4b200971' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:12:57.250  INFO 15972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:12:57.252  INFO 15972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-01 20:12:57.410  INFO 15972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-04-01 20:12:57.416  INFO 15972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-01 20:12:57.417  INFO 15972 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2020-04-01 20:12:57.477  INFO 15972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-01 20:12:57.477  INFO 15972 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1035 ms
-2020-04-01 20:12:57.750  INFO 15972 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-04-01 20:12:57.835  INFO 15972 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ab802f4, org.springframework.security.web.context.SecurityContextPersistenceFilter@230a73f2, org.springframework.security.web.header.HeaderWriterFilter@236ae13d, org.springframework.security.web.authentication.logout.LogoutFilter@498c535d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2f054f70, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@383cb5ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b325930, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@608cd501, org.springframework.security.web.session.SessionManagementFilter@5b251fb9, org.springframework.security.web.access.ExceptionTranslationFilter@12d40609, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64518270]
-2020-04-01 20:12:57.905  INFO 15972 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-01 20:12:58.002  INFO 15972 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-04-01 20:12:58.014  INFO 15972 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-04-01 20:12:58.035  INFO 15972 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-04-01 20:12:58.343  INFO 15972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-01 20:12:58.346  INFO 15972 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.211 seconds (JVM running for 2.786)
-2020-04-01 20:13:01.791  INFO 15972 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-01 20:13:01.793  INFO 15972 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-01 20:13:01.801  INFO 15972 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2020-04-01 20:13:01.864 ERROR 15972 --- [http-nio-8080-exec-3] c.e.api.controllers.CustomerController   : fill in everything
+2020-04-02 09:51:56.903  INFO 20588 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 20588 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
+2020-04-02 09:51:56.905  INFO 20588 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
+2020-04-02 09:51:57.891  INFO 20588 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:57.896  INFO 20588 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:57.898  INFO 20588 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6dd1c3ed' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:57.900  INFO 20588 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:57.901  INFO 20588 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-02 09:51:58.059  INFO 20588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-02 09:51:58.066  INFO 20588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-02 09:51:58.067  INFO 20588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-02 09:51:58.139  INFO 20588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-02 09:51:58.139  INFO 20588 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1188 ms
+2020-04-02 09:51:58.421  INFO 20588 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-04-02 09:51:58.513  INFO 20588 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@553d2579, org.springframework.security.web.context.SecurityContextPersistenceFilter@236ae13d, org.springframework.security.web.header.HeaderWriterFilter@49edcb30, org.springframework.security.web.authentication.logout.LogoutFilter@ce12fbb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@64518270, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2be818da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c931134, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a8f6e6, org.springframework.security.web.session.SessionManagementFilter@12d40609, org.springframework.security.web.access.ExceptionTranslationFilter@647b9364, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@184823ed]
+2020-04-02 09:51:58.587  INFO 20588 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-02 09:51:58.694  INFO 20588 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-04-02 09:51:58.706  INFO 20588 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-04-02 09:51:58.728  INFO 20588 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-04-02 09:51:59.048  INFO 20588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-02 09:51:59.051  INFO 20588 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.485 seconds (JVM running for 3.095)
+2020-04-02 09:52:00.627  INFO 20588 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-02 09:52:00.628  INFO 20588 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-02 09:52:00.634  INFO 20588 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms

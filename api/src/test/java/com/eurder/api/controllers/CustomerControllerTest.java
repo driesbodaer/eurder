@@ -5,6 +5,7 @@ import com.eurder.domain.dto.CustomerDto;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.CustomerMapper;
 import com.eurder.domain.repository.CustomerRepository;
+import com.google.common.base.Utf8;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,70 +13,65 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.util.Base64Utils;
 import reactor.core.publisher.Mono;
+
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CustomerControllerTest {
     CustomerController customerController;
+    CustomerMapper customerMapper;
 
     WebTestClient testClient;
 
     @Autowired
-    public CustomerControllerTest(CustomerController customerController, WebTestClient webTestClient) {
+    public CustomerControllerTest(CustomerController customerController, WebTestClient webTestClient, CustomerMapper customerMapper) {
         this.customerController = customerController;
+        this.customerMapper = customerMapper;
         this.testClient = webTestClient;
     }
 
 
     @Test
-    void createCostumer() {
-
-        Customer actual = CustomerFactory.buildCustomer()
-                .setAddress("kerkstraat")
-                .setFirstname("bart")
-                .setLastname("test")
-                .setAddress("kerkstraat")
-                .setEmailadress("dries@gmail.com")
-                .setPhonenumber("013426238")
-                .build();
-
-        CustomerDto expected = CustomerFactory.buildCustomer()
-                .setAddress("kerkstraat")
-                .setFirstname("bart")
-                .setLastname("test")
-                .setAddress("kerkstraat")
-                .setEmailadress("dries@gmail.com")
-                .setPhonenumber("013426238")
-                .buildCustomerDto();
-
-        Customer expectedCustomer = customerController.createCostumer(expected);
-
-        Assertions.assertThat(actual).isEqualTo(expectedCustomer);
-    }
-    @Test
     void createCostumer_customerIsAdded() {
 
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
-                .setFirstname("bart")
+                .setFirstname("bart2")
                 .setLastname("test")
-                .setAddress("kerkstraat")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
                 .buildCustomerDto();
 
         Customer expectedCustomer = customerController.createCostumer(expected);
 
-        Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(1)).isEqualTo(expectedCustomer);
+        Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(2)).isEqualTo(expectedCustomer);
+    }
+    @Test
+    void createCostumer() {
+
+        Customer actual = CustomerFactory.buildCustomer()
+                .setAddress("kerkstraat")
+                .setFirstname("bart1")
+                .setLastname("test")
+                .setEmailadress("dries@gmail.com")
+                .setPhonenumber("013426238")
+                .build();
+
+
+        Customer expectedCustomer = customerController.createCostumer(customerMapper.toCustomerDto(actual));
+
+        Assertions.assertThat(actual).isEqualTo(expectedCustomer);
     }
 
     @Test
-    void createCostumer_WithSprinboottest() {
+    void createCostumer_WithSprinboottest() throws UnsupportedEncodingException {
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("bart")
                 .setLastname("test")
-                .setAddress("kerkstraat")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
                 .buildCustomerDto();
@@ -84,6 +80,8 @@ class CustomerControllerTest {
 
         testClient.post()
                 .uri(url)
+                .header("Authorization", "Basic " + Base64Utils
+                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(Mono.just(expected), CustomerDto.class)
                 .exchange()
