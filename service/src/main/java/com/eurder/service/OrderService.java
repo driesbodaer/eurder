@@ -1,9 +1,12 @@
 package com.eurder.service;
 
 import com.eurder.domain.classes.Customer;
+import com.eurder.domain.classes.ItemGroup;
+import com.eurder.domain.classes.ItemGroupWithadress;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.dto.OrderDto;
 import com.eurder.domain.dto.ReportDto;
+import com.eurder.domain.mapper.ItemGroupMapper;
 import com.eurder.domain.mapper.OrderMapper;
 import com.eurder.domain.repository.CustomerRepository;
 import com.eurder.domain.repository.ItemRepository;
@@ -11,9 +14,12 @@ import com.eurder.domain.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
@@ -21,14 +27,16 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final ItemRepository itemRepository;
     private final CustomerRepository customerRepository;
+    private final ItemGroupMapper itemGroupMapper;
 
 
     @Autowired
-    public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository) {
+    public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository, ItemGroupMapper itemGroupMapper) {
         this.orderMapper = orderMapper;
         this.orderRepository = orderRepository;
         this.itemRepository = itemRepository;
         this.customerRepository = customerRepository;
+        this.itemGroupMapper = itemGroupMapper;
     }
 
     public OrderDto placeOrder(OrderDto orderDto, String username)  {
@@ -41,6 +49,14 @@ public class OrderService {
         customerThatOrdered.getReportDto().addOrder(order);
         orderRepository.placeOrder(order);
         return orderDto;
+    }
+    public Order placeExistingOrder(int orderID,  String username)  {
+        Order order = orderRepository.getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null);
+        Order updatedOrder = orderMapper.orderUpdateToCurrentItems(order);
+        Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
+        customerThatOrdered.getReportDto().addOrder(updatedOrder);
+        orderRepository.placeOrder(updatedOrder);
+        return updatedOrder;
     }
 
 
@@ -67,5 +83,16 @@ public class OrderService {
 
     public ReportDto getOrderByID(int id) {
         return Objects.requireNonNull(customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)).getReportDto();
+    }
+
+    public List<ItemGroupWithadress> getToShipToday() {
+        List<ItemGroupWithadress> itemGroupWithadressArrayList =new ArrayList<>();
+
+        for (Order order : orderRepository.getOrderList()) {
+            for (ItemGroup itemGroup : order.getItemGroupList()) {
+                itemGroupWithadressArrayList.add(itemGroupMapper.toItemGroupWithadress( itemGroup, order.getCustomer()));
+            }
+        }
+        return itemGroupWithadressArrayList.stream().filter(x-> x.getItemGroup().getShippingdate().equals(LocalDate.now())).collect(Collectors.toList());
     }
 }

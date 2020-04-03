@@ -34,7 +34,7 @@ public class ItemController {
 
 
     @PostMapping(produces = JSON, consumes = JSON)
-    @PreAuthorize("hasAuthority('MAKE_ITEM')")
+    @PreAuthorize("hasAuthority('ADMIN_ONLY')")
     @ResponseStatus(HttpStatus.CREATED)
     public ItemDto addItem(@RequestBody ItemDto itemDto) {
         return itemService.addItem(itemDto);
@@ -52,6 +52,8 @@ public class ItemController {
         Urgency urgency1 = itemService.calculateUrgency(urgency);
         return itemService.getSortedList().stream().filter(x->x.getUrgency() == urgency1).collect(Collectors.toList());
     }
+
+
 
     @PutMapping (produces = JSON, consumes = JSON, path = "{name}")
     @PreAuthorize("hasAuthority('MAKE_ITEM')")

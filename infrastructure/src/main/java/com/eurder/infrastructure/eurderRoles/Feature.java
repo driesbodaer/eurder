@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public enum Feature {
-    MAKE_ITEM(List.of(EurderRole.ADMIN));
+    ADMIN_ONLY(List.of(EurderRole.ADMIN));
 
 
     private List<EurderRole> roles;

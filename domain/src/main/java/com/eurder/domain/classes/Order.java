@@ -9,7 +9,7 @@ public class Order {
     private List<ItemGroup> itemGroupList;
     private final Price totalPrice;
     private Customer customer;
-    private static int counter = 1;
+    private static int counter = 100;
 
 
     public Order(List<ItemGroup> itemGroupList, Customer customer) {
@@ -25,6 +25,10 @@ public class Order {
             price += itemGroup.getPrice();
         }
         return new Price(price, "eur");
+    }
+
+    public int getId() {
+        return id;
     }
 
     public List<ItemGroup> getItemGroupList() {

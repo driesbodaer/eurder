@@ -37,6 +37,15 @@ public class OrderMapper {
         return new Order(itemGroupList, customer);
     }
 
+        public Order orderUpdateToCurrentItems(Order order)  {
+        List<ItemGroup> itemGroupList = new ArrayList<>();
+        for (ItemGroup itemGroup : order.getItemGroupList()) {
+            itemGroupList.add(new ItemGroup(itemGroup.getItem(),itemGroup.getAmount(), checkIfItemGroupIsInStock(itemGroup)));
+            removeItemFromRepo(itemGroup);
+        }
+        return new Order(itemGroupList, order.getCustomer());
+    }
+
     private void removeItemFromRepo(ItemGroupDto itemGroupDto) {
         if (checkIfItemGroupIsInStock(itemGroupDto)) {
             Item item = getItemFromList(itemGroupDto);
@@ -44,9 +53,21 @@ public class OrderMapper {
         }
     }
 
+    private void removeItemFromRepo(ItemGroup itemGroup) {
+        if (checkIfItemGroupIsInStock(itemGroup)) {
+            Item item = getItemFromList(itemGroup);
+            item.setAmount(item.getAmount() - itemGroup.getAmount());
+        }
+    }
+
     public Boolean checkIfItemGroupIsInStock(ItemGroupDto itemGroupDto) {
         Item itemTocheck = getItemFromList(itemGroupDto);
         return itemTocheck != null && itemTocheck.getAmount() >= itemGroupDto.getAmount();
+    }
+
+    public Boolean checkIfItemGroupIsInStock(ItemGroup itemGroup) {
+        Item itemTocheck = getItemFromList(itemGroup);
+        return itemTocheck != null && itemTocheck.getAmount() >= itemGroup.getAmount();
     }
 
     public OrderDto toOrderDto(Order order) {
@@ -60,6 +81,11 @@ public class OrderMapper {
     private Item getItemFromList(ItemGroupDto itemGroupDto) {
         return itemRepository.getItemList().stream()
                 .filter(x -> x.getName().equals(itemGroupDto.getItem().getName()))
+                .findFirst().orElse(null);
+    }
+    private Item getItemFromList(ItemGroup itemGroup) {
+        return itemRepository.getItemList().stream()
+                .filter(x -> x.getName().equals(itemGroup.getItem().getName()))
                 .findFirst().orElse(null);
     }
 }
