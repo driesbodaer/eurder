@@ -18,12 +18,14 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.util.Base64Utils;
 import reactor.core.publisher.Mono;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -138,6 +140,52 @@ class CustomerControllerTest {
                 .body(Mono.just(expected), CustomerDto.class)
                 .exchange()
                 .expectStatus().isCreated()
+                .expectBody(CustomerDto.class)
+                .isEqualTo(expected);
+    }
+
+    @Test
+    void getCostumers_WithSprinboottest() throws UnsupportedEncodingException {
+        CustomerDto expected = CustomerFactory.buildCustomer()
+                .setAddress("kerkstraat")
+                .setFirstname("ggg")
+                .setLastname("test")
+                .setEmailadress("dries@gmail.com")
+                .setPhonenumber("013426238")
+                .buildCustomerDto();
+        customerController.createCostumer(expected);
+        String url = "customers";
+
+        testClient.get()
+                .uri(url)
+                .header("Authorization", "Basic " + Base64Utils
+                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBodyList(CustomerDto.class)
+                .contains(expected);
+
+    }
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    void getCostumer_WithSprinboottest() throws UnsupportedEncodingException {
+        CustomerDto expected = CustomerFactory.buildCustomer()
+                .setAddress("kerkstraat")
+                .setFirstname("admin")
+                .setLastname("bodaer")
+                .setEmailadress("dries@gmail.com")
+                .setPhonenumber("013426238")
+                .buildCustomerDto();
+
+        String url = "customers/1";
+
+        testClient.get()
+                .uri(url)
+                .header("Authorization", "Basic " + Base64Utils
+                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
+                .exchange()
+                .expectStatus().isOk()
                 .expectBody(CustomerDto.class)
                 .isEqualTo(expected);
     }

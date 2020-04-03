@@ -33,13 +33,13 @@ public class CustomerController {
 
     @GetMapping(produces = JSON)
     @ResponseStatus(HttpStatus.OK)
-    public List<Customer> getAllCustomer() {
+    public List<CustomerDto> getAllCustomer() {
         return customerService.getAllCustomers();
     }
 
     @GetMapping(produces = JSON, path = "{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Customer getCustomer(@PathVariable int id) {
+    public CustomerDto getCustomer(@PathVariable int id) {
         return customerService.getCustomer(id);
     }
 

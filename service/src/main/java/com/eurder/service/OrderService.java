@@ -10,6 +10,7 @@ import com.eurder.domain.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,7 +29,7 @@ public class OrderService {
         this.customerRepository = customerRepository;
     }
 
-    public Order placeOrder(OrderDto orderDto, String username) {
+    public OrderDto placeOrder(OrderDto orderDto, String username) {
         if (hasAnyEmptyFields(orderDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
@@ -36,7 +37,7 @@ public class OrderService {
         Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
         Order order = orderMapper.toOrder(orderDto, customerThatOrdered);
         orderRepository.placeOrder(order);
-        return order;
+        return orderDto;
     }
 
 
@@ -49,7 +50,11 @@ public class OrderService {
     }
 
 
-    public List<Order> getAllOrders() {
-        return orderRepository.getOrderList();
+    public List<OrderDto> getAllOrders() {
+        ArrayList<OrderDto> returnList = new ArrayList<>();
+        for (Order order : orderRepository.getOrderList()) {
+            returnList.add(orderMapper.toOrderDto(order));
+        }
+        return returnList;
     }
 }

@@ -35,30 +35,31 @@ class MockingOrderControllerTest {
     MockMvc mockMvc;
 
 
-    @Test
-    void getAllOrders() throws Exception {
-
-        List<Order> orderList = new ArrayList<>();
-             orderList.add(new Order(new ArrayList<ItemGroup>( List.of(new ItemGroup(  new Item("kaas", "camenbert", new Price(1.5, "eur"), 10), 2, true))), CustomerFactory.buildCustomer()
-                     .setAddress("kerkstraat")
-                     .setFirstname("admin")
-                     .setLastname("bodaer")
-                     .setAddress("kerkstraat")
-                     .setEmailadress("dries@gmail.com")
-                     .setPhonenumber("013426238")
-                     .build()));
-
-        Mockito.when(orderService.getAllOrders()).thenReturn(orderList);
-
-        mockMvc.perform(get("/orders")
-                .with(user("admin")
-                        .password("admin")
-                        .roles("admin"))
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-
-        // meer uitleg over nodig
-    }
+//    @Test
+//    void getAllOrders() throws Exception {
+//
+//        List<Order> orderList = new ArrayList<>();
+//             orderList.add(new Order(new ArrayList<ItemGroup>( List.of(new ItemGroup(  new Item("kaas", "camenbert", new Price(1.5, "eur"), 10), 2, true))), CustomerFactory.buildCustomer()
+//                     .setAddress("kerkstraat")
+//                     .setFirstname("admin")
+//                     .setLastname("bodaer")
+//                     .setAddress("kerkstraat")
+//                     .setEmailadress("dries@gmail.com")
+//                     .setPhonenumber("013426238")
+//                     .build()));
+//
+//
+//        Mockito.when(orderService.getAllOrders()).thenReturn(orderList);
+//
+//        mockMvc.perform(get("/orders")
+//                .with(user("admin")
+//                        .password("admin")
+//                        .roles("admin"))
+//                .contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk());
+//
+//        // meer uitleg over nodig
+//    }
 
 
 

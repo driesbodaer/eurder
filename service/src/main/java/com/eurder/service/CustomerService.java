@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class CustomerService {
@@ -40,12 +42,16 @@ public class CustomerService {
         return customer;
     }
 
-    public List<Customer> getAllCustomers() {
-        return   customerRepository.getCustomerList();
+    public List<CustomerDto> getAllCustomers() {
+        List<CustomerDto> returnlist = new ArrayList<>();
+        for (Customer customer : customerRepository.getCustomerList()) {
+            returnlist.add(customerMapper.toCustomerDto(customer));
+        }
+        return   returnlist;
     }
 
-    public Customer getCustomer(int id) {
-        return   customerRepository.getCustomerList().stream().filter(x -> x.getId() == id ).findFirst().orElse(null);
+    public CustomerDto getCustomer(int id) {
+        return  customerMapper.toCustomerDto(Objects.requireNonNull(customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)));
     }
 
     public boolean hasAnyEmptyFields(CustomerDto customerDto) {

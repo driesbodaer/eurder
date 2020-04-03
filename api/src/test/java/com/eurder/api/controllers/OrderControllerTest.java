@@ -70,7 +70,7 @@ class OrderControllerTest {
         Order order = getOrder();
         OrderDto orderDto = orderMapper.toOrderDto(order);
 
-        Assertions.assertThat(order).isEqualTo(orderController.placeOrder(orderDto, principal));
+        Assertions.assertThat(orderDto).isEqualTo(orderController.placeOrder(orderDto, principal));
     }
 
     @Test

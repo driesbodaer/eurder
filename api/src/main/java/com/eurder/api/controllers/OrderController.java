@@ -38,13 +38,13 @@ public class OrderController {
 
     @PostMapping(produces = JSON, consumes = JSON)
     @ResponseStatus(HttpStatus.CREATED)
-    public Order placeOrder(@RequestBody OrderDto orderDto, Principal principal) {
+    public OrderDto placeOrder(@RequestBody OrderDto orderDto, Principal principal) {
         return orderService.placeOrder(orderDto, principal.getName());
     }
 
     @GetMapping(produces = JSON)
     @ResponseStatus(HttpStatus.OK)
-    public List<Order> getAllOrders() {
+    public List<OrderDto> getAllOrders() {
         return orderService.getAllOrders();
     }
 
