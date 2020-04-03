@@ -42,6 +42,10 @@ public class Customer {
         return phonenumber;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +

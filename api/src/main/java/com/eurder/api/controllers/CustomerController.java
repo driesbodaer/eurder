@@ -1,6 +1,7 @@
 package com.eurder.api.controllers;
 
 import com.eurder.domain.classes.Customer;
+import com.eurder.domain.classes.Order;
 import com.eurder.domain.dto.CustomerDto;
 import com.eurder.service.CustomerService;
 import com.eurder.service.NotEverythingFilledInExeption;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "customers")
@@ -27,6 +29,18 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.CREATED)
     public Customer createCostumer(@RequestBody CustomerDto customerDto) {
         return customerService.createCustomer(customerDto);
+    }
+
+    @GetMapping(produces = JSON)
+    @ResponseStatus(HttpStatus.OK)
+    public List<Customer> getAllCustomer() {
+        return customerService.getAllCustomers();
+    }
+
+    @GetMapping(produces = JSON, path = "{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Customer getCustomer(@PathVariable int id) {
+        return customerService.getCustomer(id);
     }
 
     public CustomerService getCustomerService() {

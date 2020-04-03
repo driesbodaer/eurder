@@ -40,6 +40,14 @@ public class CustomerService {
         return customer;
     }
 
+    public List<Customer> getAllCustomers() {
+        return   customerRepository.getCustomerList();
+    }
+
+    public Customer getCustomer(int id) {
+        return   customerRepository.getCustomerList().stream().filter(x -> x.getId() == id ).findFirst().orElse(null);
+    }
+
     public boolean hasAnyEmptyFields(CustomerDto customerDto) {
         return customerDto.getAddress().isEmpty() || customerDto.getEmailadress().isEmpty() || customerDto.getFirstname().isEmpty() || customerDto.getLastname().isEmpty() || customerDto.getPhonenumber().isEmpty();
     }

@@ -98,26 +98,6 @@ class OrderControllerTest {
     }
 
 
-//    @Test
-//    void webtestclient_test() {
-//        Order order = getOrder();
-//        OrderDto orderDto = orderMapper.toOrderDto(order);
-//
-//        String url = "orders";
-//
-//        testClient.post()
-//                .uri(url)
-//                .header("Authorization", "Basic " + Base64Utils
-//                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .body(Mono.just(orderDto), OrderDto.class)
-//                .exchange()
-//                .expectStatus().isCreated()
-//                .expectBody(OrderDto.class)
-//                .isEqualTo(orderDto);
-//
-//    }
-
     @Test
     void webtestclient_test2() {
         OrderDto orderDto = orderMapper.toOrderDto(getOrder());
