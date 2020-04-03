@@ -54,9 +54,9 @@ class CustomerControllerTest {
                 .setPhonenumber("013426238")
                 .buildCustomerDto();
 
-        Customer expectedCustomer = customerController.createCostumer(expected);
+        CustomerDto expectedCustomer = customerController.createCostumer(expected);
 
-        Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(2)).isEqualTo(expectedCustomer);
+        Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(2)).isEqualTo(customerMapper.toCustomer(expectedCustomer));
     }
 
     @Test
@@ -70,7 +70,7 @@ class CustomerControllerTest {
                 .setPhonenumber("013426238")
                 .buildCustomerDto();
 
-        Customer expectedCustomer = customerController.createCostumer(expected);
+        CustomerDto expectedCustomer = customerController.createCostumer(expected);
 
         Assertions.assertThat(customerController.getCustomerService().getFakeAuthenticationService().getUser("bbb", "customer")).isEqualTo(new ExternalAuthentication().withUsername("bbb").withPassword("customer").withRoles(List.of(EurderRole.CUSTOMER)));
     }
@@ -115,9 +115,9 @@ class CustomerControllerTest {
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
                 .build();
-        Customer expectedCustomer = customerController.createCostumer(customerMapper.toCustomerDto(actual));
+        CustomerDto expectedCustomer = customerController.createCostumer(customerMapper.toCustomerDto(actual));
 
-        Assertions.assertThat(actual).isEqualTo(expectedCustomer);
+        Assertions.assertThat(actual).isEqualTo(customerMapper.toCustomer(expectedCustomer));
     }
 
     @Test

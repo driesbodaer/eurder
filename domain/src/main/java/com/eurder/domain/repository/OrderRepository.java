@@ -16,7 +16,7 @@ public class OrderRepository {
     CustomerRepository customerRepository;
 
     @Autowired
-    public OrderRepository(ItemRepository itemRepository, CustomerRepository customerRepository) {
+    public OrderRepository(ItemRepository itemRepository, CustomerRepository customerRepository) throws CloneNotSupportedException {
         this.customerRepository = customerRepository;
         this.itemRepository = itemRepository;
         this.orderList = new ArrayList<>();

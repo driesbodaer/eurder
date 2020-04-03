@@ -28,7 +28,7 @@ public class OrderMapper {
 
     }
 
-    public Order toOrder(OrderDto orderDto, Customer customer) {
+    public Order toOrder(OrderDto orderDto, Customer customer)  {
         List<ItemGroup> itemGroupList = new ArrayList<>();
         for (ItemGroupDto itemGroupDto : orderDto.getItemGroupDtoList()) {
             itemGroupList.add(itemGroupMapper.toItemGroup(itemGroupDto, checkIfItemGroupIsInStock(itemGroupDto)));

@@ -28,7 +28,7 @@ public class CustomerService {
         this.fakeAuthenticationService = fakeAuthenticationService;
     }
 
-    public Customer createCustomer(CustomerDto customerDto) {
+    public CustomerDto createCustomer(CustomerDto customerDto) {
         if (hasAnyEmptyFields(customerDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
@@ -39,7 +39,7 @@ public class CustomerService {
         Customer customer = customerMapper.toCustomer(customerDto);
         customerRepository.addCustomer(customer);
         fakeAuthenticationService.addUser(customer.getFirstname(), "customer", List.of(EurderRole.CUSTOMER));
-        return customer;
+        return customerDto;
     }
 
     public List<CustomerDto> getAllCustomers() {

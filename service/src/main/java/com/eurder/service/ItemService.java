@@ -21,13 +21,13 @@ public class ItemService {
         this.ItemRepository = ItemRepository;
     }
 
-    public Item addItem(ItemDto itemDto) {
+    public ItemDto addItem(ItemDto itemDto) {
         if (hasAnyEmptyFields(itemDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
         Item Item = ItemMapper.toItem(itemDto);
         ItemRepository.addItem(Item);
-        return Item;
+        return itemDto;
     }
 
     public boolean hasAnyEmptyFields(ItemDto itemDto) {

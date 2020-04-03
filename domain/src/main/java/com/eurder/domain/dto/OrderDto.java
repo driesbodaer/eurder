@@ -37,6 +37,13 @@ public class OrderDto {
         return totalPrice;
     }
 
+    public void setItemGroupDtoList(List<ItemGroupDto> itemGroupDtoList) {
+        this.itemGroupDtoList = itemGroupDtoList;
+    }
+
+    public void setTotalPrice(Price totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -4,7 +4,9 @@ import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.classes.Price;
+import com.eurder.domain.dto.OrderDto;
 import com.eurder.domain.mapper.CustomerFactory;
+import com.eurder.domain.mapper.OrderMapper;
 import com.eurder.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -33,33 +35,42 @@ class MockingOrderControllerTest {
 
     @Autowired
     MockMvc mockMvc;
+    @Autowired
+    OrderMapper orderMapper;
+//dummyomgeving
+
+    @Test
+    void getAllOrders() throws Exception {
+
+        List<Order> orderList = new ArrayList<>();
+             orderList.add(new Order(new ArrayList<ItemGroup>( List.of(new ItemGroup(  new Item("kaas", "camenbert", new Price(1.5, "eur"), 10), 2, true))), CustomerFactory.buildCustomer()
+                     .setAddress("kerkstraat")
+                     .setFirstname("admin")
+                     .setLastname("bodaer")
+                     .setAddress("kerkstraat")
+                     .setEmailadress("dries@gmail.com")
+                     .setPhonenumber("013426238")
+                     .build()));
+
+        List<OrderDto> orderDtoList = new ArrayList<>();
+             for (Order order : orderList)
+             {
+                 orderDtoList.add(orderMapper.toOrderDto(order));}
+
+        Mockito.when(orderService.getAllOrders()).thenReturn(orderDtoList);
 
 
-//    @Test
-//    void getAllOrders() throws Exception {
-//
-//        List<Order> orderList = new ArrayList<>();
-//             orderList.add(new Order(new ArrayList<ItemGroup>( List.of(new ItemGroup(  new Item("kaas", "camenbert", new Price(1.5, "eur"), 10), 2, true))), CustomerFactory.buildCustomer()
-//                     .setAddress("kerkstraat")
-//                     .setFirstname("admin")
-//                     .setLastname("bodaer")
-//                     .setAddress("kerkstraat")
-//                     .setEmailadress("dries@gmail.com")
-//                     .setPhonenumber("013426238")
-//                     .build()));
-//
-//
-//        Mockito.when(orderService.getAllOrders()).thenReturn(orderList);
-//
-//        mockMvc.perform(get("/orders")
-//                .with(user("admin")
-//                        .password("admin")
-//                        .roles("admin"))
-//                .contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk());
-//
-//        // meer uitleg over nodig
-//    }
+        //doe een get op ordercontroller
+        mockMvc.perform(get("/orders")
+                .with(user("admin")
+                        .password("admin")
+                        .roles("admin"))
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray());
+
+        // meer uitleg over nodig
+    }
 
 
 

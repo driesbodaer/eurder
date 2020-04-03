@@ -2,7 +2,7 @@ package com.eurder.domain.classes;
 
 import java.util.Objects;
 
-public class Item {
+public class Item  {
     private String name;
     private String description;
     private Price price;
@@ -14,6 +14,7 @@ public class Item {
         this.price = price;
         this.amount = amount;
     }
+
 
     public Price getPrice() {
         return price;

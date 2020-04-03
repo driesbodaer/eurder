@@ -4,6 +4,7 @@ import com.eurder.domain.classes.Customer;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.dto.CustomerDto;
 import com.eurder.domain.dto.OrderDto;
+import com.eurder.domain.dto.ReportDto;
 import com.eurder.service.CustomerService;
 import com.eurder.service.ItemService;
 import com.eurder.service.NotEverythingFilledInExeption;
@@ -15,12 +16,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
+import java.util.Objects;
 
 import static com.eurder.api.controllers.CustomerController.JSON;
 
@@ -48,6 +51,14 @@ public class OrderController {
         return orderService.getAllOrders();
     }
 
+    @GetMapping(produces = JSON, path = "{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ReportDto getAllOrdersByCustomer(@PathVariable int id, Principal principal ) {
+        if (principal.getName().equals(Objects.requireNonNull(orderService.getCustomerRepository().getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)).getFirstname())) {
+            return orderService.getOrderByID(id);
+        }else throw new NotCorrectUserException("you shall not pass!");
+    }
+
     public OrderService getOrderService() {
         return orderService;
     }
@@ -58,4 +69,12 @@ public class OrderController {
         response.sendError(403, "some fields are empty");
 
     }
+
+    @ExceptionHandler(NotCorrectUserException.class)
+    protected void notCorrectUserExeptoin(NotCorrectUserException e, HttpServletResponse response) throws IOException {
+        LOGGER.error(e.getMessage());
+        response.sendError(403, "only have acces to your own data");
+
+    }
+
 }

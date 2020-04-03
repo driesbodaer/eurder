@@ -97,7 +97,7 @@ class OrderControllerTest {
         return new Order(List.of(new ItemGroup(itemRepository.getItemList().get(0), 2, true)), customerRepository.getCustomerList().get(0));
     }
 
-
+// uw orderDto klass heeft Default constructors EN setter nodig!!!!!!!!!!
     @Test
     void webtestclient_test2() {
         OrderDto orderDto = orderMapper.toOrderDto(getOrder());
@@ -113,7 +113,7 @@ class OrderControllerTest {
                 .body(Mono.just(orderDto), OrderDto.class)
                 .exchange()
                 .expectStatus().isCreated()
-                .expectBody(OrderDto.class);
-
+                .expectBody(OrderDto.class)
+                .isEqualTo(orderDto);
     }
 }

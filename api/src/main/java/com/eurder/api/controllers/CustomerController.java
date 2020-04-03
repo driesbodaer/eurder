@@ -27,7 +27,7 @@ public class CustomerController {
 
     @PostMapping(produces = JSON, consumes = JSON)
     @ResponseStatus(HttpStatus.CREATED)
-    public Customer createCostumer(@RequestBody CustomerDto customerDto) {
+    public CustomerDto createCostumer(@RequestBody CustomerDto customerDto) {
         return customerService.createCustomer(customerDto);
     }
 

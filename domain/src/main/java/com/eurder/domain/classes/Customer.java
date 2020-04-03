@@ -1,7 +1,9 @@
 package com.eurder.domain.classes;
 
+import com.eurder.domain.dto.ReportDto;
 import com.eurder.domain.mapper.CustomerFactory;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Customer {
@@ -11,6 +13,7 @@ public class Customer {
     private String Emailadress;
     private String address;
     private String phonenumber;
+    private ReportDto reportDto;
     private static int counter = 1;
 
     public Customer(CustomerFactory customerFactory) {
@@ -20,6 +23,7 @@ public class Customer {
         Emailadress = customerFactory.getEmailadress();
         this.address = customerFactory.getAddress();
         this.phonenumber = customerFactory.getPhonenumber();
+        this.reportDto = new ReportDto();
     }
 
     public String getFirstname() {
@@ -44,6 +48,10 @@ public class Customer {
 
     public int getId() {
         return id;
+    }
+
+    public ReportDto getReportDto() {
+        return reportDto;
     }
 
     @Override

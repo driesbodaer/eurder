@@ -37,7 +37,7 @@ class ItemControllerTest {
         Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
 
-        Assertions.assertThat(item).isEqualTo(itemController.addItem(itemDto));
+        Assertions.assertThat(itemDto).isEqualTo(itemController.addItem(itemDto));
     }
 
     @Test

@@ -32,16 +32,16 @@ class OrderMapperTest {
         this.customerRepository = customerRepository;
     }
 
-    private Order getOrder() {
+    private Order getOrder() throws CloneNotSupportedException {
         return new Order(List.of(new ItemGroup(itemRepository.getItemList().get(0), 2, true)), customerRepository.getCustomerList().get(0));
     }
 
-    private OrderDto getOrderDto() {
+    private OrderDto getOrderDto() throws CloneNotSupportedException {
         return new OrderDto(List.of(itemGroupMapper.toItemGroupDto(new ItemGroup(itemRepository.getItemList().get(0), 2, true))));
     }
 
     @Test
-    void toOrder() {
+    void toOrder() throws CloneNotSupportedException {
         Assertions.assertEquals(orderMapper.toOrderDto(getOrder()), getOrderDto());
     }
 

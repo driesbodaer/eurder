@@ -3,6 +3,7 @@ package com.eurder.service;
 import com.eurder.domain.classes.Customer;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.dto.OrderDto;
+import com.eurder.domain.dto.ReportDto;
 import com.eurder.domain.mapper.OrderMapper;
 import com.eurder.domain.repository.CustomerRepository;
 import com.eurder.domain.repository.ItemRepository;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class OrderService {
@@ -29,13 +31,14 @@ public class OrderService {
         this.customerRepository = customerRepository;
     }
 
-    public OrderDto placeOrder(OrderDto orderDto, String username) {
+    public OrderDto placeOrder(OrderDto orderDto, String username)  {
         if (hasAnyEmptyFields(orderDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
 
         Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
         Order order = orderMapper.toOrder(orderDto, customerThatOrdered);
+        customerThatOrdered.getReportDto().addOrder(order);
         orderRepository.placeOrder(order);
         return orderDto;
     }
@@ -56,5 +59,13 @@ public class OrderService {
             returnList.add(orderMapper.toOrderDto(order));
         }
         return returnList;
+    }
+
+    public CustomerRepository getCustomerRepository() {
+        return customerRepository;
+    }
+
+    public ReportDto getOrderByID(int id) {
+        return Objects.requireNonNull(customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)).getReportDto();
     }
 }
