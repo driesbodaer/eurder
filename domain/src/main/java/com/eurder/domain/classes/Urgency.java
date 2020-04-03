@@ -6,11 +6,12 @@ public enum Urgency {
     STOCK_HIGH(3);
 
     int hierrachy;
-    Urgency(int  hierrachy) {
+
+    Urgency(int hierrachy) {
         this.hierrachy = hierrachy;
     }
 
-    public int gethierarchy(){
+    public int gethierarchy() {
         return hierrachy;
     }
 }

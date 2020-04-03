@@ -15,5 +15,4 @@ public class ItemMapper {
         return new ItemDto(item.getName(), item.getDescription(), item.getPrice(), item.getAmount());
     }
 
-
 }

@@ -36,9 +36,6 @@ public class ReportDto {
                 '}';
     }
 
-    public String getReport() {
-        return this.toString();
-    }
 
     public void setTotalpriceOfOrders() {
         this.totalpriceOfOrders = calculateTotal();

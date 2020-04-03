@@ -11,14 +11,13 @@ public class ItemGroup {
     private boolean inStock;
 
 
-    public ItemGroup(Item item, int amount, boolean inStock)  {
+    public ItemGroup(Item item, int amount, boolean inStock) {
         this.item = new Item(item.getName(), item.getDescription(), item.getPrice(), item.getAmount());
         this.amount = amount;
         this.price = item.getPrice().getPrice() * amount;
         this.inStock = inStock;
         this.shippingdate = calcShippingdate();
     }
-
 
 
     private LocalDate calcShippingdate() {

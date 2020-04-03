@@ -1,15 +1,9 @@
 package com.eurder.api.controllers;
 
-import com.eurder.domain.classes.Customer;
 import com.eurder.domain.classes.ItemGroupWithadress;
 import com.eurder.domain.classes.Order;
-import com.eurder.domain.classes.Urgency;
-import com.eurder.domain.dto.CustomerDto;
-import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.dto.OrderDto;
 import com.eurder.domain.dto.ReportDto;
-import com.eurder.service.CustomerService;
-import com.eurder.service.ItemService;
 import com.eurder.service.NotEverythingFilledInExeption;
 import com.eurder.service.OrderService;
 import org.slf4j.Logger;
@@ -17,18 +11,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpClientErrorException;
 
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 import static com.eurder.api.controllers.CustomerController.JSON;
 
@@ -54,9 +43,9 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public Order placeOrderById(Principal principal, @RequestParam("orderID") int orderID) {
         if (orderService.getCustomerRepository().getCustomerList().stream().filter(x -> x.getFirstname().equals(principal.getName())).findFirst().orElse(null) ==
-                orderService.getOrderRepository().getOrderList().stream().filter(x->x.getId() == orderID).findFirst().orElse(null).getCustomer()) {
+                orderService.getOrderRepository().getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null).getCustomer()) {
             return orderService.placeExistingOrder(orderID, principal.getName());
-        }else throw new NotCorrectUserException("you cannot access other customers data");
+        } else throw new NotCorrectUserException("you cannot access other customers data");
     }
 
     @GetMapping(produces = JSON)
@@ -74,10 +63,10 @@ public class OrderController {
 
     @GetMapping(produces = JSON, path = "{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ReportDto getAllOrdersByCustomer(@PathVariable int id, Principal principal ) {
+    public ReportDto getAllOrdersByCustomer(@PathVariable int id, Principal principal) {
         if (principal.getName().equals(Objects.requireNonNull(orderService.getCustomerRepository().getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)).getFirstname())) {
             return orderService.getOrderByID(id);
-        }else throw new NotCorrectUserException("you cannot access other customers data");
+        } else throw new NotCorrectUserException("you cannot access other customers data");
     }
 
     public OrderService getOrderService() {

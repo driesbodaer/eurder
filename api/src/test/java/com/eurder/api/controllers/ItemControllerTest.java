@@ -2,9 +2,7 @@ package com.eurder.api.controllers;
 
 import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.Price;
-import com.eurder.domain.dto.CustomerDto;
 import com.eurder.domain.dto.ItemDto;
-import com.eurder.domain.mapper.CustomerMapper;
 import com.eurder.domain.mapper.ItemMapper;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -16,8 +14,6 @@ import org.springframework.util.Base64Utils;
 import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ItemControllerTest {
@@ -44,7 +40,6 @@ class ItemControllerTest {
     void addItem_addedToList() {
         Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
-
         itemController.addItem(itemDto);
         Assertions.assertThat(itemController.getItemService().getItemRepository().getItemList().get(2)).isEqualTo(item);
     }

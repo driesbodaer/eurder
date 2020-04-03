@@ -2,7 +2,6 @@ package com.eurder.infrastructure;
 
 import com.eurder.infrastructure.authentication.ExternalAuthentication;
 import com.eurder.infrastructure.authentication.FakeAuthenticationService;
-import com.eurder.infrastructure.eurderRoles.EurderRole;
 import com.eurder.infrastructure.eurderRoles.Feature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;

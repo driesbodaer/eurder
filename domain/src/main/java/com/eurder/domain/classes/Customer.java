@@ -3,7 +3,6 @@ package com.eurder.domain.classes;
 import com.eurder.domain.dto.ReportDto;
 import com.eurder.domain.mapper.CustomerFactory;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Customer {

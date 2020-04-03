@@ -2,7 +2,6 @@ package com.eurder.domain.mapper;
 
 import com.eurder.domain.classes.Customer;
 import com.eurder.domain.dto.CustomerDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component

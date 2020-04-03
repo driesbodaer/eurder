@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -39,7 +38,7 @@ public class OrderService {
         this.itemGroupMapper = itemGroupMapper;
     }
 
-    public OrderDto placeOrder(OrderDto orderDto, String username)  {
+    public OrderDto placeOrder(OrderDto orderDto, String username) {
         if (hasAnyEmptyFields(orderDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
@@ -50,7 +49,8 @@ public class OrderService {
         orderRepository.placeOrder(order);
         return orderDto;
     }
-    public Order placeExistingOrder(int orderID,  String username)  {
+
+    public Order placeExistingOrder(int orderID, String username) {
         Order order = orderRepository.getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null);
         Order updatedOrder = orderMapper.orderUpdateToCurrentItems(order);
         Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
@@ -86,13 +86,13 @@ public class OrderService {
     }
 
     public List<ItemGroupWithadress> getToShipToday() {
-        List<ItemGroupWithadress> itemGroupWithadressArrayList =new ArrayList<>();
+        List<ItemGroupWithadress> itemGroupWithadressArrayList = new ArrayList<>();
 
         for (Order order : orderRepository.getOrderList()) {
             for (ItemGroup itemGroup : order.getItemGroupList()) {
-                itemGroupWithadressArrayList.add(itemGroupMapper.toItemGroupWithadress( itemGroup, order.getCustomer()));
+                itemGroupWithadressArrayList.add(itemGroupMapper.toItemGroupWithadress(itemGroup, order.getCustomer()));
             }
         }
-        return itemGroupWithadressArrayList.stream().filter(x-> x.getItemGroup().getShippingdate().equals(LocalDate.now())).collect(Collectors.toList());
+        return itemGroupWithadressArrayList.stream().filter(x -> x.getItemGroup().getShippingdate().equals(LocalDate.now())).collect(Collectors.toList());
     }
 }

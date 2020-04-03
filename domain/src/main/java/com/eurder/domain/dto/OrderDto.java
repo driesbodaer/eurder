@@ -1,8 +1,5 @@
 package com.eurder.domain.dto;
 
-import com.eurder.domain.classes.Customer;
-import com.eurder.domain.classes.Item;
-import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Price;
 
 import java.util.ArrayList;
@@ -31,18 +28,6 @@ public class OrderDto {
 
     public List<ItemGroupDto> getItemGroupDtoList() {
         return itemGroupDtoList;
-    }
-
-    public Price getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setItemGroupDtoList(List<ItemGroupDto> itemGroupDtoList) {
-        this.itemGroupDtoList = itemGroupDtoList;
-    }
-
-    public void setTotalPrice(Price totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     @Override

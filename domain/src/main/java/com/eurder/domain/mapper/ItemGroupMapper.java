@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ItemGroupMapper {
 
-    public ItemGroup toItemGroup(ItemGroupDto itemGroupDto, boolean inStock)  {
+    public ItemGroup toItemGroup(ItemGroupDto itemGroupDto, boolean inStock) {
         return new ItemGroup(itemGroupDto.getItem(), itemGroupDto.getAmount(), inStock);
     }
 

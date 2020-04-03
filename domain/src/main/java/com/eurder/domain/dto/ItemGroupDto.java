@@ -2,7 +2,6 @@ package com.eurder.domain.dto;
 
 import com.eurder.domain.classes.Item;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class ItemGroupDto {

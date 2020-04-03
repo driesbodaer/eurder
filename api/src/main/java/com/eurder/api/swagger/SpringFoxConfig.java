@@ -18,30 +18,30 @@ import java.util.Collections;
     http://localhost:8080/swagger-ui.html
  */
 
-    @Configuration
-    @EnableSwagger2
-    public class SpringFoxConfig {
+@Configuration
+@EnableSwagger2
+public class SpringFoxConfig {
 
-        @Bean
-        public Docket api() {
-            Docket docket = new Docket(DocumentationType.SWAGGER_2)
-                    .select()
-                    .apis(RequestHandlerSelectors.any())
-                    .paths(PathSelectors.any())
-                    .build()
-                    .apiInfo(apiInfo());
-            return docket;
-        }
-
-        private ApiInfo apiInfo() {
-            return new ApiInfo(
-                    "eurder API",
-                    "Created by dries",
-                    "",
-                    "",
-                    new Contact("", "", ""),
-                    "", "", Collections.emptyList());
-        }
-
+    @Bean
+    public Docket api() {
+        Docket docket = new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build()
+                .apiInfo(apiInfo());
+        return docket;
     }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfo(
+                "eurder API",
+                "Created by dries",
+                "",
+                "",
+                new Contact("", "", ""),
+                "", "", Collections.emptyList());
+    }
+
+}
 

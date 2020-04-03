@@ -6,12 +6,10 @@ import com.eurder.domain.mapper.UrgencyComperator;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 @Repository
-public class ItemRepository  {
+public class ItemRepository {
 
     private List<Item> itemList;
 
@@ -32,6 +30,5 @@ public class ItemRepository  {
     public List<Item> getItemList() {
         return itemList;
     }
-
 
 }

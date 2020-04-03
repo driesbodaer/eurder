@@ -43,19 +43,19 @@ class MockingOrderControllerTest {
     void getAllOrders() throws Exception {
 
         List<Order> orderList = new ArrayList<>();
-             orderList.add(new Order(new ArrayList<ItemGroup>( List.of(new ItemGroup(  new Item("kaas", "camenbert", new Price(1.5, "eur"), 10), 2, true))), CustomerFactory.buildCustomer()
-                     .setAddress("kerkstraat")
-                     .setFirstname("admin")
-                     .setLastname("bodaer")
-                     .setAddress("kerkstraat")
-                     .setEmailadress("dries@gmail.com")
-                     .setPhonenumber("013426238")
-                     .build()));
+        orderList.add(new Order(new ArrayList<ItemGroup>(List.of(new ItemGroup(new Item("kaas", "camenbert", new Price(1.5, "eur"), 10), 2, true))), CustomerFactory.buildCustomer()
+                .setAddress("kerkstraat")
+                .setFirstname("admin")
+                .setLastname("bodaer")
+                .setAddress("kerkstraat")
+                .setEmailadress("dries@gmail.com")
+                .setPhonenumber("013426238")
+                .build()));
 
         List<OrderDto> orderDtoList = new ArrayList<>();
-             for (Order order : orderList)
-             {
-                 orderDtoList.add(orderMapper.toOrderDto(order));}
+        for (Order order : orderList) {
+            orderDtoList.add(orderMapper.toOrderDto(order));
+        }
 
         Mockito.when(orderService.getAllOrders()).thenReturn(orderDtoList);
 
@@ -71,7 +71,6 @@ class MockingOrderControllerTest {
 
         // meer uitleg over nodig
     }
-
 
 
 }

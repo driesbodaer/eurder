@@ -2,7 +2,7 @@ package com.eurder.domain.classes;
 
 import java.util.Objects;
 
-public class Item  {
+public class Item {
     private String name;
     private String description;
     private Price price;
@@ -22,7 +22,7 @@ public class Item  {
     }
 
     public void calculateUrgency() {
-        if (amount<=10 && amount>5) {
+        if (amount <= 10 && amount > 5) {
             this.urgency = Urgency.STOCK_MEDIUM;
             return;
         }

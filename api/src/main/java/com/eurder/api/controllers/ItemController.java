@@ -1,8 +1,6 @@
 package com.eurder.api.controllers;
 
-import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.Urgency;
-import com.eurder.domain.dto.CustomerDto;
 import com.eurder.domain.dto.ItemDto;
 import com.eurder.service.ItemService;
 import com.eurder.service.NotEverythingFilledInExeption;
@@ -14,7 +12,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -50,18 +47,16 @@ public class ItemController {
     @ResponseStatus(HttpStatus.OK)
     public List<ItemDto> getfilteredListlow(@RequestParam("urgency") String urgency) {
         Urgency urgency1 = itemService.calculateUrgency(urgency);
-        return itemService.getSortedList().stream().filter(x->x.getUrgency() == urgency1).collect(Collectors.toList());
+        return itemService.getSortedList().stream().filter(x -> x.getUrgency() == urgency1).collect(Collectors.toList());
     }
 
 
-
-    @PutMapping (produces = JSON, consumes = JSON, path = "{name}")
+    @PutMapping(produces = JSON, consumes = JSON, path = "{name}")
     @PreAuthorize("hasAuthority('MAKE_ITEM')")
     @ResponseStatus(HttpStatus.OK)
     public ItemDto updateItem(@PathVariable("name") String name, @RequestBody ItemDto itemDto) {
         return itemService.updateItem(itemDto, name);
     }
-
 
 
     public ItemService getItemService() {

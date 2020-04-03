@@ -1,7 +1,5 @@
 package com.eurder.domain.classes;
 
-import java.util.List;
-
 public class ItemGroupWithadress {
     ItemGroup itemGroup;
     String adress;

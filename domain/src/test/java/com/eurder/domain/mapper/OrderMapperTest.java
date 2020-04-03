@@ -1,6 +1,5 @@
 package com.eurder.domain.mapper;
 
-import com.eurder.domain.classes.Customer;
 import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.dto.OrderDto;
@@ -10,11 +9,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(classes = {OrderMapper.class, ItemRepository.class, ItemGroupMapper.class, CustomerRepository.class})
 class OrderMapperTest {
@@ -32,16 +28,16 @@ class OrderMapperTest {
         this.customerRepository = customerRepository;
     }
 
-    private Order getOrder() throws CloneNotSupportedException {
+    private Order getOrder()  {
         return new Order(List.of(new ItemGroup(itemRepository.getItemList().get(0), 2, true)), customerRepository.getCustomerList().get(0));
     }
 
-    private OrderDto getOrderDto() throws CloneNotSupportedException {
+    private OrderDto getOrderDto()  {
         return new OrderDto(List.of(itemGroupMapper.toItemGroupDto(new ItemGroup(itemRepository.getItemList().get(0), 2, true))));
     }
 
     @Test
-    void toOrder() throws CloneNotSupportedException {
+    void toOrder() {
         Assertions.assertEquals(orderMapper.toOrderDto(getOrder()), getOrderDto());
     }
 

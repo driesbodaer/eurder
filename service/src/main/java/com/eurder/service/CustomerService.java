@@ -9,7 +9,6 @@ import com.eurder.infrastructure.eurderRoles.EurderRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -47,11 +46,11 @@ public class CustomerService {
         for (Customer customer : customerRepository.getCustomerList()) {
             returnlist.add(customerMapper.toCustomerDto(customer));
         }
-        return   returnlist;
+        return returnlist;
     }
 
     public CustomerDto getCustomer(int id) {
-        return  customerMapper.toCustomerDto(Objects.requireNonNull(customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)));
+        return customerMapper.toCustomerDto(Objects.requireNonNull(customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)));
     }
 
     public boolean hasAnyEmptyFields(CustomerDto customerDto) {

@@ -1,6 +1,5 @@
 package com.eurder.domain.repository;
 
-import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Order;
 import org.springframework.beans.factory.annotation.Autowired;

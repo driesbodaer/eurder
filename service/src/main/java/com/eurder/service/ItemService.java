@@ -2,8 +2,6 @@ package com.eurder.service;
 
 import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.Urgency;
-import com.eurder.domain.dto.CustomerDto;
-import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.mapper.ItemMapper;
 import com.eurder.domain.repository.ItemRepository;
@@ -43,10 +41,10 @@ public class ItemService {
     }
 
     public Urgency calculateUrgency(String urgencyString) {
-        if (urgencyString.equals( "Urgency.STOCK_LOW")) {
+        if (urgencyString.equals("Urgency.STOCK_LOW")) {
             return Urgency.STOCK_LOW;
         }
-        if (urgencyString.equals( "Urgency.STOCK_MEDIUM")) {
+        if (urgencyString.equals("Urgency.STOCK_MEDIUM")) {
             return Urgency.STOCK_MEDIUM;
         }
         return Urgency.STOCK_HIGH;
@@ -61,7 +59,7 @@ public class ItemService {
     }
 
     public ItemDto updateItem(ItemDto itemDto, String name) {
-       int index = itemRepository.getItemList().indexOf( itemRepository.getItemList().stream().filter(x-> x.getName().equals(name)).findFirst().orElse(null));
+        int index = itemRepository.getItemList().indexOf(itemRepository.getItemList().stream().filter(x -> x.getName().equals(name)).findFirst().orElse(null));
         itemRepository.getItemList().set(index, itemMapper.toItem(itemDto));
         return itemDto;
     }

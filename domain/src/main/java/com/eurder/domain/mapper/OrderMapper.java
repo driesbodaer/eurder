@@ -4,7 +4,6 @@ import com.eurder.domain.classes.Customer;
 import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Order;
-import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.dto.ItemGroupDto;
 import com.eurder.domain.dto.OrderDto;
 import com.eurder.domain.repository.ItemRepository;
@@ -28,7 +27,7 @@ public class OrderMapper {
 
     }
 
-    public Order toOrder(OrderDto orderDto, Customer customer)  {
+    public Order toOrder(OrderDto orderDto, Customer customer) {
         List<ItemGroup> itemGroupList = new ArrayList<>();
         for (ItemGroupDto itemGroupDto : orderDto.getItemGroupDtoList()) {
             itemGroupList.add(itemGroupMapper.toItemGroup(itemGroupDto, checkIfItemGroupIsInStock(itemGroupDto)));
@@ -37,10 +36,10 @@ public class OrderMapper {
         return new Order(itemGroupList, customer);
     }
 
-        public Order orderUpdateToCurrentItems(Order order)  {
+    public Order orderUpdateToCurrentItems(Order order) {
         List<ItemGroup> itemGroupList = new ArrayList<>();
         for (ItemGroup itemGroup : order.getItemGroupList()) {
-            itemGroupList.add(new ItemGroup(itemGroup.getItem(),itemGroup.getAmount(), checkIfItemGroupIsInStock(itemGroup)));
+            itemGroupList.add(new ItemGroup(itemGroup.getItem(), itemGroup.getAmount(), checkIfItemGroupIsInStock(itemGroup)));
             removeItemFromRepo(itemGroup);
         }
         return new Order(itemGroupList, order.getCustomer());
@@ -83,6 +82,7 @@ public class OrderMapper {
                 .filter(x -> x.getName().equals(itemGroupDto.getItem().getName()))
                 .findFirst().orElse(null);
     }
+
     private Item getItemFromList(ItemGroup itemGroup) {
         return itemRepository.getItemList().stream()
                 .filter(x -> x.getName().equals(itemGroup.getItem().getName()))
