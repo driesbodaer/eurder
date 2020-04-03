@@ -7,12 +7,30 @@ public class Item  {
     private String description;
     private Price price;
     private int amount;
+    private Urgency urgency;
 
     public Item(String name, String description, Price price, int amount) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.amount = amount;
+        calculateUrgency();
+    }
+
+    public Urgency getUrgency() {
+        return urgency;
+    }
+
+    public void calculateUrgency() {
+        if (amount<=10 && amount>5) {
+            this.urgency = Urgency.STOCK_MEDIUM;
+            return;
+        }
+        if (amount <= 5) {
+            this.urgency = Urgency.STOCK_LOW;
+            return;
+        }
+        this.urgency = Urgency.STOCK_HIGH;
     }
 
 
@@ -34,6 +52,7 @@ public class Item  {
 
     public void setAmount(int amount) {
         this.amount = amount;
+        calculateUrgency();
     }
 
     @Override

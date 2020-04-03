@@ -1,6 +1,7 @@
 package com.eurder.domain.dto;
 
 import com.eurder.domain.classes.Price;
+import com.eurder.domain.classes.Urgency;
 
 import java.util.Objects;
 
@@ -9,12 +10,30 @@ public class ItemDto {
     private String description;
     private Price price;
     private int amount;
+    private Urgency urgency;
 
     public ItemDto(String name, String description, Price price, int amount) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.amount = amount;
+        calculateUrgency();
+    }
+
+    public Urgency getUrgency() {
+        return urgency;
+    }
+
+    public void calculateUrgency() {
+        if (amount<=10 && amount>5) {
+            this.urgency = Urgency.STOCK_MEDIUM;
+            return;
+        }
+        if (amount <= 5) {
+            this.urgency = Urgency.STOCK_LOW;
+            return;
+        }
+        this.urgency = Urgency.STOCK_HIGH;
     }
 
     public String getName() {

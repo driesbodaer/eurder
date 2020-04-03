@@ -1,6 +1,7 @@
 package com.eurder.service;
 
 import com.eurder.domain.classes.Item;
+import com.eurder.domain.classes.Urgency;
 import com.eurder.domain.dto.CustomerDto;
 import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.dto.ItemDto;
@@ -9,25 +10,46 @@ import com.eurder.domain.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class ItemService {
 
-    private final ItemMapper ItemMapper;
-    private final ItemRepository ItemRepository;
+    private final ItemMapper itemMapper;
+    private final ItemRepository itemRepository;
 
     @Autowired
-    public ItemService(ItemMapper ItemMapper, ItemRepository ItemRepository) {
-        this.ItemMapper = ItemMapper;
-        this.ItemRepository = ItemRepository;
+    public ItemService(ItemMapper itemMapper, ItemRepository itemRepository) {
+        this.itemMapper = itemMapper;
+        this.itemRepository = itemRepository;
     }
 
     public ItemDto addItem(ItemDto itemDto) {
         if (hasAnyEmptyFields(itemDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
-        Item Item = ItemMapper.toItem(itemDto);
-        ItemRepository.addItem(Item);
+        Item Item = itemMapper.toItem(itemDto);
+        itemRepository.addItem(Item);
         return itemDto;
+    }
+
+    public List<ItemDto> getSortedList() {
+        List<ItemDto> returnlist = new ArrayList<>();
+        for (Item item : itemRepository.sortedList()) {
+            returnlist.add(itemMapper.toItemDto(item));
+        }
+        return returnlist;
+    }
+
+    public Urgency calculateUrgency(String urgencyString) {
+        if (urgencyString.equals( "Urgency.STOCK_LOW")) {
+            return Urgency.STOCK_LOW;
+        }
+        if (urgencyString.equals( "Urgency.STOCK_MEDIUM")) {
+            return Urgency.STOCK_MEDIUM;
+        }
+        return Urgency.STOCK_HIGH;
     }
 
     public boolean hasAnyEmptyFields(ItemDto itemDto) {
@@ -35,6 +57,12 @@ public class ItemService {
     }
 
     public com.eurder.domain.repository.ItemRepository getItemRepository() {
-        return ItemRepository;
+        return itemRepository;
+    }
+
+    public ItemDto updateItem(ItemDto itemDto, String name) {
+       int index = itemRepository.getItemList().indexOf( itemRepository.getItemList().stream().filter(x-> x.getName().equals(name)).findFirst().orElse(null));
+        itemRepository.getItemList().set(index, itemMapper.toItem(itemDto));
+        return itemDto;
     }
 }

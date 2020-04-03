@@ -45,6 +45,14 @@ public class OrderController {
         return orderService.placeOrder(orderDto, principal.getName());
     }
 
+    @PostMapping(produces = JSON, consumes = JSON)
+    @ResponseStatus(HttpStatus.CREATED)
+    public OrderDto placeOrder(@RequestBody OrderDto orderDto, Principal principal) {
+        if (principal.getName().equals(Objects.requireNonNull(orderService.getCustomerRepository().getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)).getFirstname())) {
+            return orderService.placeOrder(orderDto, principal.getName());
+        }else throw new NotCorrectUserException("you cannot access other customers data");
+    }
+
     @GetMapping(produces = JSON)
     @ResponseStatus(HttpStatus.OK)
     public List<OrderDto> getAllOrders() {
@@ -56,7 +64,7 @@ public class OrderController {
     public ReportDto getAllOrdersByCustomer(@PathVariable int id, Principal principal ) {
         if (principal.getName().equals(Objects.requireNonNull(orderService.getCustomerRepository().getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)).getFirstname())) {
             return orderService.getOrderByID(id);
-        }else throw new NotCorrectUserException("you shall not pass!");
+        }else throw new NotCorrectUserException("you cannot access other customers data");
     }
 
     public OrderService getOrderService() {
