@@ -13,7 +13,4 @@ public class ItemGroupWithadress {
         return itemGroup;
     }
 
-    public String getAdress() {
-        return adress;
-    }
 }

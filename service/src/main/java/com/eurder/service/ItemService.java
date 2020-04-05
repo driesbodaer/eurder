@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ItemService {
@@ -50,17 +51,21 @@ public class ItemService {
         return Urgency.STOCK_HIGH;
     }
 
-    public boolean hasAnyEmptyFields(ItemDto itemDto) {
-        return itemDto.getDescription().isEmpty() || itemDto.getName().isEmpty() || itemDto.getAmount() == 0 || itemDto.getPrice().getPrice() == 0.0;
-    }
-
-    public com.eurder.domain.repository.ItemRepository getItemRepository() {
-        return itemRepository;
-    }
-
     public ItemDto updateItem(ItemDto itemDto, String name) {
         int index = itemRepository.getItemList().indexOf(itemRepository.getItemList().stream().filter(x -> x.getName().equals(name)).findFirst().orElse(null));
         itemRepository.getItemList().set(index, itemMapper.toItem(itemDto));
         return itemDto;
+    }
+
+    public List<ItemDto> filterList(Urgency urgency) {
+        return getSortedList().stream().filter(x -> x.getUrgency() == urgency).collect(Collectors.toList());
+    }
+
+    public boolean hasAnyEmptyFields(ItemDto itemDto) {
+        return itemDto.getDescription().isEmpty() || itemDto.getName().isEmpty() || itemDto.getAmount() == 0 || itemDto.getPrice().getPrice() == 0.0;
+    }
+
+    public ItemRepository getItemRepository() {
+        return itemRepository;
     }
 }

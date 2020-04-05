@@ -41,6 +41,14 @@ public class CustomerService {
         return customerDto;
     }
 
+    public boolean hasAnyEmptyFields(CustomerDto customerDto) {
+        return customerDto.getAddress().isEmpty() || customerDto.getEmailadress().isEmpty() || customerDto.getFirstname().isEmpty() || customerDto.getLastname().isEmpty() || customerDto.getPhonenumber().isEmpty();
+    }
+
+    public boolean lettersAreInputted(String input) {
+        return !input.chars().allMatch(Character::isLetter);
+    }
+
     public List<CustomerDto> getAllCustomers() {
         List<CustomerDto> returnlist = new ArrayList<>();
         for (Customer customer : customerRepository.getCustomerList()) {
@@ -51,14 +59,6 @@ public class CustomerService {
 
     public CustomerDto getCustomer(int id) {
         return customerMapper.toCustomerDto(Objects.requireNonNull(customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)));
-    }
-
-    public boolean hasAnyEmptyFields(CustomerDto customerDto) {
-        return customerDto.getAddress().isEmpty() || customerDto.getEmailadress().isEmpty() || customerDto.getFirstname().isEmpty() || customerDto.getLastname().isEmpty() || customerDto.getPhonenumber().isEmpty();
-    }
-
-    public boolean lettersAreInputted(String input) {
-        return !input.chars().allMatch(Character::isLetter);
     }
 
     public FakeAuthenticationService getFakeAuthenticationService() {

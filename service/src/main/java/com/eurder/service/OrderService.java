@@ -13,18 +13,22 @@ import com.eurder.domain.repository.ItemRepository;
 import com.eurder.domain.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
     private final OrderMapper orderMapper;
     private final OrderRepository orderRepository;
-    private final ItemRepository itemRepository;
     private final CustomerRepository customerRepository;
     private final ItemGroupMapper itemGroupMapper;
 
@@ -33,7 +37,6 @@ public class OrderService {
     public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository, ItemGroupMapper itemGroupMapper) {
         this.orderMapper = orderMapper;
         this.orderRepository = orderRepository;
-        this.itemRepository = itemRepository;
         this.customerRepository = customerRepository;
         this.itemGroupMapper = itemGroupMapper;
     }
@@ -64,6 +67,7 @@ public class OrderService {
         return orderDto.getItemGroupDtoList().isEmpty();
     }
 
+
     public OrderRepository getOrderRepository() {
         return orderRepository;
     }
@@ -75,10 +79,6 @@ public class OrderService {
             returnList.add(orderMapper.toOrderDto(order));
         }
         return returnList;
-    }
-
-    public CustomerRepository getCustomerRepository() {
-        return customerRepository;
     }
 
     public ReportDto getOrderByID(int id) {
@@ -94,5 +94,17 @@ public class OrderService {
             }
         }
         return itemGroupWithadressArrayList.stream().filter(x -> x.getItemGroup().getShippingdate().equals(LocalDate.now())).collect(Collectors.toList());
+    }
+
+    public Customer getCustomerById(@PathVariable int id) {
+        return customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+    }
+
+    public Order getOrder(@RequestParam("orderID") int orderID) {
+        return orderRepository.getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null);
+    }
+
+    public Customer getCustomer(Principal principal) {
+        return customerRepository.getCustomerList().stream().filter(x -> x.getFirstname().equals(principal.getName())).findFirst().orElse(null);
     }
 }

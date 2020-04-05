@@ -28,6 +28,10 @@ public class ReportDto {
         return new Price(prijs, "eur");
     }
 
+    public void setTotalpriceOfOrders() {
+        this.totalpriceOfOrders = calculateTotal();
+    }
+
     @Override
     public String toString() {
         return "ReportDto{" +
@@ -36,8 +40,4 @@ public class ReportDto {
                 '}';
     }
 
-
-    public void setTotalpriceOfOrders() {
-        this.totalpriceOfOrders = calculateTotal();
-    }
 }

@@ -19,7 +19,6 @@ public class ItemGroup {
         this.shippingdate = calcShippingdate();
     }
 
-
     private LocalDate calcShippingdate() {
         if (inStock) {
             return LocalDate.now().plusDays(1);

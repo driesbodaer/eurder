@@ -1,5 +1,7 @@
 package com.eurder.api.controllers;
 
+import com.eurder.domain.classes.Customer;
+import com.eurder.domain.classes.Order;
 import com.eurder.domain.dto.CustomerDto;
 import com.eurder.service.CustomerService;
 import com.eurder.service.NotEverythingFilledInExeption;

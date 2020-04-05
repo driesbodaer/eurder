@@ -98,7 +98,7 @@ class CustomerControllerTest {
     }
 
     @Test
-    void createCostumer() {
+    void testmapper() {
 
         Customer actual = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
@@ -137,7 +137,7 @@ class CustomerControllerTest {
     }
 
     @Test
-    void getCostumers_WithSprinboottest() throws UnsupportedEncodingException {
+    void getCostumers_WithSprinboottest_all() throws UnsupportedEncodingException {
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("ggg")
@@ -161,7 +161,7 @@ class CustomerControllerTest {
 
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     @Test
-    void getCostumer_WithSprinboottest() throws UnsupportedEncodingException {
+    void getCostumer_WithSprinboottest_ByID() throws UnsupportedEncodingException {
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("admin")

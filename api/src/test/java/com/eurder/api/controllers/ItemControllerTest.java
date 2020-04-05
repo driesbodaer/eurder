@@ -2,8 +2,10 @@ package com.eurder.api.controllers;
 
 import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.Price;
+import com.eurder.domain.classes.Urgency;
 import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.mapper.ItemMapper;
+import com.eurder.service.ItemService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,28 +22,15 @@ class ItemControllerTest {
     ItemController itemController;
     ItemMapper itemMapper;
     WebTestClient testClient;
+    ItemService itemService;
 
     @Autowired
-    public ItemControllerTest(ItemController itemController, WebTestClient webTestClient, ItemMapper itemMapper) {
+    public ItemControllerTest(ItemController itemController, WebTestClient webTestClient, ItemMapper itemMapper, ItemService itemService) {
         this.itemController = itemController;
         this.itemMapper = itemMapper;
         this.testClient = webTestClient;
-    }
+        this.itemService = itemService;
 
-    @Test
-    void addItem() {
-        Item item = getItem();
-        ItemDto itemDto = itemMapper.toItemDto(item);
-
-        Assertions.assertThat(itemDto).isEqualTo(itemController.addItem(itemDto));
-    }
-
-    @Test
-    void addItem_addedToList() {
-        Item item = getItem();
-        ItemDto itemDto = itemMapper.toItemDto(item);
-        itemController.addItem(itemDto);
-        Assertions.assertThat(itemController.getItemService().getItemRepository().getItemList().get(2)).isEqualTo(item);
     }
 
     private Item getItem() {
@@ -57,13 +46,69 @@ class ItemControllerTest {
     }
 
     @Test
-    void webtestclient_test() {
+    void webtestclient_post() {
         Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
 
         String url = "items";
 
         testClient.post()
+                .uri(url)
+                .header("Authorization", "Basic " + Base64Utils
+                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(Mono.just(itemDto), ItemDto.class)
+                .exchange()
+                .expectStatus().isCreated()
+                .expectBody(ItemDto.class)
+                .isEqualTo(itemDto);
+
+    }
+
+    @Test
+    void webtestclient_getsorted() {
+        Item item = getItem();
+        ItemDto itemDto = itemMapper.toItemDto(item);
+        itemService.getSortedList();
+        String url = "items";
+
+        testClient.get()
+                .uri(url)
+                .header("Authorization", "Basic " + Base64Utils
+                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBodyList(ItemDto.class)
+                .isEqualTo(itemService.getSortedList());
+
+    }
+
+    @Test
+    void webtestclient_getfiltered() {
+        Item item = getItem();
+        ItemDto itemDto = itemMapper.toItemDto(item);
+
+        String url = "items?urgency=Urgency.STOCK_HIGH";
+
+        testClient.get()
+                .uri(url)
+                .header("Authorization", "Basic " + Base64Utils
+                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBodyList(ItemDto.class)
+                .isEqualTo(itemService.filterList(Urgency.STOCK_HIGH));
+
+    }
+
+    @Test
+    void webtestclient_put() {
+        Item item = getItem();
+        ItemDto itemDto = itemMapper.toItemDto(item);
+
+        String url = "items/kaas";
+
+        testClient.put()
                 .uri(url)
                 .header("Authorization", "Basic " + Base64Utils
                         .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))

@@ -42,8 +42,7 @@ public class OrderController {
     @PostMapping(produces = JSON, consumes = JSON, params = {"orderID"})
     @ResponseStatus(HttpStatus.CREATED)
     public Order placeOrderById(Principal principal, @RequestParam("orderID") int orderID) {
-        if (orderService.getCustomerRepository().getCustomerList().stream().filter(x -> x.getFirstname().equals(principal.getName())).findFirst().orElse(null) ==
-                orderService.getOrderRepository().getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null).getCustomer()) {
+        if (orderService.getCustomer(principal) == orderService.getOrder(orderID).getCustomer()) {
             return orderService.placeExistingOrder(orderID, principal.getName());
         } else throw new NotCorrectUserException("you cannot access other customers data");
     }
@@ -64,9 +63,13 @@ public class OrderController {
     @GetMapping(produces = JSON, path = "{id}")
     @ResponseStatus(HttpStatus.OK)
     public ReportDto getAllOrdersByCustomer(@PathVariable int id, Principal principal) {
-        if (principal.getName().equals(Objects.requireNonNull(orderService.getCustomerRepository().getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)).getFirstname())) {
+        if (loggedInCustomerOwnsData(id, principal)) {
             return orderService.getOrderByID(id);
         } else throw new NotCorrectUserException("you cannot access other customers data");
+    }
+
+    private boolean loggedInCustomerOwnsData(@PathVariable int id, Principal principal) {
+        return principal.getName().equals(Objects.requireNonNull(orderService.getCustomerById(id)).getFirstname());
     }
 
     public OrderService getOrderService() {
