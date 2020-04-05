@@ -16,6 +16,18 @@ public class ItemGroupDto {
         this.price = item.getPrice().getPrice() * amount;
     }
 
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public double getPrice() {
         return price;
     }

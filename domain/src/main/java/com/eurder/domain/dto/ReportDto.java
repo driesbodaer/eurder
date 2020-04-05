@@ -42,7 +42,7 @@ public class ReportDto {
     Price calculateTotal() {
         int prijs = 0;
         for (OrderDto order : orderReportList) {
-//            prijs += order.getTotalPrice().getPrice();
+            prijs += order.getTotalPrice().getPrice();
         }
         return new Price(prijs, "eur");
     }

@@ -1,7 +1,10 @@
 package com.eurder.domain.classes;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
 
+@Component
 public class Price {
     private double price;
     private String denomination;
@@ -11,6 +14,18 @@ public class Price {
 
     public Price(double price, String denomination) {
         this.price = price;
+        this.denomination = denomination;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getDenomination() {
+        return denomination;
+    }
+
+    public void setDenomination(String denomination) {
         this.denomination = denomination;
     }
 

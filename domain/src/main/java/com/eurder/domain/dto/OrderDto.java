@@ -8,11 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Component
 public class OrderDto {
     private List<ItemGroupDto> itemGroupDtoList;
     private Price totalPrice;
 
     public OrderDto() {
+        this.itemGroupDtoList = new ArrayList<>();
+        this.totalPrice = calculateTotalPrice();
     }
 
     public OrderDto(List<ItemGroupDto> itemGroupList) {
@@ -32,6 +35,7 @@ public class OrderDto {
         double price = 0;
         for (ItemGroupDto itemGroupDto : itemGroupDtoList) {
             price += itemGroupDto.getPrice();
+            System.out.println(price);
         }
         return new Price(price, "eur");
     }
