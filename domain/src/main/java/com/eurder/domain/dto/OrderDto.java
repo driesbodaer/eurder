@@ -8,14 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Component
+
 public class OrderDto {
     private List<ItemGroupDto> itemGroupDtoList;
     private Price totalPrice;
 
     public OrderDto() {
-        this.itemGroupDtoList = new ArrayList<>();
-        this.totalPrice = calculateTotalPrice();
+//        this.itemGroupDtoList = new ArrayList<>();
+        this.totalPrice = new Price(0 , "eur");
+
     }
 
     public OrderDto(List<ItemGroupDto> itemGroupList) {

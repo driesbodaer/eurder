@@ -1,14 +1,16 @@
 package com.eurder.domain.dto;
 
 import com.eurder.domain.classes.Item;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import org.springframework.stereotype.Component;
 
 import java.util.Objects;
+
 
 public class ItemGroupDto {
     private Item item;
     private int amount;
     private double price;
-
 
     public ItemGroupDto(Item item, int amount) {
         this.item = item;
