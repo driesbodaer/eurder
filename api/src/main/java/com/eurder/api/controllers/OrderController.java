@@ -4,6 +4,7 @@ import com.eurder.domain.classes.ItemGroupWithadress;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.dto.OrderDto;
 import com.eurder.domain.dto.ReportDto;
+import com.eurder.service.NotCorrectUserException;
 import com.eurder.service.NotEverythingFilledInExeption;
 import com.eurder.service.OrderService;
 import org.slf4j.Logger;
