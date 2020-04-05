@@ -16,7 +16,7 @@ public class ReportDto {
     @Autowired
     public ReportDto() {
         this.orderReportList = new ArrayList<>();
-        this.totalpriceOfOrders = new Price(0, "eur");
+        this.totalpriceOfOrders = calculateTotal();
     }
 
     public void addOrder(Order order) {
@@ -24,12 +24,16 @@ public class ReportDto {
         setTotalpriceOfOrders();
     }
 
-    public void setTotalpriceOfOrders() {
+    Price calculateTotal() {
         int prijs = 0;
         for (Order order : orderReportList) {
             prijs += order.getTotalPrice().getPrice();
         }
-        this.totalpriceOfOrders = new Price(prijs, "eur");
+        return new Price(prijs, "eur");
+    }
+
+    public void setTotalpriceOfOrders() {
+        this.totalpriceOfOrders = calculateTotal();
     }
 
     @Override
