@@ -65,7 +65,8 @@ public class OrderController {
     @ResponseStatus(HttpStatus.OK)
     public ReportDto getAllOrdersByCustomer(@PathVariable int id, Principal principal) {
         if (loggedInCustomerOwnsData(id, principal)) {
-            return orderService.getOrderByID(id);
+            System.out.println(orderService.getOrderReportByID(id));
+            return orderService.getOrderReportByID(id);
         } else throw new NotCorrectUserException("you cannot access other customers data");
     }
 

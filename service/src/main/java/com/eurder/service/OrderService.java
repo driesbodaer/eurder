@@ -56,6 +56,7 @@ public class OrderService {
     public Order placeExistingOrder(int orderID, String username) {
         Order order = orderRepository.getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null);
         Order updatedOrder = orderMapper.orderUpdateToCurrentItems(order);
+//        OrderDto updatedOrderDto = orderMapper.toOrderDto(updatedOrder);
         Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
         customerThatOrdered.getReportDto().addOrder(updatedOrder);
         orderRepository.placeOrder(updatedOrder);
@@ -81,8 +82,8 @@ public class OrderService {
         return returnList;
     }
 
-    public ReportDto getOrderByID(int id) {
-        return Objects.requireNonNull(customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)).getReportDto();
+    public ReportDto getOrderReportByID(int id) {
+        return Objects.requireNonNull(getCustomerById(id).getReportDto());
     }
 
     public List<ItemGroupWithadress> getToShipToday() {
@@ -96,11 +97,11 @@ public class OrderService {
         return itemGroupWithadressArrayList.stream().filter(x -> x.getItemGroup().getShippingdate().equals(LocalDate.now())).collect(Collectors.toList());
     }
 
-    public Customer getCustomerById(@PathVariable int id) {
+    public Customer getCustomerById( int id) {
         return customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null);
     }
 
-    public Order getOrder(@RequestParam("orderID") int orderID) {
+    public Order getOrder( int orderID) {
         return orderRepository.getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null);
     }
 

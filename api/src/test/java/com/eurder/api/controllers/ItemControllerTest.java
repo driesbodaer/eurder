@@ -5,6 +5,7 @@ import com.eurder.domain.classes.Price;
 import com.eurder.domain.classes.Urgency;
 import com.eurder.domain.dto.ItemDto;
 import com.eurder.domain.mapper.ItemMapper;
+import com.eurder.domain.repository.ItemRepository;
 import com.eurder.service.ItemService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,13 +24,15 @@ class ItemControllerTest {
     ItemMapper itemMapper;
     WebTestClient testClient;
     ItemService itemService;
+    ItemRepository itemRepository;
 
     @Autowired
-    public ItemControllerTest(ItemController itemController, WebTestClient webTestClient, ItemMapper itemMapper, ItemService itemService) {
+    public ItemControllerTest(ItemController itemController, WebTestClient webTestClient, ItemMapper itemMapper, ItemService itemService, ItemRepository itemRepository) {
         this.itemController = itemController;
         this.itemMapper = itemMapper;
         this.testClient = webTestClient;
         this.itemService = itemService;
+        this.itemRepository = itemRepository;
 
     }
 
@@ -118,6 +121,8 @@ class ItemControllerTest {
                 .expectStatus().isCreated()
                 .expectBody(ItemDto.class)
                 .isEqualTo(itemDto);
+
+        Assertions.assertThat(itemRepository.getItemList().get(0)).isEqualTo(item);
 
     }
 

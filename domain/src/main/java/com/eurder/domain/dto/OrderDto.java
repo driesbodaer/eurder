@@ -1,6 +1,8 @@
 package com.eurder.domain.dto;
 
 import com.eurder.domain.classes.Price;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,14 @@ public class OrderDto {
     private Price totalPrice;
 
     public OrderDto() {
+    }
+
+    public void setItemGroupDtoList(List<ItemGroupDto> itemGroupDtoList) {
+        this.itemGroupDtoList = itemGroupDtoList;
+    }
+
+    public void setTotalPrice(Price totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public OrderDto(List<ItemGroupDto> itemGroupList) {
@@ -24,6 +34,10 @@ public class OrderDto {
             price += itemGroupDto.getPrice();
         }
         return new Price(price, "eur");
+    }
+
+    public Price getTotalPrice() {
+        return totalPrice;
     }
 
     public List<ItemGroupDto> getItemGroupDtoList() {
