@@ -48,7 +48,7 @@ public class OrderService {
 
         Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
         Order order = orderMapper.toOrder(orderDto, customerThatOrdered);
-        customerThatOrdered.getReportDto().addOrder(order);
+        customerThatOrdered.getReportDto().addOrder(orderDto);
         orderRepository.placeOrder(order);
         return orderDto;
     }
@@ -56,9 +56,9 @@ public class OrderService {
     public Order placeExistingOrder(int orderID, String username) {
         Order order = orderRepository.getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null);
         Order updatedOrder = orderMapper.orderUpdateToCurrentItems(order);
-//        OrderDto updatedOrderDto = orderMapper.toOrderDto(updatedOrder);
+        OrderDto updatedOrderDto = orderMapper.toOrderDto(updatedOrder);
         Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
-        customerThatOrdered.getReportDto().addOrder(updatedOrder);
+        customerThatOrdered.getReportDto().addOrder(updatedOrderDto);
         orderRepository.placeOrder(updatedOrder);
         return updatedOrder;
     }

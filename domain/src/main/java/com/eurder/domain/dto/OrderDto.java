@@ -15,17 +15,17 @@ public class OrderDto {
     public OrderDto() {
     }
 
+    public OrderDto(List<ItemGroupDto> itemGroupList) {
+        this.itemGroupDtoList = new ArrayList<>(itemGroupList);
+        this.totalPrice = calculateTotalPrice();
+    }
+
     public void setItemGroupDtoList(List<ItemGroupDto> itemGroupDtoList) {
         this.itemGroupDtoList = itemGroupDtoList;
     }
 
     public void setTotalPrice(Price totalPrice) {
         this.totalPrice = totalPrice;
-    }
-
-    public OrderDto(List<ItemGroupDto> itemGroupList) {
-        this.itemGroupDtoList = new ArrayList<>(itemGroupList);
-        this.totalPrice = calculateTotalPrice();
     }
 
     public Price calculateTotalPrice() {

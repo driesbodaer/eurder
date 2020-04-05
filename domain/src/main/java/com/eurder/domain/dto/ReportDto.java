@@ -10,14 +10,19 @@ import java.util.List;
 
 
 public class ReportDto {
-    private List<Order> orderReportList;
+    private List<OrderDto> orderReportList;
     private Price totalpriceOfOrders;
 
-    public List<Order> getOrderReportList() {
+    public ReportDto() {
+        this.orderReportList = new ArrayList<>();
+        this.totalpriceOfOrders = calculateTotal();
+    }
+
+    public List<OrderDto> getOrderReportList() {
         return orderReportList;
     }
 
-    public void setOrderReportList(List<Order> orderReportList) {
+    public void setOrderReportList(List<OrderDto> orderReportList) {
         this.orderReportList = orderReportList;
     }
 
@@ -29,20 +34,15 @@ public class ReportDto {
         this.totalpriceOfOrders = totalpriceOfOrders;
     }
 
-    public ReportDto() {
-        this.orderReportList = new ArrayList<>();
-        this.totalpriceOfOrders = calculateTotal();
-    }
-
-    public void addOrder(Order order) {
+    public void addOrder(OrderDto order) {
         orderReportList.add(order);
         setTotalpriceOfOrders();
     }
 
     Price calculateTotal() {
         int prijs = 0;
-        for (Order order : orderReportList) {
-            prijs += order.getTotalPrice().getPrice();
+        for (OrderDto order : orderReportList) {
+//            prijs += order.getTotalPrice().getPrice();
         }
         return new Price(prijs, "eur");
     }
