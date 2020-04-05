@@ -12,12 +12,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.util.Base64Utils;
 import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
-
+@WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ItemControllerTest {
     ItemController itemController;
@@ -124,6 +125,22 @@ class ItemControllerTest {
 
         Assertions.assertThat(itemRepository.getItemList().get(0)).isEqualTo(item);
 
+    }
+
+    @Test
+    void addItem2() {
+        Item item = getItem();
+        ItemDto itemDto = itemMapper.toItemDto(item);
+
+        Assertions.assertThat(itemDto).isEqualTo(itemController.addItem(itemDto));
+    }
+
+    @Test
+    void addItem_addedToList() {
+        Item item = getItem();
+        ItemDto itemDto = itemMapper.toItemDto(item);
+        itemController.addItem(itemDto);
+        Assertions.assertThat(itemController.getItemService().getItemRepository().getItemList().get(2)).isEqualTo(item);
     }
 
 }

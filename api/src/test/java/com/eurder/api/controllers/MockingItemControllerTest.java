@@ -15,7 +15,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
@@ -23,6 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @ComponentScan(basePackages = "com.eurder")
 @WebMvcTest(ItemController.class)
 class MockingItemControllerTest {
@@ -36,17 +41,18 @@ class MockingItemControllerTest {
     MockMvc mockMvc;
     @Autowired
     com.eurder.domain.mapper.ItemMapper itemMapper;
+    @Autowired
     ItemController itemController;
 
 
     @Test
     void addItem() throws Exception {
 
-//        Mockito.when().thenReturn();
+        Mockito.when(itemService.getSortedList()).thenReturn(new ArrayList<>(List.of(new ItemDto("iets", "ites" ,new Price(5, "eur"), 5))));
 
 
         //doe een get op ordercontroller
-        mockMvc.perform(get("/orders")
+        mockMvc.perform(get("/items")
                 .with(user("admin")
                         .password("admin")
                         .roles("admin"))
@@ -55,21 +61,9 @@ class MockingItemControllerTest {
                 .andExpect(jsonPath("$").isArray());
     }
 
-    @Test
-    void addItem2() {
-        Item item = getItem();
-        ItemDto itemDto = itemMapper.toItemDto(item);
 
-        Assertions.assertThat(itemDto).isEqualTo(itemController.addItem(itemDto));
-    }
 
-    @Test
-    void addItem_addedToList() {
-        Item item = getItem();
-        ItemDto itemDto = itemMapper.toItemDto(item);
-        itemController.addItem(itemDto);
-        Assertions.assertThat(itemController.getItemService().getItemRepository().getItemList().get(2)).isEqualTo(item);
-    }
+    // I dont know how to turn off authentication in tests?
 
     private Item getItem() {
         return new Item("cheese", "burgut", new Price(5.4, "eur"), 15);

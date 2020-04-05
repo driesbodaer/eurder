@@ -16,8 +16,8 @@ public class OrderDto {
     public OrderDto() {
 //        this.itemGroupDtoList = new ArrayList<>();
         this.totalPrice = new Price(0 , "eur");
-
     }
+    //WAAROM DIE DEFAULT CONSTRUCTORSS???
 
     public OrderDto(List<ItemGroupDto> itemGroupList) {
         this.itemGroupDtoList = new ArrayList<>(itemGroupList);
