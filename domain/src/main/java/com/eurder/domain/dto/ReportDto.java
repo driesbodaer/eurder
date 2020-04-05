@@ -8,12 +8,27 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+
 public class ReportDto {
     private List<Order> orderReportList;
     private Price totalpriceOfOrders;
 
-    @Autowired
+    public List<Order> getOrderReportList() {
+        return orderReportList;
+    }
+
+    public void setOrderReportList(List<Order> orderReportList) {
+        this.orderReportList = orderReportList;
+    }
+
+    public Price getTotalpriceOfOrders() {
+        return totalpriceOfOrders;
+    }
+
+    public void setTotalpriceOfOrders(Price totalpriceOfOrders) {
+        this.totalpriceOfOrders = totalpriceOfOrders;
+    }
+
     public ReportDto() {
         this.orderReportList = new ArrayList<>();
         this.totalpriceOfOrders = calculateTotal();
