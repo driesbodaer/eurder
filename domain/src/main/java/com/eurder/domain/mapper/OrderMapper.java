@@ -28,7 +28,6 @@ public class OrderMapper {
     }
 
     public Order toOrder(OrderDto orderDto, Customer customer) {
-        orderDto.calculateTotalPrice();
         List<ItemGroup> itemGroupList = new ArrayList<>();
         for (ItemGroupDto itemGroupDto : orderDto.getItemGroupDtoList()) {
             itemGroupList.add(itemGroupMapper.toItemGroup(itemGroupDto, checkIfItemGroupIsInStock(itemGroupDto)));

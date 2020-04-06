@@ -21,6 +21,7 @@ public class OrderRepository {
         this.itemRepository = itemRepository;
         this.orderList = new ArrayList<>();
         orderList.add(new Order(List.of(new ItemGroup(itemRepository.getItemList().get(0), 2, true)), customerRepository.getCustomerList().get(0)));
+        orderList.get(0).calculateTotalPrice();
     }
 
     public List<Order> getOrderList() {

@@ -1,8 +1,7 @@
 package com.eurder.domain.dto;
 
 import com.eurder.domain.classes.Price;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import org.springframework.stereotype.Component;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,23 +13,22 @@ public class OrderDto {
     private Price totalPrice;
 
     public OrderDto() {
-//        this.itemGroupDtoList = new ArrayList<>();
-        this.totalPrice = new Price(0 , "eur");
     }
-    //WAAROM DIE DEFAULT CONSTRUCTORSS???
 
     public OrderDto(List<ItemGroupDto> itemGroupList) {
         this.itemGroupDtoList = new ArrayList<>(itemGroupList);
         this.totalPrice = calculateTotalPrice();
     }
 
-    public void setItemGroupDtoList(List<ItemGroupDto> itemGroupDtoList) {
-        this.itemGroupDtoList = itemGroupDtoList;
+    public List<ItemGroupDto> getItemGroupDtoList() {
+        return itemGroupDtoList;
     }
 
-    public void setTotalPrice(Price totalPrice) {
-        this.totalPrice = totalPrice;
+
+    public Price getTotalPrice() {
+        return totalPrice;
     }
+
 
     public Price calculateTotalPrice() {
         double price = 0;
@@ -38,15 +36,9 @@ public class OrderDto {
             price += itemGroupDto.getPrice();
             System.out.println(price);
         }
-        return new Price(price, "eur");
-    }
-
-    public Price getTotalPrice() {
-        return totalPrice;
-    }
-
-    public List<ItemGroupDto> getItemGroupDtoList() {
-        return itemGroupDtoList;
+        Price price1 = new Price(price, "eur");
+        this.totalPrice =price1;
+        return price1;
     }
 
     @Override
@@ -68,5 +60,13 @@ public class OrderDto {
                 "itemGroupDtoList=" + itemGroupDtoList +
                 ", totalPrice=" + totalPrice +
                 '}';
+    }
+
+    public void setItemGroupDtoList(List<ItemGroupDto> itemGroupDtoList) {
+        this.itemGroupDtoList = itemGroupDtoList;
+    }
+
+    public void setTotalPrice(Price totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }

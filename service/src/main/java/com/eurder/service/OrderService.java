@@ -45,11 +45,11 @@ public class OrderService {
         if (hasAnyEmptyFields(orderDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
-
+        orderDto.calculateTotalPrice();
         Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
         Order order = orderMapper.toOrder(orderDto, customerThatOrdered);
-        customerThatOrdered.getReportDto().addOrder(orderDto);
         orderRepository.placeOrder(order);
+        customerThatOrdered.getReportDto().addOrder(orderDto);
         return orderDto;
     }
 
