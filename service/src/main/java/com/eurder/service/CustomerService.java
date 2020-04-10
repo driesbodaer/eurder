@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class CustomerService {
@@ -49,11 +50,8 @@ public class CustomerService {
     }
 
     public List<CustomerDto> getAllCustomers() {
-        List<CustomerDto> returnlist = new ArrayList<>();
-        for (Customer customer : customerRepository.getCustomerList()) {
-            returnlist.add(customerMapper.toCustomerDto(customer));
-        }
-        return returnlist;
+       return customerRepository.getCustomerList().stream().map(x -> customerMapper.toCustomerDto(x)).collect(Collectors.toList());
+
     }
 
     public CustomerDto getCustomer(int id) {
