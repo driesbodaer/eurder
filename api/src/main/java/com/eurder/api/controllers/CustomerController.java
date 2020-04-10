@@ -4,6 +4,7 @@ import com.eurder.service.CustomerService;
 import com.eurder.service.NotEverythingFilledInExeption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ public class CustomerController {
     private final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
     private final CustomerService customerService;
 
+    @Autowired
     public CustomerController(CustomerService customerService) {
         this.customerService = customerService;
     }

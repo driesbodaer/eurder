@@ -3,11 +3,8 @@ package com.eurder.api.controllers;
 import com.eurder.domain.classes.Item;
 import com.eurder.domain.classes.Price;
 import com.eurder.domain.dto.ItemDto;
-import com.eurder.domain.mapper.ItemMapper;
-import com.eurder.domain.mapper.OrderMapper;
 import com.eurder.service.ItemService;
-import com.eurder.service.OrderService;
-import org.assertj.core.api.Assertions;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +14,17 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.Matchers.is;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 
 @WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @ComponentScan(basePackages = "com.eurder")
@@ -46,12 +45,11 @@ class MockingItemControllerTest {
 
 
     @Test
-    void addItem() throws Exception {
+    void getItems() throws Exception {
 
         Mockito.when(itemService.getSortedList()).thenReturn(new ArrayList<>(List.of(new ItemDto("iets", "ites" ,new Price(5, "eur"), 5))));
 
 
-        //doe een get op ordercontroller
         mockMvc.perform(get("/items")
                 .with(user("admin")
                         .password("admin")
@@ -61,8 +59,48 @@ class MockingItemControllerTest {
                 .andExpect(jsonPath("$").isArray());
     }
 
+    @Test
+    void addItem() throws Exception {
+
+        Mockito.when(itemService.addItem(itemMapper.toItemDto(getItem()))).thenReturn(itemMapper.toItemDto(getItem()));
+
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/items")
+                .content(asJsonString(getItem()))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.name" , is("cheese")))
+                .andExpect(jsonPath("$.description" , is("burgut")));
+    }
+
+//    @Test
+//    void update_Item() throws Exception {
+//
+//
+//        Mockito.when(itemService.updateItem(itemMapper.toItemDto(getItem()), "admin")).thenReturn(itemMapper.toItemDto(getItem()));
+//
+//
+//        mockMvc.perform(MockMvcRequestBuilders.put("/items/cheese")
+//                .content(asJsonString(getItem()))
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isCreated())
+//                .andExpect(jsonPath("$.name" , is("cheese")))
+//                .andExpect(jsonPath("$.description" , is("burgut")));
+//    }
+
+
+
     private Item getItem() {
         return new Item("cheese", "burgut", new Price(5.4, "eur"), 15);
     }
 
+    public static String asJsonString(final Object obj) {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
