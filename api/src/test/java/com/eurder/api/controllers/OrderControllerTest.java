@@ -5,6 +5,7 @@ import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.classes.Price;
 import com.eurder.domain.dto.OrderDto;
+import com.eurder.domain.dto.ReportDto;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.OrderMapper;
 import com.eurder.domain.repository.CustomerRepository;
@@ -16,6 +17,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.util.Base64Utils;
 import reactor.core.publisher.Mono;
@@ -24,6 +27,8 @@ import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
+@WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class OrderControllerTest {
     OrderController orderController;
@@ -141,21 +146,22 @@ class OrderControllerTest {
 
     }
 
-//    @Test
-//    void webtestclient_getOrdersByCustomer() {
-//        OrderDto orderDto = orderMapper.toOrderDto(getOrder());
-//
-//        String url = "/orders";
-//
-//        testClient.get()
-//                .uri(url)
-//                .header("Authorization", "Basic " + Base64Utils
-//                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
-//                .exchange()
-//                .expectStatus().isOk()
-//                .expectBody(ReportDto.class)
-//        .isEqualTo(customerRepository.getCustomerList().get(0).getReportDto());
-//
-//
-//    }
+    @Test
+    void webtestclient_getOrdersByCustomer() {
+        OrderDto orderDto = orderMapper.toOrderDto(getOrder());
+        orderService.placeOrder(orderDto, "admin");
+
+        String url = "/orders/1";
+
+        testClient.get()
+                .uri(url)
+                .header("Authorization", "Basic " + Base64Utils
+                        .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(ReportDto.class)
+        .isEqualTo(customerRepository.getCustomerList().get(0).getReportDto());
+
+
+    }
 }

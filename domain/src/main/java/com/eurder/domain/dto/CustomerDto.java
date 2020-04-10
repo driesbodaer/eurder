@@ -19,13 +19,13 @@ public class CustomerDto {
         this.phonenumber = customerFactory.getPhonenumber();
     }
 
-//    public CustomerDto(String firstname, String lastname, String emailadress, String address, String phonenumber) {
-//        this.firstname = firstname;
-//        this.lastname = lastname;
-//        this.emailadress = emailadress;
-//        this.address = address;
-//        this.phonenumber = phonenumber;
-//    }
+    public CustomerDto(String firstname, String lastname, String emailadress, String address, String phonenumber) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.emailadress = emailadress;
+        this.address = address;
+        this.phonenumber = phonenumber;
+    }
 
     public String getFirstname() {
         return firstname;

@@ -13,11 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.util.Base64Utils;
 import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
+
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 @WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ItemControllerTest {
@@ -67,12 +70,12 @@ class ItemControllerTest {
                 .expectBody(ItemDto.class)
                 .isEqualTo(itemDto);
 
+        Assertions.assertThat(itemRepository.getItemList().get(2)).isEqualTo(item);
+
     }
 
     @Test
     void webtestclient_getsorted() {
-        Item item = getItem();
-        ItemDto itemDto = itemMapper.toItemDto(item);
         itemService.getSortedList();
         String url = "items";
 
@@ -89,9 +92,6 @@ class ItemControllerTest {
 
     @Test
     void webtestclient_getfiltered() {
-        Item item = getItem();
-        ItemDto itemDto = itemMapper.toItemDto(item);
-
         String url = "items?urgency=Urgency.STOCK_HIGH";
 
         testClient.get()
@@ -128,7 +128,7 @@ class ItemControllerTest {
     }
 
     @Test
-    void addItem2() {
+    void addItem() {
         Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
 
@@ -136,7 +136,7 @@ class ItemControllerTest {
     }
 
     @Test
-    void addItem_addedToList() {
+    void addItem_addedToRepository() {
         Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
         itemController.addItem(itemDto);

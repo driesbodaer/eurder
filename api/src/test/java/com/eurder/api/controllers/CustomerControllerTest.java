@@ -4,6 +4,7 @@ import com.eurder.domain.classes.Customer;
 import com.eurder.domain.dto.CustomerDto;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.CustomerMapper;
+import com.eurder.domain.repository.CustomerRepository;
 import com.eurder.infrastructure.authentication.ExternalAuthentication;
 import com.eurder.infrastructure.eurderRoles.EurderRole;
 import org.assertj.core.api.Assertions;
@@ -19,19 +20,22 @@ import reactor.core.publisher.Mono;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CustomerControllerTest {
     CustomerController customerController;
     CustomerMapper customerMapper;
     WebTestClient testClient;
+    CustomerRepository customerRepository;
 
     @Autowired
-    public CustomerControllerTest(CustomerController customerController, WebTestClient webTestClient, CustomerMapper customerMapper) {
+    public CustomerControllerTest(CustomerController customerController, WebTestClient webTestClient, CustomerMapper customerMapper, CustomerRepository customerRepository) {
         this.customerController = customerController;
         this.customerMapper = customerMapper;
         this.testClient = webTestClient;
+        this.customerRepository = customerRepository;
     }
+
 
 
     @Test
@@ -47,7 +51,7 @@ class CustomerControllerTest {
 
         CustomerDto expectedCustomer = customerController.createCostumer(expected);
 
-        Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(2)).isEqualTo(customerMapper.toCustomer(expectedCustomer));
+        Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(4)).isEqualTo(customerMapper.toCustomer(expectedCustomer));
     }
 
     @Test
@@ -133,6 +137,8 @@ class CustomerControllerTest {
                 .expectStatus().isCreated()
                 .expectBody(CustomerDto.class)
                 .isEqualTo(expected);
+
+        Assertions.assertThat(customerRepository.getCustomerList().get(1)).isEqualTo(customerMapper.toCustomer(expected));
     }
 
     @Test
@@ -158,9 +164,9 @@ class CustomerControllerTest {
 
     }
 
-    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+//    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     @Test
-    void getCostumer_WithSprinboottest_ByID() throws UnsupportedEncodingException {
+    void getCostumer_WithSprinboottest_ByID() {
         CustomerDto expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("admin")
@@ -168,6 +174,7 @@ class CustomerControllerTest {
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
                 .buildCustomerDto();
+
 
         String url = "customers/1";
 

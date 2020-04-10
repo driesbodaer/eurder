@@ -34,7 +34,6 @@ public class OrderDto {
         double price = 0;
         for (ItemGroupDto itemGroupDto : itemGroupDtoList) {
             price += itemGroupDto.getPrice();
-            System.out.println(price);
         }
         Price price1 = new Price(price, "eur");
         this.totalPrice =price1;
