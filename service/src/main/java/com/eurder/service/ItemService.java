@@ -27,6 +27,7 @@ public class ItemService {
         if (hasAnyEmptyFields(itemDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
+
         Item Item = itemMapper.toItem(itemDto);
         itemRepository.addItem(Item);
         return itemDto;

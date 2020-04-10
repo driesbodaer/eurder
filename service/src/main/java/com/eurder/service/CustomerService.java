@@ -8,7 +8,6 @@ import com.eurder.infrastructure.authentication.FakeAuthenticationService;
 import com.eurder.infrastructure.eurderRoles.EurderRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;

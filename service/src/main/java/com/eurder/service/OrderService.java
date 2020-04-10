@@ -71,7 +71,10 @@ public class OrderService {
 
 
     public List<OrderDto> getAllOrders() {
-        return orderRepository.getOrderList().stream().map(x-> orderMapper.toOrderDto(x)).collect(Collectors.toList());
+        return orderRepository.getOrderList()
+                .stream()
+                .map(x-> orderMapper.toOrderDto(x))
+                .collect(Collectors.toList());
     }
 
     public ReportDto getOrderReportByID(int id) {
@@ -90,14 +93,23 @@ public class OrderService {
     }
 
     public Customer getCustomerById( int id) {
-        return customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+        return customerRepository.getCustomerList()
+                .stream()
+                .filter(x -> x.getId() == id)
+                .findFirst().orElse(null);
     }
 
     public Order getOrder( int orderID) {
-        return orderRepository.getOrderList().stream().filter(x -> x.getId() == orderID).findFirst().orElse(null);
+        return orderRepository.getOrderList()
+                .stream()
+                .filter(x -> x.getId() == orderID)
+                .findFirst().orElse(null);
     }
 
     public Customer getCustomer(Principal principal) {
-        return customerRepository.getCustomerList().stream().filter(x -> x.getFirstname().equals(principal.getName())).findFirst().orElse(null);
+        return customerRepository.getCustomerList()
+                .stream()
+                .filter(x -> x.getFirstname().equals(principal.getName()))
+                .findFirst().orElse(null);
     }
 }
