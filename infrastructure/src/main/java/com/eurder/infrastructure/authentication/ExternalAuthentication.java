@@ -2,7 +2,6 @@ package com.eurder.infrastructure.authentication;
 
 import com.eurder.infrastructure.eurderRoles.EurderRole;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Objects;
 

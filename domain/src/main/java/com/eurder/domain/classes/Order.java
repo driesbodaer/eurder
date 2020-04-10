@@ -35,10 +35,6 @@ public class Order {
         return itemGroupList;
     }
 
-    public Price getTotalPrice() {
-        return totalPrice;
-    }
-
     public Customer getCustomer() {
         return customer;
     }

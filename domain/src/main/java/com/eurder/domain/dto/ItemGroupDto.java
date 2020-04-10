@@ -22,10 +22,6 @@ public class ItemGroupDto {
         this.item = item;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
     public void setPrice(double price) {
         this.price = price;
     }

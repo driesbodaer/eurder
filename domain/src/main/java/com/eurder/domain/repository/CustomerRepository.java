@@ -3,7 +3,6 @@ package com.eurder.domain.repository;
 import com.eurder.domain.classes.Customer;
 import com.eurder.domain.mapper.CustomerFactory;
 import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 

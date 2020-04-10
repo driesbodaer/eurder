@@ -21,14 +21,6 @@ public class Price {
         this.price = price;
     }
 
-    public String getDenomination() {
-        return denomination;
-    }
-
-    public void setDenomination(String denomination) {
-        this.denomination = denomination;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

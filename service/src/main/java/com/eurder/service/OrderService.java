@@ -13,16 +13,11 @@ import com.eurder.domain.repository.ItemRepository;
 import com.eurder.domain.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.security.Principal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Service
@@ -45,6 +40,7 @@ public class OrderService {
         if (hasAnyEmptyFields(orderDto)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
+
         orderDto.calculateTotalPrice();
         Customer customerThatOrdered = customerRepository.getCustomerBasedOnName(username);
         Order order = orderMapper.toOrder(orderDto, customerThatOrdered);
@@ -75,11 +71,7 @@ public class OrderService {
 
 
     public List<OrderDto> getAllOrders() {
-        ArrayList<OrderDto> returnList = new ArrayList<>();
-        for (Order order : orderRepository.getOrderList()) {
-            returnList.add(orderMapper.toOrderDto(order));
-        }
-        return returnList;
+        return orderRepository.getOrderList().stream().map(x-> orderMapper.toOrderDto(x)).collect(Collectors.toList());
     }
 
     public ReportDto getOrderReportByID(int id) {

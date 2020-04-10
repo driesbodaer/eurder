@@ -52,24 +52,8 @@ public class ItemDto {
         return price;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public void setPrice(Price price) {
         this.price = price;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public void setUrgency(Urgency urgency) {
-        this.urgency = urgency;
     }
 
     @Override
