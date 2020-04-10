@@ -9,18 +9,6 @@ public class ItemGroupWithadress {
         this.adress = adress;
     }
 
-    public void setItemGroup(ItemGroup itemGroup) {
-        this.itemGroup = itemGroup;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
-
     public ItemGroup getItemGroup() {
         return itemGroup;
     }

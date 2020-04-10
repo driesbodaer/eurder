@@ -1,5 +1,4 @@
 package com.eurder.api.controllers;
-
 import com.eurder.domain.classes.ItemGroupWithadress;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.dto.OrderDto;
@@ -13,13 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 import java.util.Objects;
-
 import static com.eurder.api.controllers.CustomerController.JSON;
 
 

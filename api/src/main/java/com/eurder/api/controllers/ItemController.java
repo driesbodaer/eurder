@@ -1,6 +1,5 @@
 package com.eurder.api.controllers;
 
-import com.eurder.domain.classes.Urgency;
 import com.eurder.domain.dto.ItemDto;
 import com.eurder.service.ItemService;
 import com.eurder.service.NotEverythingFilledInExeption;
@@ -10,12 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import static com.eurder.api.controllers.CustomerController.JSON;
 
 @RestController

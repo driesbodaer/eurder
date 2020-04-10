@@ -46,24 +46,8 @@ public class ItemGroup {
         this.item = item;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public void setShippingdate(LocalDate shippingdate) {
-        this.shippingdate = shippingdate;
-    }
-
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public boolean isInStock() {
-        return inStock;
-    }
-
-    public void setInStock(boolean inStock) {
-        this.inStock = inStock;
     }
 
     @Override

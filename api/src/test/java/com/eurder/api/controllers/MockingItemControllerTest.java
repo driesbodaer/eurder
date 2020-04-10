@@ -61,10 +61,6 @@ class MockingItemControllerTest {
                 .andExpect(jsonPath("$").isArray());
     }
 
-
-
-    // I dont know how to turn off authentication in tests?
-
     private Item getItem() {
         return new Item("cheese", "burgut", new Price(5.4, "eur"), 15);
     }

@@ -1,7 +1,5 @@
 package com.eurder.domain.classes;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Objects;
 
 
@@ -24,20 +22,8 @@ public class Item {
         return urgency;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public void setPrice(Price price) {
         this.price = price;
-    }
-
-    public void setUrgency(Urgency urgency) {
-        this.urgency = urgency;
     }
 
     public void calculateUrgency() {

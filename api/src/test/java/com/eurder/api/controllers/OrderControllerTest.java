@@ -5,7 +5,6 @@ import com.eurder.domain.classes.ItemGroup;
 import com.eurder.domain.classes.Order;
 import com.eurder.domain.classes.Price;
 import com.eurder.domain.dto.OrderDto;
-import com.eurder.domain.dto.ReportDto;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.OrderMapper;
 import com.eurder.domain.repository.CustomerRepository;
@@ -20,7 +19,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.util.Base64Utils;
 import reactor.core.publisher.Mono;
-
 import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.time.LocalDate;

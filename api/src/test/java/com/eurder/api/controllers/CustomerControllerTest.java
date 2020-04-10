@@ -21,7 +21,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@EnableAutoConfiguration (exclude = { SecurityAutoConfiguration.class})
 class CustomerControllerTest {
     CustomerController customerController;
     CustomerMapper customerMapper;
@@ -181,6 +180,4 @@ class CustomerControllerTest {
                 .expectBody(CustomerDto.class)
                 .isEqualTo(expected);
     }
-
-
 }
