@@ -1,5 +1,5 @@
-2020-04-10 12:10:17.109  INFO 30672 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 30672 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-10 12:10:17.120  INFO 30672 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
+2020-04-10 12:10:17.109  INFO 30672 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : Starting SoloprojApplication on CI00092537 with PID 30672 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
+2020-04-10 12:10:17.120  INFO 30672 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : No active profile set, falling back to default profiles: default
 2020-04-10 12:10:18.091  INFO 30672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2020-04-10 12:10:18.095  INFO 30672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2020-04-10 12:10:18.098  INFO 30672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@78054f54' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -17,14 +17,14 @@
 2020-04-10 12:10:18.975  INFO 30672 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
 2020-04-10 12:10:19.001  INFO 30672 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
 2020-04-10 12:10:19.335  INFO 30672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-10 12:10:19.338  INFO 30672 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.557 seconds (JVM running for 3.134)
+2020-04-10 12:10:19.338  INFO 30672 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : Started SoloprojApplication in 2.557 seconds (JVM running for 3.134)
 2020-04-10 12:10:23.697  INFO 30672 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-04-10 12:10:23.698  INFO 30672 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-04-10 12:10:23.704  INFO 30672 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-10 12:10:23.775 ERROR 30672 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class com.eurder.domain.dto.CustomerDto]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.eurder.domain.dto.CustomerDto` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+2020-04-10 12:10:23.775 ERROR 30672 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class com.eurder.domain.dto.CustomerDtoRABBIT]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.eurder.domain.dto.CustomerDtoRABBIT` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
  at [Source: (PushbackInputStream); line: 4, column: 5]] with root cause
 
-com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.eurder.domain.dto.CustomerDto` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.eurder.domain.dto.CustomerDtoRABBIT` (no Creators, like default construct, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
  at [Source: (PushbackInputStream); line: 4, column: 5]
 	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67) ~[jackson-databind-2.10.3.jar:2.10.3]
 	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1592) ~[jackson-databind-2.10.3.jar:2.10.3]
@@ -121,8 +121,8 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct 
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
 	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
 
-2020-04-10 12:11:46.274  INFO 7592 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 7592 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-10 12:11:46.277  INFO 7592 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
+2020-04-10 12:11:46.274  INFO 7592 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : Starting SoloprojApplication on CI00092537 with PID 7592 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
+2020-04-10 12:11:46.277  INFO 7592 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : No active profile set, falling back to default profiles: default
 2020-04-10 12:11:47.240  INFO 7592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2020-04-10 12:11:47.243  INFO 7592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2020-04-10 12:11:47.245  INFO 7592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7100dea' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -140,7 +140,7 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct 
 2020-04-10 12:11:48.068  INFO 7592 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
 2020-04-10 12:11:48.095  INFO 7592 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
 2020-04-10 12:11:48.435  INFO 7592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-10 12:11:48.438  INFO 7592 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.445 seconds (JVM running for 3.014)
+2020-04-10 12:11:48.438  INFO 7592 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : Started SoloprojApplication in 2.445 seconds (JVM running for 3.014)
 2020-04-10 12:11:51.394  INFO 7592 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-04-10 12:11:51.395  INFO 7592 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-04-10 12:11:51.400  INFO 7592 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
@@ -149,7 +149,7 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct 
 java.lang.IllegalArgumentException: username already exists
 	at com.eurder.infrastructure.authentication.FakeAuthenticationService.addUser(FakeAuthenticationService.java:33) ~[classes/:na]
 	at com.eurder.service.CustomerService.createCustomer(CustomerService.java:39) ~[classes/:na]
-	at com.eurder.api.controllers.CustomerController.createCostumer(CustomerController.java:27) ~[classes/:na]
+	at com.eurder.api.controllers.CustomerControllerRABBIT.createCostumer(CustomerController.java:27) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -441,8 +441,8 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
 
 2020-04-10 12:14:30.078  WARN 7592 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class com.eurder.domain.dto.ReportDto] with preset Content-Type 'null']
-2020-04-10 12:14:48.752  INFO 25628 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 25628 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-10 12:14:48.755  INFO 25628 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
+2020-04-10 12:14:48.752  INFO 25628 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : Starting SoloprojApplication on CI00092537 with PID 25628 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
+2020-04-10 12:14:48.755  INFO 25628 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : No active profile set, falling back to default profiles: default
 2020-04-10 12:14:49.687  INFO 25628 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2020-04-10 12:14:49.690  INFO 25628 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2020-04-10 12:14:49.693  INFO 25628 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5f7989fa' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -460,12 +460,12 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2020-04-10 12:14:50.546  INFO 25628 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
 2020-04-10 12:14:50.570  INFO 25628 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
 2020-04-10 12:14:50.899  INFO 25628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-10 12:14:50.902  INFO 25628 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.438 seconds (JVM running for 3.009)
+2020-04-10 12:14:50.902  INFO 25628 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : Started SoloprojApplication in 2.438 seconds (JVM running for 3.009)
 2020-04-10 12:14:58.709  INFO 25628 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-04-10 12:14:58.710  INFO 25628 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-04-10 12:14:58.717  INFO 25628 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-10 18:16:58.454  INFO 4060 --- [main] com.eurder.api.SoloprojApplication       : Starting SoloprojApplication on CI00092537 with PID 4060 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
-2020-04-10 18:16:58.458  INFO 4060 --- [main] com.eurder.api.SoloprojApplication       : No active profile set, falling back to default profiles: default
+2020-04-10 18:16:58.454  INFO 4060 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : Starting SoloprojApplication on CI00092537 with PID 4060 (C:\_projects\switchfully\eurder\api\target\classes started by driesbo in C:\_projects\switchfully\eurder)
+2020-04-10 18:16:58.458  INFO 4060 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : No active profile set, falling back to default profiles: default
 2020-04-10 18:16:59.629  INFO 4060 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2020-04-10 18:16:59.634  INFO 4060 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2020-04-10 18:16:59.636  INFO 4060 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5460b754' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -483,7 +483,7 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2020-04-10 18:17:00.572  INFO 4060 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
 2020-04-10 18:17:00.603  INFO 4060 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
 2020-04-10 18:17:00.944  INFO 4060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-04-10 18:17:00.948  INFO 4060 --- [main] com.eurder.api.SoloprojApplication       : Started SoloprojApplication in 2.876 seconds (JVM running for 3.482)
+2020-04-10 18:17:00.948  INFO 4060 --- [main] com.eurder.api.SoloprojApplicationRABBIT       : Started SoloprojApplication in 2.876 seconds (JVM running for 3.482)
 2020-04-10 18:17:01.209  INFO 4060 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-04-10 18:17:01.211  INFO 4060 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-04-10 18:17:01.218  INFO 4060 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms

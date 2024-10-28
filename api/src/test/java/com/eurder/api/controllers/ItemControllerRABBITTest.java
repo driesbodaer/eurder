@@ -23,16 +23,16 @@ import java.nio.charset.StandardCharsets;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 @WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ItemControllerTest {
-    ItemController itemController;
+class ItemControllerRABBITTest {
+    ItemControllerRABBIT itemControllerRABBIT;
     ItemMapper itemMapper;
     WebTestClient testClient;
     ItemService itemService;
     ItemRepository itemRepository;
 
     @Autowired
-    public ItemControllerTest(ItemController itemController, WebTestClient webTestClient, ItemMapper itemMapper, ItemService itemService, ItemRepository itemRepository) {
-        this.itemController = itemController;
+    public ItemControllerRABBITTest(ItemControllerRABBIT itemControllerRABBIT, WebTestClient webTestClient, ItemMapper itemMapper, ItemService itemService, ItemRepository itemRepository) {
+        this.itemControllerRABBIT = itemControllerRABBIT;
         this.itemMapper = itemMapper;
         this.testClient = webTestClient;
         this.itemService = itemService;
@@ -49,7 +49,7 @@ class ItemControllerTest {
         Item item = new Item("", "burgut", new Price(5.4, "eur"), 15);
         ItemDto itemDto = itemMapper.toItemDto(item);
 
-        Assertions.assertThatThrownBy(() -> itemController.addItem(itemDto));
+        Assertions.assertThatThrownBy(() -> itemControllerRABBIT.addItem(itemDto));
     }
 
     @Test
@@ -132,15 +132,15 @@ class ItemControllerTest {
         Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
 
-        Assertions.assertThat(itemDto).isEqualTo(itemController.addItem(itemDto));
+        Assertions.assertThat(itemDto).isEqualTo(itemControllerRABBIT.addItem(itemDto));
     }
 
     @Test
     void addItem_addedToRepository() {
         Item item = getItem();
         ItemDto itemDto = itemMapper.toItemDto(item);
-        itemController.addItem(itemDto);
-        Assertions.assertThat(itemController.getItemService().getItemRepository().getItemList().get(2)).isEqualTo(item);
+        itemControllerRABBIT.addItem(itemDto);
+        Assertions.assertThat(itemControllerRABBIT.getItemService().getItemRepository().getItemList().get(2)).isEqualTo(item);
     }
 
 }

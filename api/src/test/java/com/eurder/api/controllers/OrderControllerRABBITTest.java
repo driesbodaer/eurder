@@ -11,7 +11,7 @@ import com.eurder.domain.mapper.OrderMapper;
 import com.eurder.domain.repository.CustomerRepository;
 import com.eurder.domain.repository.ItemRepository;
 import com.eurder.domain.repository.OrderRepository;
-import com.eurder.service.OrderService;
+import com.eurder.service.OrderServiceRABBIT;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +30,14 @@ import java.util.List;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 @WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class OrderControllerTest {
-    OrderController orderController;
+class OrderControllerRABBITTest {
+    OrderControllerRABBIT orderControllerRABBIT;
     OrderRepository orderRepository;
     OrderMapper orderMapper;
     WebTestClient testClient;
     ItemRepository itemRepository;
     CustomerRepository customerRepository;
-    OrderService orderService;
+    OrderServiceRABBIT orderServiceRABBIT;
     Principal principal = new Principal() {
         @Override
         public String getName() {
@@ -46,14 +46,14 @@ class OrderControllerTest {
     };
 
     @Autowired
-    public OrderControllerTest(OrderController orderController, WebTestClient webTestClient, OrderMapper orderMapper, ItemRepository itemRepository, CustomerRepository customerRepository, OrderRepository orderRepository, OrderService orderService) {
-        this.orderController = orderController;
+    public OrderControllerRABBITTest(OrderControllerRABBIT orderControllerRABBIT, WebTestClient webTestClient, OrderMapper orderMapper, ItemRepository itemRepository, CustomerRepository customerRepository, OrderRepository orderRepository, OrderServiceRABBIT orderServiceRABBIT) {
+        this.orderControllerRABBIT = orderControllerRABBIT;
         this.orderMapper = orderMapper;
         this.testClient = webTestClient;
         this.itemRepository = itemRepository;
         this.customerRepository = customerRepository;
         this.orderRepository = orderRepository;
-        this.orderService = orderService;
+        this.orderServiceRABBIT = orderServiceRABBIT;
 
         customerRepository.addCustomer(CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
@@ -70,7 +70,7 @@ class OrderControllerTest {
         Order order = getOrder();
         OrderDto orderDto = orderMapper.toOrderDto(order);
 
-        orderController.placeOrder(orderDto, principal);
+        orderControllerRABBIT.placeOrder(orderDto, principal);
 
         Assertions.assertThat(itemRepository.getItemList().get(0).getAmount()).isEqualTo(2);
     }
@@ -80,7 +80,7 @@ class OrderControllerTest {
         Order order = getOrder();
         OrderDto orderDto = orderMapper.toOrderDto(order);
 
-        Assertions.assertThat(orderDto).isEqualTo(orderController.placeOrder(orderDto, principal));
+        Assertions.assertThat(orderDto).isEqualTo(orderControllerRABBIT.placeOrder(orderDto, principal));
     }
 
     @Test
@@ -88,9 +88,9 @@ class OrderControllerTest {
         Order order = getOrder();
         OrderDto orderDto = orderMapper.toOrderDto(order);
 
-        orderController.placeOrder(orderDto, principal);
+        orderControllerRABBIT.placeOrder(orderDto, principal);
 
-        Assertions.assertThat(orderController.getOrderService().getOrderRepository().getOrderList().get(0)).isEqualTo(order);
+        Assertions.assertThat(orderControllerRABBIT.getOrderService().getOrderRepository().getOrderList().get(0)).isEqualTo(order);
     }
 
     @Test
@@ -98,7 +98,7 @@ class OrderControllerTest {
         Order order = getOrder();
         OrderDto orderDto = orderMapper.toOrderDto(order);
 
-        orderController.placeOrder(orderDto, principal);
+        orderControllerRABBIT.placeOrder(orderDto, principal);
 
         Assertions.assertThat(order.getItemGroupList().get(0).getShippingdate()).isEqualTo(LocalDate.now().plusDays(1));
     }
@@ -142,14 +142,14 @@ class OrderControllerTest {
                 .exchange()
                 .expectStatus().isOk()
                 .expectBodyList(OrderDto.class)
-                .isEqualTo(orderService.getAllOrders());
+                .isEqualTo(orderServiceRABBIT.getAllOrders());
 
     }
 
     @Test
     void webtestclient_getOrdersByCustomer() {
         OrderDto orderDto = orderMapper.toOrderDto(getOrder());
-        orderService.placeOrder(orderDto, "admin");
+        orderServiceRABBIT.placeOrder(orderDto, "admin");
 
         String url = "/orders/1";
 

@@ -15,11 +15,11 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private final EurderAuthenticationEntryPoint authEntryPoint;
+    private final EurderAuthenticationEntryPointRABBIT authEntryPoint;
     private final EurderAuthenticationProvider authenticationProvider;
 
     @Autowired
-    public SecurityConfig(EurderAuthenticationEntryPoint authEntryPoint, EurderAuthenticationProvider authenticationProvider) {
+    public SecurityConfig(EurderAuthenticationEntryPointRABBIT authEntryPoint, EurderAuthenticationProvider authenticationProvider) {
         this.authEntryPoint = authEntryPoint;
         this.authenticationProvider = authenticationProvider;
     }

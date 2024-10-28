@@ -1,7 +1,7 @@
 package com.eurder.service;
 
 import com.eurder.domain.classes.Customer;
-import com.eurder.domain.dto.CustomerDto;
+import com.eurder.domain.dto.CustomerDtoRABBIT;
 import com.eurder.domain.mapper.CustomerMapper;
 import com.eurder.domain.repository.CustomerRepository;
 import com.eurder.infrastructure.authentication.FakeAuthenticationService;
@@ -26,34 +26,34 @@ public class CustomerService {
         this.fakeAuthenticationService = fakeAuthenticationService;
     }
 
-    public CustomerDto createCustomer(CustomerDto customerDto) {
-        if (hasAnyEmptyFields(customerDto)) {
+    public CustomerDtoRABBIT createCustomer(CustomerDtoRABBIT customerDtoRABBIT) {
+        if (hasAnyEmptyFields(customerDtoRABBIT)) {
             throw new NotEverythingFilledInExeption("fill in everything");
         }
-        if (lettersAreInputted(customerDto.getFirstname()) || lettersAreInputted(customerDto.getLastname())) {
+        if (lettersAreInputted(customerDtoRABBIT.getFirstname()) || lettersAreInputted(customerDtoRABBIT.getLastname())) {
             throw new NotEverythingFilledInExeption("nameinput not correct");
         }
 
-        Customer customer = customerMapper.toCustomer(customerDto);
+        Customer customer = customerMapper.toCustomer(customerDtoRABBIT);
         customerRepository.addCustomer(customer);
         fakeAuthenticationService.addUser(customer.getFirstname(), "customer", List.of(EurderRole.CUSTOMER));
-        return customerDto;
+        return customerDtoRABBIT;
     }
 
-    public boolean hasAnyEmptyFields(CustomerDto customerDto) {
-        return customerDto.getAddress().isEmpty() || customerDto.getEmailadress().isEmpty() || customerDto.getFirstname().isEmpty() || customerDto.getLastname().isEmpty() || customerDto.getPhonenumber().isEmpty();
+    public boolean hasAnyEmptyFields(CustomerDtoRABBIT customerDtoRABBIT) {
+        return customerDtoRABBIT.getAddress().isEmpty() || customerDtoRABBIT.getEmailadress().isEmpty() || customerDtoRABBIT.getFirstname().isEmpty() || customerDtoRABBIT.getLastname().isEmpty() || customerDtoRABBIT.getPhonenumber().isEmpty();
     }
 
     public boolean lettersAreInputted(String input) {
         return !input.chars().allMatch(Character::isLetter);
     }
 
-    public List<CustomerDto> getAllCustomers() {
+    public List<CustomerDtoRABBIT> getAllCustomers() {
        return customerRepository.getCustomerList().stream().map(x -> customerMapper.toCustomerDto(x)).collect(Collectors.toList());
 
     }
 
-    public CustomerDto getCustomer(int id) {
+    public CustomerDtoRABBIT getCustomer(int id) {
         return customerMapper.toCustomerDto(Objects.requireNonNull(customerRepository.getCustomerList().stream().filter(x -> x.getId() == id).findFirst().orElse(null)));
     }
 

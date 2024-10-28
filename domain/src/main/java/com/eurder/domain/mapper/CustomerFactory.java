@@ -1,7 +1,7 @@
 package com.eurder.domain.mapper;
 
 import com.eurder.domain.classes.Customer;
-import com.eurder.domain.dto.CustomerDto;
+import com.eurder.domain.dto.CustomerDtoRABBIT;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,8 +20,8 @@ public class CustomerFactory {
         return new Customer(this);
     }
 
-    public CustomerDto buildCustomerDto() {
-        return new CustomerDto(this);
+    public CustomerDtoRABBIT buildCustomerDto() {
+        return new CustomerDtoRABBIT(this);
     }
 
     public CustomerFactory setFirstname(String firstname) {

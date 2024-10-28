@@ -2,7 +2,7 @@ package com.eurder.infrastructure;
 
 import com.eurder.infrastructure.authentication.ExternalAuthentication;
 import com.eurder.infrastructure.authentication.FakeAuthenticationService;
-import com.eurder.infrastructure.eurderRoles.Feature;
+import com.eurder.infrastructure.eurderRoles.FeatureRABBIT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -35,11 +35,11 @@ public class EurderAuthenticationProvider implements AuthenticationProvider {
         if (user == null) {
             throw new BadCredentialsException("Username and password not found.");
         } else {
-            return new UsernamePasswordAuthenticationToken(username, password, rolesToGrantedAuthorities(Feature.getFeaturesForRoles(user.getRoles())));
+            return new UsernamePasswordAuthenticationToken(username, password, rolesToGrantedAuthorities(FeatureRABBIT.getFeaturesForRoles(user.getRoles())));
         }
     }
 
-    private Collection<? extends GrantedAuthority> rolesToGrantedAuthorities(List<Feature> roles) {
+    private Collection<? extends GrantedAuthority> rolesToGrantedAuthorities(List<FeatureRABBIT> roles) {
         return roles.stream()
                 .map(eurderRole -> eurderRole.name())
                 .map(role -> new SimpleGrantedAuthority(role))

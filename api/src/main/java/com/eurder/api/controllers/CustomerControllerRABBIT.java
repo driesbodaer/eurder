@@ -1,5 +1,5 @@
 package com.eurder.api.controllers;
-import com.eurder.domain.dto.CustomerDto;
+import com.eurder.domain.dto.CustomerDtoRABBIT;
 import com.eurder.service.CustomerService;
 import com.eurder.service.NotEverythingFilledInExeption;
 import org.slf4j.Logger;
@@ -13,31 +13,31 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "customers")
-public class CustomerController {
+public class CustomerControllerRABBIT {
     public static final String JSON = "application/json";
-    private final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(CustomerControllerRABBIT.class);
     private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(CustomerService customerService) {
+    public CustomerControllerRABBIT(CustomerService customerService) {
         this.customerService = customerService;
     }
 
     @PostMapping(produces = JSON, consumes = JSON)
     @ResponseStatus(HttpStatus.CREATED)
-    public CustomerDto createCostumer(@RequestBody CustomerDto customerDto) {
-        return customerService.createCustomer(customerDto);
+    public CustomerDtoRABBIT createCostumer(@RequestBody CustomerDtoRABBIT customerDtoRABBIT) {
+        return customerService.createCustomer(customerDtoRABBIT);
     }
 
     @GetMapping(produces = JSON)
     @ResponseStatus(HttpStatus.OK)
-    public List<CustomerDto> getAllCustomer() {
+    public List<CustomerDtoRABBIT> getAllCustomer() {
         return customerService.getAllCustomers();
     }
 
     @GetMapping(produces = JSON, path = "{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CustomerDto getCustomer(@PathVariable int id) {
+    public CustomerDtoRABBIT getCustomer(@PathVariable int id) {
         return customerService.getCustomer(id);
     }
 

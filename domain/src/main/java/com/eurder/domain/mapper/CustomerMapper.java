@@ -1,24 +1,24 @@
 package com.eurder.domain.mapper;
 
 import com.eurder.domain.classes.Customer;
-import com.eurder.domain.dto.CustomerDto;
+import com.eurder.domain.dto.CustomerDtoRABBIT;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CustomerMapper {
 
-    public Customer toCustomer(CustomerDto customerDto) {
+    public Customer toCustomer(CustomerDtoRABBIT customerDtoRABBIT) {
         return CustomerFactory.buildCustomer()
-                .setAddress(customerDto.getAddress())
-                .setFirstname(customerDto.getFirstname())
-                .setLastname(customerDto.getLastname())
-                .setAddress(customerDto.getAddress())
-                .setEmailadress(customerDto.getEmailadress())
-                .setPhonenumber(customerDto.getPhonenumber())
+                .setAddress(customerDtoRABBIT.getAddress())
+                .setFirstname(customerDtoRABBIT.getFirstname())
+                .setLastname(customerDtoRABBIT.getLastname())
+                .setAddress(customerDtoRABBIT.getAddress())
+                .setEmailadress(customerDtoRABBIT.getEmailadress())
+                .setPhonenumber(customerDtoRABBIT.getPhonenumber())
                 .build();
     }
 
-    public CustomerDto toCustomerDto(Customer customer) {
+    public CustomerDtoRABBIT toCustomerDto(Customer customer) {
         return CustomerFactory.buildCustomer()
                 .setAddress(customer.getAddress())
                 .setFirstname(customer.getFirstname())

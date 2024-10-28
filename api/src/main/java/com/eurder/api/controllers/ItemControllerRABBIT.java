@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import static com.eurder.api.controllers.CustomerController.JSON;
+import static com.eurder.api.controllers.CustomerControllerRABBIT.JSON;
 
 @RestController
 @RequestMapping(path = "items")
-public class ItemController {
-    private final Logger LOGGER = LoggerFactory.getLogger(ItemController.class);
+public class ItemControllerRABBIT {
+    private final Logger LOGGER = LoggerFactory.getLogger(ItemControllerRABBIT.class);
     private final ItemService itemService;
 
     @Autowired
-    public ItemController(ItemService itemService) {
+    public ItemControllerRABBIT(ItemService itemService) {
         this.itemService = itemService;
     }
 

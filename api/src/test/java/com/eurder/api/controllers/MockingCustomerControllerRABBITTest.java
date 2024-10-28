@@ -1,7 +1,7 @@
 package com.eurder.api.controllers;
 
 import com.eurder.domain.classes.Customer;
-import com.eurder.domain.dto.CustomerDto;
+import com.eurder.domain.dto.CustomerDtoRABBIT;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.CustomerMapper;
 import com.eurder.service.CustomerService;
@@ -27,8 +27,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @ComponentScan(basePackages = "com.eurder")
-@WebMvcTest(CustomerController.class)
-class MockingCustomerControllerTest {
+@WebMvcTest(CustomerControllerRABBIT.class)
+class MockingCustomerControllerRABBITTest {
 
     @MockBean
     CustomerService customerService;
@@ -52,12 +52,12 @@ class MockingCustomerControllerTest {
                 .build();
         customerList.add(customer);
 
-        List<CustomerDto> customerDtoList = new ArrayList<>();
+        List<CustomerDtoRABBIT> customerDtoRABBITList = new ArrayList<>();
         for (Customer customer1 : customerList) {
-            customerDtoList.add(customerMapper.toCustomerDto(customer1));
+            customerDtoRABBITList.add(customerMapper.toCustomerDto(customer1));
         }
 
-        Mockito.when(customerService.getAllCustomers()).thenReturn(customerDtoList);
+        Mockito.when(customerService.getAllCustomers()).thenReturn(customerDtoRABBITList);
 
 
         //doe een get op ordercontroller
@@ -74,7 +74,7 @@ class MockingCustomerControllerTest {
     @Test
     void getCustomer_byID() throws Exception {
 
-        CustomerDto customer =  CustomerFactory.buildCustomer()
+        CustomerDtoRABBIT customer =  CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("ggg")
                 .setLastname("test")
@@ -100,7 +100,7 @@ class MockingCustomerControllerTest {
     @Test
     void Create_Customer() throws Exception {
 
-        CustomerDto customer =  CustomerFactory.buildCustomer()
+        CustomerDtoRABBIT customer =  CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("mmm")
                 .setLastname("test")

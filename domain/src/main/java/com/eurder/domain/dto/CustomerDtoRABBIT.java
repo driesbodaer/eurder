@@ -4,14 +4,14 @@ import com.eurder.domain.mapper.CustomerFactory;
 
 import java.util.Objects;
 
-public class CustomerDto {
+public class CustomerDtoRABBIT {
     private String firstname;
     private String lastname;
     private String emailadress;
     private String address;
     private String phonenumber;
 
-    public CustomerDto(CustomerFactory customerFactory) {
+    public CustomerDtoRABBIT(CustomerFactory customerFactory) {
         this.firstname = customerFactory.getFirstname();
         this.lastname = customerFactory.getLastname();
         this.emailadress = customerFactory.getEmailadress();
@@ -19,7 +19,7 @@ public class CustomerDto {
         this.phonenumber = customerFactory.getPhonenumber();
     }
 
-    public CustomerDto(String firstname, String lastname, String emailadress, String address, String phonenumber) {
+    public CustomerDtoRABBIT(String firstname, String lastname, String emailadress, String address, String phonenumber) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.emailadress = emailadress;
@@ -62,7 +62,7 @@ public class CustomerDto {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CustomerDto that = (CustomerDto) o;
+        CustomerDtoRABBIT that = (CustomerDtoRABBIT) o;
         return Objects.equals(firstname, that.firstname) &&
                 Objects.equals(lastname, that.lastname) &&
                 Objects.equals(emailadress, that.emailadress) &&

@@ -28,8 +28,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @ComponentScan(basePackages = "com.eurder")
-@WebMvcTest(ItemController.class)
-class MockingItemControllerTest {
+@WebMvcTest(ItemControllerRABBIT.class)
+class MockingItemControllerRABBITTest {
 
 
 
@@ -41,7 +41,7 @@ class MockingItemControllerTest {
     @Autowired
     com.eurder.domain.mapper.ItemMapper itemMapper;
     @Autowired
-    ItemController itemController;
+    ItemControllerRABBIT itemControllerRABBIT;
 
 
     @Test

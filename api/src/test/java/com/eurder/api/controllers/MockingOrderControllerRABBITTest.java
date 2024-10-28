@@ -7,7 +7,7 @@ import com.eurder.domain.classes.Price;
 import com.eurder.domain.dto.OrderDto;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.OrderMapper;
-import com.eurder.service.OrderService;
+import com.eurder.service.OrderServiceRABBIT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -18,7 +18,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +30,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WithMockUser(username="admin", authorities={"ADMIN_ONLY"})
 @ComponentScan(basePackages = "com.eurder")
-@WebMvcTest(OrderController.class)
-class MockingOrderControllerTest {
+@WebMvcTest(OrderControllerRABBIT.class)
+class MockingOrderControllerRABBITTest {
 
     @MockBean
-    OrderService orderService;
+    OrderServiceRABBIT orderServiceRABBIT;
 
     @Autowired
     MockMvc mockMvc;
@@ -61,7 +60,7 @@ class MockingOrderControllerTest {
             orderDtoList.add(orderMapper.toOrderDto(order));
         }
 
-        Mockito.when(orderService.getAllOrders()).thenReturn(orderDtoList);
+        Mockito.when(orderServiceRABBIT.getAllOrders()).thenReturn(orderDtoList);
 
 
         //doe een get op ordercontroller

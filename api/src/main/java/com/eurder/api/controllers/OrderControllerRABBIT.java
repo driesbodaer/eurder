@@ -5,7 +5,7 @@ import com.eurder.domain.dto.OrderDto;
 import com.eurder.domain.dto.ReportDto;
 import com.eurder.service.NotCorrectUserException;
 import com.eurder.service.NotEverythingFilledInExeption;
-import com.eurder.service.OrderService;
+import com.eurder.service.OrderServiceRABBIT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,62 +17,62 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 import java.util.Objects;
-import static com.eurder.api.controllers.CustomerController.JSON;
+import static com.eurder.api.controllers.CustomerControllerRABBIT.JSON;
 
 
 @RestController
 @RequestMapping(path = "orders")
-public class OrderController {
-    private final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
-    private final OrderService orderService;
+public class OrderControllerRABBIT {
+    private final Logger LOGGER = LoggerFactory.getLogger(OrderControllerRABBIT.class);
+    private final OrderServiceRABBIT orderServiceRABBIT;
 
     @Autowired
-    public OrderController(OrderService orderService) {
-        this.orderService = orderService;
+    public OrderControllerRABBIT(OrderServiceRABBIT orderServiceRABBIT) {
+        this.orderServiceRABBIT = orderServiceRABBIT;
     }
 
     @PostMapping(produces = JSON, consumes = JSON)
     @ResponseStatus(HttpStatus.CREATED)
     public OrderDto placeOrder(@RequestBody OrderDto orderDto, Principal principal) {
-        return orderService.placeOrder(orderDto, principal.getName());
+        return orderServiceRABBIT.placeOrder(orderDto, principal.getName());
     }
 
     @PostMapping(produces = JSON, consumes = JSON, params = {"orderID"})
     @ResponseStatus(HttpStatus.CREATED)
     public Order placeOrderById(Principal principal, @RequestParam("orderID") int orderID) {
-        if (orderService.getCustomer(principal) == orderService.getOrder(orderID).getCustomer()) {
-            return orderService.placeExistingOrder(orderID, principal.getName());
+        if (orderServiceRABBIT.getCustomer(principal) == orderServiceRABBIT.getOrder(orderID).getCustomer()) {
+            return orderServiceRABBIT.placeExistingOrder(orderID, principal.getName());
         } else throw new NotCorrectUserException("you cannot access other customers data");
     }
 
     @GetMapping(produces = JSON)
     @ResponseStatus(HttpStatus.OK)
     public List<OrderDto> getAllOrders() {
-        return orderService.getAllOrders();
+        return orderServiceRABBIT.getAllOrders();
     }
 
     @GetMapping(produces = JSON, path = "shippingtoday")
     @PreAuthorize("hasAuthority('ADMIN_ONLY')")
     @ResponseStatus(HttpStatus.OK)
     public List<ItemGroupWithadress> getOrdersToShipToday() {
-        return orderService.getToShipToday();
+        return orderServiceRABBIT.getToShipToday();
     }
 
     @GetMapping(produces = JSON, path = "{id}")
     @ResponseStatus(HttpStatus.OK)
     public ReportDto getAllOrdersByCustomer(@PathVariable int id, Principal principal) {
         if (loggedInCustomerOwnsData(id, principal)) {
-            System.out.println(orderService.getOrderReportByID(id));
-            return orderService.getOrderReportByID(id);
+            System.out.println(orderServiceRABBIT.getOrderReportByID(id));
+            return orderServiceRABBIT.getOrderReportByID(id);
         } else throw new NotCorrectUserException("you cannot access other customers data");
     }
 
     private boolean loggedInCustomerOwnsData(@PathVariable int id, Principal principal) {
-        return principal.getName().equals(Objects.requireNonNull(orderService.getCustomerById(id)).getFirstname());
+        return principal.getName().equals(Objects.requireNonNull(orderServiceRABBIT.getCustomerById(id)).getFirstname());
     }
 
-    public OrderService getOrderService() {
-        return orderService;
+    public OrderServiceRABBIT getOrderService() {
+        return orderServiceRABBIT;
     }
 
     @ExceptionHandler(NotEverythingFilledInExeption.class)

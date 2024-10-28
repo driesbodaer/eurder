@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
-public class EurderAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
+public class EurderAuthenticationEntryPointRABBIT extends BasicAuthenticationEntryPoint {
 
     public static final String NAME_OF_REALM = "eurderRealm";
 
-    public EurderAuthenticationEntryPoint() {
+    public EurderAuthenticationEntryPointRABBIT() {
         setRealmName(NAME_OF_REALM);
     }
 

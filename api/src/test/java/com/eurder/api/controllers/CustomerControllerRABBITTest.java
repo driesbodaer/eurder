@@ -1,7 +1,7 @@
 package com.eurder.api.controllers;
 
 import com.eurder.domain.classes.Customer;
-import com.eurder.domain.dto.CustomerDto;
+import com.eurder.domain.dto.CustomerDtoRABBIT;
 import com.eurder.domain.mapper.CustomerFactory;
 import com.eurder.domain.mapper.CustomerMapper;
 import com.eurder.domain.repository.CustomerRepository;
@@ -22,15 +22,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CustomerControllerTest {
-    CustomerController customerController;
+class CustomerControllerRABBITTest {
+    CustomerControllerRABBIT customerControllerRABBIT;
     CustomerMapper customerMapper;
     WebTestClient testClient;
     CustomerRepository customerRepository;
 
     @Autowired
-    public CustomerControllerTest(CustomerController customerController, WebTestClient webTestClient, CustomerMapper customerMapper, CustomerRepository customerRepository) {
-        this.customerController = customerController;
+    public CustomerControllerRABBITTest(CustomerControllerRABBIT customerControllerRABBIT, WebTestClient webTestClient, CustomerMapper customerMapper, CustomerRepository customerRepository) {
+        this.customerControllerRABBIT = customerControllerRABBIT;
         this.customerMapper = customerMapper;
         this.testClient = webTestClient;
         this.customerRepository = customerRepository;
@@ -41,7 +41,7 @@ class CustomerControllerTest {
     @Test
     void createCostumer_customerIsAdded() {
 
-        CustomerDto expected = CustomerFactory.buildCustomer()
+        CustomerDtoRABBIT expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("aaaaa")
                 .setLastname("test")
@@ -49,15 +49,15 @@ class CustomerControllerTest {
                 .setPhonenumber("013426238")
                 .buildCustomerDto();
 
-        CustomerDto expectedCustomer = customerController.createCostumer(expected);
+        CustomerDtoRABBIT expectedCustomer = customerControllerRABBIT.createCostumer(expected);
 
-        Assertions.assertThat(customerController.getCustomerService().getCustomerRepository().getCustomerList().get(4)).isEqualTo(customerMapper.toCustomer(expectedCustomer));
+        Assertions.assertThat(customerControllerRABBIT.getCustomerService().getCustomerRepository().getCustomerList().get(4)).isEqualTo(customerMapper.toCustomer(expectedCustomer));
     }
 
     @Test
     void createCostumer_customerIsAddedToSecurity() {
 
-        CustomerDto expected = CustomerFactory.buildCustomer()
+        CustomerDtoRABBIT expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("bbb")
                 .setLastname("test")
@@ -65,9 +65,9 @@ class CustomerControllerTest {
                 .setPhonenumber("013426238")
                 .buildCustomerDto();
 
-        CustomerDto expectedCustomer = customerController.createCostumer(expected);
+        CustomerDtoRABBIT expectedCustomer = customerControllerRABBIT.createCostumer(expected);
 
-        Assertions.assertThat(customerController.getCustomerService().getFakeAuthenticationService().getUser("bbb", "customer")).isEqualTo(new ExternalAuthentication().withUsername("bbb").withPassword("customer").withRoles(List.of(EurderRole.CUSTOMER)));
+        Assertions.assertThat(customerControllerRABBIT.getCustomerService().getFakeAuthenticationService().getUser("bbb", "customer")).isEqualTo(new ExternalAuthentication().withUsername("bbb").withPassword("customer").withRoles(List.of(EurderRole.CUSTOMER)));
     }
 
     @Test
@@ -80,9 +80,9 @@ class CustomerControllerTest {
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("")
                 .build();
-        CustomerDto customerDto = customerMapper.toCustomerDto(actual);
+        CustomerDtoRABBIT customerDtoRABBIT = customerMapper.toCustomerDto(actual);
 
-        Assertions.assertThatThrownBy(() -> customerController.createCostumer(customerDto));
+        Assertions.assertThatThrownBy(() -> customerControllerRABBIT.createCostumer(customerDtoRABBIT));
     }
 
     @Test
@@ -95,9 +95,9 @@ class CustomerControllerTest {
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("01352485")
                 .build();
-        CustomerDto customerDto = customerMapper.toCustomerDto(actual);
+        CustomerDtoRABBIT customerDtoRABBIT = customerMapper.toCustomerDto(actual);
 
-        Assertions.assertThatThrownBy(() -> customerController.createCostumer(customerDto));
+        Assertions.assertThatThrownBy(() -> customerControllerRABBIT.createCostumer(customerDtoRABBIT));
     }
 
     @Test
@@ -110,14 +110,14 @@ class CustomerControllerTest {
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
                 .build();
-        CustomerDto expectedCustomer = customerController.createCostumer(customerMapper.toCustomerDto(actual));
+        CustomerDtoRABBIT expectedCustomer = customerControllerRABBIT.createCostumer(customerMapper.toCustomerDto(actual));
 
         Assertions.assertThat(actual).isEqualTo(customerMapper.toCustomer(expectedCustomer));
     }
 
     @Test
     void createCostumer_WithSprinboottest() throws UnsupportedEncodingException {
-        CustomerDto expected = CustomerFactory.buildCustomer()
+        CustomerDtoRABBIT expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("fff")
                 .setLastname("test")
@@ -132,10 +132,10 @@ class CustomerControllerTest {
                 .header("Authorization", "Basic " + Base64Utils
                         .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(Mono.just(expected), CustomerDto.class)
+                .body(Mono.just(expected), CustomerDtoRABBIT.class)
                 .exchange()
                 .expectStatus().isCreated()
-                .expectBody(CustomerDto.class)
+                .expectBody(CustomerDtoRABBIT.class)
                 .isEqualTo(expected);
 
         Assertions.assertThat(customerRepository.getCustomerList().get(1)).isEqualTo(customerMapper.toCustomer(expected));
@@ -143,14 +143,14 @@ class CustomerControllerTest {
 
     @Test
     void getCostumers_WithSprinboottest_all() throws UnsupportedEncodingException {
-        CustomerDto expected = CustomerFactory.buildCustomer()
+        CustomerDtoRABBIT expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("ggg")
                 .setLastname("test")
                 .setEmailadress("dries@gmail.com")
                 .setPhonenumber("013426238")
                 .buildCustomerDto();
-        customerController.createCostumer(expected);
+        customerControllerRABBIT.createCostumer(expected);
         String url = "customers";
 
         testClient.get()
@@ -159,7 +159,7 @@ class CustomerControllerTest {
                         .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
                 .exchange()
                 .expectStatus().isOk()
-                .expectBodyList(CustomerDto.class)
+                .expectBodyList(CustomerDtoRABBIT.class)
                 .contains(expected);
 
     }
@@ -167,7 +167,7 @@ class CustomerControllerTest {
 //    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     @Test
     void getCostumer_WithSprinboottest_ByID() {
-        CustomerDto expected = CustomerFactory.buildCustomer()
+        CustomerDtoRABBIT expected = CustomerFactory.buildCustomer()
                 .setAddress("kerkstraat")
                 .setFirstname("admin")
                 .setLastname("bodaer")
@@ -184,7 +184,7 @@ class CustomerControllerTest {
                         .encodeToString(("admin" + ":" + "admin").getBytes(StandardCharsets.UTF_8)))
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(CustomerDto.class)
+                .expectBody(CustomerDtoRABBIT.class)
                 .isEqualTo(expected);
     }
 }

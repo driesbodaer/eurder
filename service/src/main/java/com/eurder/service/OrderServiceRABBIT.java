@@ -21,7 +21,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
-public class OrderService {
+public class OrderServiceRABBIT {
     private final OrderMapper orderMapper;
     private final OrderRepository orderRepository;
     private final CustomerRepository customerRepository;
@@ -29,7 +29,7 @@ public class OrderService {
 
 
     @Autowired
-    public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository, ItemGroupMapper itemGroupMapper) {
+    public OrderServiceRABBIT(OrderMapper orderMapper, OrderRepository orderRepository, ItemRepository itemRepository, CustomerRepository customerRepository, ItemGroupMapper itemGroupMapper) {
         this.orderMapper = orderMapper;
         this.orderRepository = orderRepository;
         this.customerRepository = customerRepository;

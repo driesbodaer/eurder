@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "com.eurder")
-public class SoloprojApplication {
+public class SoloprojApplicationRABBIT {
 
     public static void main(String[] args) {
-        SpringApplication.run(SoloprojApplication.class, args);
+        SpringApplication.run(SoloprojApplicationRABBIT.class, args);
     }
 
 }
